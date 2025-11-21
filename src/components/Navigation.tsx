@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Heart } from "lucide-react";
 
@@ -6,36 +7,37 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "About Us", href: "#about" },
-    { name: "Our Work", href: "#programs" },
-    { name: "Stories", href: "#stories" },
-    { name: "Team", href: "#team" },
-    { name: "Get Involved", href: "#help" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Work", href: "/programs" },
+    { name: "Stories", href: "/stories" },
+    { name: "Team", href: "/team" },
+    { name: "Get Involved", href: "/get-involved" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm shadow-sm z-50 border-b border-border">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <Heart className="h-8 w-8 text-primary mr-3" />
             <div>
               <h2 className="text-xl font-bold text-foreground">Delhi House Society</h2>
               <p className="text-xs text-muted-foreground">Sewa Ashram</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-foreground hover:text-primary transition-colors font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <Button className="bg-primary hover:bg-primary/90">
               Donate
@@ -56,14 +58,14 @@ const Navigation = () => {
           <div className="md:hidden border-t border-border">
             <div className="px-4 pt-2 pb-4 space-y-2">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="block py-2 text-foreground hover:text-primary transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <Button className="w-full mt-4 bg-primary hover:bg-primary/90">
                 Donate
