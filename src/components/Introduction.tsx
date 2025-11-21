@@ -29,7 +29,7 @@ const Introduction = () => {
     <section className="section-padding bg-background">
       <div className="container-custom">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
-          Introduction
+          Delhi House Society – Sewa Ashram
         </h2>
         
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
