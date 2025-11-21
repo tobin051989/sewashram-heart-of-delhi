@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-community.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -23,24 +23,6 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
             Empowering the homeless, children, and marginalized communities through care, education, and livelihoods.
           </p>
-          
-          <div className="pt-8 space-y-6">
-            <p className="text-lg md:text-xl leading-relaxed text-white/95 max-w-3xl mx-auto">
-              Since the mid-1990s, Delhi House Society – Sewa Ashram has been a sanctuary of healing and transformation for Delhi's most vulnerable: the homeless, sick, and abandoned.
-            </p>
-            
-            <p className="text-base md:text-lg leading-relaxed text-white/90 max-w-3xl mx-auto">
-              What began when our founder, Ton Snellaert, was inspired by the Biblical call to "loose the chains of injustice" and bring hope to the poorest of the poor, has grown into a thriving community of compassion, rehabilitation, and empowerment.
-            </p>
-            
-            <p className="text-base md:text-lg leading-relaxed text-white/90 max-w-3xl mx-auto">
-              In recognition of our work as "a modern-day Good Samaritan," Delhi House Society received the <strong>Mother Teresa Memorial Award for Social Justice in 2010</strong>.
-            </p>
-            
-            <p className="text-lg md:text-xl font-medium text-white/95 max-w-2xl mx-auto pt-4">
-              Every life touched here tells a story of resilience, faith, and restored dignity.
-            </p>
-          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Button 
