@@ -118,26 +118,26 @@ const Stories = () => {
                   )}
                 </div>
                 
-                <CardContent className="p-4 md:p-6 flex flex-col justify-start overflow-y-auto h-full">
-                  <div className="mb-3">
-                    <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
+                <CardContent className="p-6 md:p-8 flex flex-col h-full overflow-y-auto">
+                  <div className="mb-4">
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                       {story.title}
                     </h2>
-                    <p className="text-base md:text-lg text-primary font-semibold">
+                    <p className="text-lg md:text-xl text-primary font-semibold">
                       {story.name}
                     </p>
                   </div>
 
-                  <div className="space-y-2 text-sm md:text-base text-muted-foreground leading-snug flex-1">
+                  <div className="space-y-3 text-base text-muted-foreground leading-relaxed flex-1">
                     {story.content.map((paragraph, pIndex) => (
                       <p key={pIndex}>{paragraph}</p>
                     ))}
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-border">
-                    <div className="flex gap-2">
-                      <Quote className="h-5 w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
-                      <p className="text-sm md:text-base italic text-foreground">
+                  <div className="mt-6 pt-4 border-t border-border">
+                    <div className="flex gap-3">
+                      <Quote className="h-6 w-6 text-primary flex-shrink-0" />
+                      <p className="text-base md:text-lg italic text-foreground">
                         {story.quote}
                       </p>
                     </div>
