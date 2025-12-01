@@ -13,11 +13,15 @@ const Team = () => {
   ];
 
   const staffMembers = [
-    { name: "Satyavir Chakrapani", role: "General Secretary | Chief Functionary" },
-    { name: "Keshav Pandey", role: "Operations Head" },
-    { name: "Suresh Kumar", role: "Accountant" },
-    { name: "Greenson", role: "Finance" },
-    { name: "Mary Ngaihte", role: "Communications Lead" },
+    { name: "Satya Chakrapani", role: "Chief Functionary" },
+    { name: "Keshav Pandey", role: "DHS Team Leader" },
+    { name: "Suresh Kumar", role: "Accounts" },
+    { name: "Greenson", role: "Manager, Accounts" },
+    { name: "Prakash Chander Arya", role: "Team Leader, Daily Operation" },
+    { name: "Sarin Thapa", role: "Team Leader, Daily Development" },
+    { name: "Bipul Borgohain", role: "Team Leader, Healthcare" },
+    { name: "Savita", role: "Team Leader, Learning Center" },
+    { name: "Mary Ngaihte Peter", role: "Communications Lead" },
     { name: "Tia", role: "Researcher" },
   ];
 
