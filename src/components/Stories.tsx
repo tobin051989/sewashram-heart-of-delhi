@@ -93,10 +93,10 @@ const Stories = () => {
           <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
         </div>
 
-        <div className="space-y-16 max-w-6xl mx-auto">
+        <div className="space-y-8 max-w-7xl mx-auto">
           {stories.map((story, index) => (
-            <Card key={story.id} className="overflow-hidden shadow-xl animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className={`grid md:grid-cols-2 gap-0 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
+            <Card key={story.id} className="overflow-hidden shadow-lg animate-fade-in h-[85vh]" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className={`grid md:grid-cols-2 gap-0 h-full ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
                 <div className={`relative ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
                   {story.images.length > 1 ? (
                     <div className="grid grid-cols-2 h-full">
@@ -118,26 +118,26 @@ const Stories = () => {
                   )}
                 </div>
                 
-                <CardContent className="p-8 md:p-12 flex flex-col justify-center">
-                  <div className="mb-6">
-                    <h2 className="text-3xl font-bold text-foreground mb-2">
+                <CardContent className="p-4 md:p-6 flex flex-col justify-start overflow-y-auto h-full">
+                  <div className="mb-3">
+                    <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
                       {story.title}
                     </h2>
-                    <p className="text-xl text-primary font-semibold">
+                    <p className="text-base md:text-lg text-primary font-semibold">
                       {story.name}
                     </p>
                   </div>
 
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <div className="space-y-2 text-sm md:text-base text-muted-foreground leading-snug flex-1">
                     {story.content.map((paragraph, pIndex) => (
                       <p key={pIndex}>{paragraph}</p>
                     ))}
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-border">
-                    <div className="flex gap-3">
-                      <Quote className="h-8 w-8 text-primary flex-shrink-0" />
-                      <p className="text-lg italic text-foreground">
+                  <div className="mt-4 pt-3 border-t border-border">
+                    <div className="flex gap-2">
+                      <Quote className="h-5 w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
+                      <p className="text-sm md:text-base italic text-foreground">
                         {story.quote}
                       </p>
                     </div>
