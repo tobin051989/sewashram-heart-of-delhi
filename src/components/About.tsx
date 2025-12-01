@@ -38,7 +38,7 @@ const About = () => {
                     At the heart of our work is <strong className="text-foreground">Sewa Ashram</strong>, formally registered in 1999 and located in Narela, North Delhi—a sanctuary for the destitute offering healthcare, rehabilitation, education, and social reintegration. Our holistic approach addresses physical, emotional, intellectual, financial, social, and spiritual well-being.
                   </p>
                   <p>
-                    Now under the leadership of Mr. Satyavir Chakrapani and guided by a dedicated board, DHS continues to operate with integrity and compassion as a nonprofit registered under the Societies Registration Act of 1860.
+                    Now under the leadership of Mr. Satyavir Chakrapani, Mr. Keshav Dutt Pandey and guided by a dedicated board, DHS continues to operate with integrity and compassion as a nonprofit registered under the Societies Registration Act of 1860.
                   </p>
                 </div>
               </div>
