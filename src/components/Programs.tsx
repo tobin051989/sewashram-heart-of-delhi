@@ -92,11 +92,16 @@ const Programs = () => {
               >
                 {program.image && (
                   <div 
-                    className={`h-64 md:h-auto bg-cover bg-center ${
+                    className={`relative min-h-64 md:min-h-80 ${
                       index % 2 === 0 ? 'md:order-1' : 'md:order-2'
                     }`}
-                    style={{ backgroundImage: `url(${program.image})` }}
-                  />
+                  >
+                    <img 
+                      src={program.image} 
+                      alt={program.title}
+                      className="w-full h-full object-cover object-center absolute inset-0"
+                    />
+                  </div>
                 )}
                 
                 <div className={`p-8 ${program.image ? (index % 2 === 0 ? 'md:order-2' : 'md:order-1') : ''}`}>
