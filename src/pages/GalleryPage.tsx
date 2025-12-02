@@ -56,6 +56,11 @@ import sewaAshram5 from "@/assets/gallery/sewa-ashram-5.jpg";
 import sewaAshram6 from "@/assets/gallery/sewa-ashram-6.jpg";
 import sewaAshram7 from "@/assets/gallery/sewa-ashram-7.jpg";
 import sewaAshram8 from "@/assets/gallery/sewa-ashram-8.jpg";
+import sewaAshram9 from "@/assets/gallery/sewa-ashram-9.jpg";
+import sewaAshram10 from "@/assets/gallery/sewa-ashram-10.jpg";
+import sewaAshram11 from "@/assets/gallery/sewa-ashram-11.jfif";
+import sewaAshram12 from "@/assets/gallery/sewa-ashram-12.jpeg";
+import sewaAshram13 from "@/assets/gallery/sewa-ashram-13.jpeg";
 
 interface Album {
   id: string;
@@ -134,6 +139,11 @@ const albums: Album[] = [
       { src: sewaAshram6, alt: "Resident playing tabla drums" },
       { src: sewaAshram7, alt: "Children at the ashram" },
       { src: sewaAshram8, alt: "Counseling session" },
+      { src: sewaAshram9, alt: "Resident in wheelchair smiling" },
+      { src: sewaAshram10, alt: "Smiling resident portrait" },
+      { src: sewaAshram11, alt: "Ashram life" },
+      { src: sewaAshram12, alt: "Medical treatment at clinic" },
+      { src: sewaAshram13, alt: "Residents at community gathering" },
     ],
   },
 ];
