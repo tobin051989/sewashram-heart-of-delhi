@@ -92,14 +92,14 @@ const Programs = () => {
               >
                 {program.image && (
                   <div 
-                    className={`relative min-h-64 md:min-h-80 ${
+                    className={`flex items-center justify-center bg-muted/30 p-4 ${
                       index % 2 === 0 ? 'md:order-1' : 'md:order-2'
                     }`}
                   >
                     <img 
                       src={program.image} 
                       alt={program.title}
-                      className="w-full h-full object-cover object-center absolute inset-0"
+                      className="w-full h-auto max-h-96 object-contain rounded-lg"
                     />
                   </div>
                 )}
