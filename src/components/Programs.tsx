@@ -4,6 +4,7 @@ import { HeartPulse, GraduationCap, Users2, Lightbulb, HandHeart } from "lucide-
 import healthcareImage from "@/assets/healthcare.jpg";
 import educationImage from "@/assets/education.jpg";
 import womenImage from "@/assets/women-empowerment.jpg";
+import ldiImage from "@/assets/ldi.jpg";
 
 const Programs = () => {
   const programs = [
@@ -52,6 +53,7 @@ const Programs = () => {
     {
       title: "Love Delhi Initiative (LDI)",
       icon: Lightbulb,
+      image: ldiImage,
       description: "Our youth and civic engagement program is dedicated to building a culture of compassion, collaboration, and social responsibility across Delhi-NCR.",
       details: [
         "Leadership workshops and mentorship programs",
