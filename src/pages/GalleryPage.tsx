@@ -24,6 +24,16 @@ import loveDelhi7 from "@/assets/gallery/love-delhi-7.jpg";
 import loveDelhi8 from "@/assets/gallery/love-delhi-8.jpg";
 import loveDelhi9 from "@/assets/gallery/love-delhi-9.jpg";
 import loveDelhi10 from "@/assets/gallery/love-delhi-10.jpg";
+import loveDelhi11 from "@/assets/gallery/love-delhi-11.jpg";
+import loveDelhi12 from "@/assets/gallery/love-delhi-12.jpg";
+import loveDelhi13 from "@/assets/gallery/love-delhi-13.jpg";
+import loveDelhi14 from "@/assets/gallery/love-delhi-14.jpg";
+import loveDelhi15 from "@/assets/gallery/love-delhi-15.jpg";
+import loveDelhi16 from "@/assets/gallery/love-delhi-16.jpg";
+import loveDelhi17 from "@/assets/gallery/love-delhi-17.jpg";
+import loveDelhi18 from "@/assets/gallery/love-delhi-18.jfif";
+import loveDelhi19 from "@/assets/gallery/love-delhi-19.jpeg";
+import loveDelhi20 from "@/assets/gallery/love-delhi-20.jpeg";
 
 const learningCentresImages = [
   { src: learningCentre1, alt: "Student with medal achievement" },
@@ -48,6 +58,16 @@ const loveDelhiImages = [
   { src: loveDelhi8, alt: "Football tournament participants" },
   { src: loveDelhi9, alt: "Children learning session" },
   { src: loveDelhi10, alt: "Team group photo" },
+  { src: loveDelhi11, alt: "Training session with participants" },
+  { src: loveDelhi12, alt: "Children studying together" },
+  { src: loveDelhi13, alt: "Child reading storybook" },
+  { src: loveDelhi14, alt: "Boys learning from textbook" },
+  { src: loveDelhi15, alt: "Children doing craft activities" },
+  { src: loveDelhi16, alt: "Classroom learning session" },
+  { src: loveDelhi17, alt: "Group of students with peace sign" },
+  { src: loveDelhi18, alt: "Love Delhi Initiative activity" },
+  { src: loveDelhi19, alt: "Child doing art and craft" },
+  { src: loveDelhi20, alt: "Child drawing with sketch pens" },
 ];
 
 interface GallerySectionProps {
