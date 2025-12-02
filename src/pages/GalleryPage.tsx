@@ -34,6 +34,15 @@ import loveDelhi17 from "@/assets/gallery/love-delhi-17.jpg";
 import loveDelhi18 from "@/assets/gallery/love-delhi-18.jfif";
 import loveDelhi19 from "@/assets/gallery/love-delhi-19.jpeg";
 import loveDelhi20 from "@/assets/gallery/love-delhi-20.jpeg";
+import loveDelhi21 from "@/assets/gallery/love-delhi-21.jpeg";
+import loveDelhi22 from "@/assets/gallery/love-delhi-22.jpeg";
+import loveDelhi23 from "@/assets/gallery/love-delhi-23.jpeg";
+import loveDelhi24 from "@/assets/gallery/love-delhi-24.jpeg";
+import loveDelhi25 from "@/assets/gallery/love-delhi-25.jpeg";
+import loveDelhi26 from "@/assets/gallery/love-delhi-26.jpeg";
+import loveDelhi27 from "@/assets/gallery/love-delhi-27.jpeg";
+import loveDelhi28 from "@/assets/gallery/love-delhi-28.jpeg";
+import loveDelhi29 from "@/assets/gallery/love-delhi-29.jpg";
 
 const learningCentresImages = [
   { src: learningCentre1, alt: "Student with medal achievement" },
@@ -68,6 +77,15 @@ const loveDelhiImages = [
   { src: loveDelhi18, alt: "Love Delhi Initiative activity" },
   { src: loveDelhi19, alt: "Child doing art and craft" },
   { src: loveDelhi20, alt: "Child drawing with sketch pens" },
+  { src: loveDelhi21, alt: "Child coloring environmental drawing" },
+  { src: loveDelhi22, alt: "Boys drawing together" },
+  { src: loveDelhi23, alt: "Boy sketching globe artwork" },
+  { src: loveDelhi24, alt: "Children's environmental drawings" },
+  { src: loveDelhi25, alt: "Girls drawing together" },
+  { src: loveDelhi26, alt: "Girls in drawing session" },
+  { src: loveDelhi27, alt: "Collection of children's artwork" },
+  { src: loveDelhi28, alt: "Child with craft mask" },
+  { src: loveDelhi29, alt: "Youth football champions with trophy" },
 ];
 
 interface GallerySectionProps {
