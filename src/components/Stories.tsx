@@ -1,7 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
-import gulistanImg1 from "@/assets/stories/gulistan-1.jpeg";
-import gulistanImg2 from "@/assets/stories/gulistan-2.jpeg";
 import sureshKumarImg from "@/assets/stories/suresh-kumar.jpeg";
 import radhaImg from "@/assets/stories/radha.jpeg";
 import narenderSinghImg from "@/assets/stories/narender-singh.jpg";
@@ -9,20 +7,6 @@ import surajImg from "@/assets/stories/suraj.jpg";
 
 const Stories = () => {
   const stories = [
-    {
-      id: 1,
-      title: "Empowerment Through Women's Literacy",
-      name: "Gulistan Rehan Khan",
-      images: [gulistanImg1, gulistanImg2],
-      content: [
-        "Gulistan Rehan Khan, a spirited and determined 31-year-old woman, lives with her husband and four children in a nearby slum within our community. Originally from Uttar Pradesh, Gulistan joined our education program a few years ago, bringing with her a story of strength and a desire for change.",
-        "She had studied up to the 3rd standard in a government school but dropped out early, finding the school environment restrictive, likening it to a jail. Years later, as her own children began attending school, she saw firsthand the value of education in shaping their future. This sparked something within her. She wanted not only to support her children better but also to rediscover the power of learning for herself.",
-        "Restarting her education was no easy feat. Gulistan faced many hurdles, self-doubt, hesitation, and the challenge of balancing studies with household responsibilities. In the beginning, she often relied on her children for help with her lessons and was shy about asking questions. But with steady encouragement and her own growing determination, she didn't give up.",
-        "Today, Gulistan proudly reads Hindi books and writes with only minor errors. She's no longer afraid or ashamed of learning. Instead, she celebrates her progress, she can now manage household expenses more confidently, assist her children with schoolwork, prepare grocery lists on her own, and contribute to the family income as a licensed E-Rickshaw driver.",
-        "Gulistan's journey is a powerful reminder that it's never too late to learn, grow, and transform. Her story reflects the deep impact of literacy on women's empowerment - not just for themselves, but for their families and communities too."
-      ],
-      quote: "Through learning, Gulistan found new confidence and a fresh start."
-    },
     {
       id: 2,
       title: "From Survivor to Supporter",
