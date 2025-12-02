@@ -118,8 +118,8 @@ const Stories = () => {
                   )}
                 </div>
                 
-                <CardContent className="p-6 md:p-8 flex flex-col h-full overflow-y-auto">
-                  <div className="mb-4">
+                <CardContent className="p-6 md:p-8 flex flex-col h-full">
+                  <div className="mb-4 flex-shrink-0">
                     <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                       {story.title}
                     </h2>
@@ -128,16 +128,16 @@ const Stories = () => {
                     </p>
                   </div>
 
-                  <div className="space-y-3 text-base text-muted-foreground leading-relaxed flex-1">
+                  <div className="space-y-3 text-sm text-muted-foreground leading-relaxed flex-1 overflow-y-auto pr-2">
                     {story.content.map((paragraph, pIndex) => (
                       <p key={pIndex}>{paragraph}</p>
                     ))}
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-border">
+                  <div className="mt-4 pt-4 border-t border-border flex-shrink-0">
                     <div className="flex gap-3">
-                      <Quote className="h-6 w-6 text-primary flex-shrink-0" />
-                      <p className="text-base md:text-lg italic text-foreground">
+                      <Quote className="h-5 w-5 text-primary flex-shrink-0" />
+                      <p className="text-sm md:text-base italic text-foreground">
                         {story.quote}
                       </p>
                     </div>
