@@ -25,6 +25,10 @@ import loveDelhi5 from "@/assets/gallery/love-delhi-5.jpg";
 import loveDelhi6 from "@/assets/gallery/love-delhi-6.jpg";
 import loveDelhi7 from "@/assets/gallery/love-delhi-7.jpg";
 import loveDelhi8 from "@/assets/gallery/love-delhi-8.jpg";
+import loveDelhi9 from "@/assets/gallery/love-delhi-9.jpg";
+import loveDelhi10 from "@/assets/gallery/love-delhi-10.jpg";
+import loveDelhi11 from "@/assets/gallery/love-delhi-11.jpg";
+import loveDelhi12 from "@/assets/gallery/love-delhi-12.jpg";
 
 // Sewa Ashram Residents images
 import sewaAshram1 from "@/assets/gallery/sewa-ashram-1.jpg";
@@ -95,6 +99,10 @@ const albums: Album[] = [
       { src: loveDelhi6, alt: "Equipping citizenry workshop" },
       { src: loveDelhi7, alt: "Conference presentation" },
       { src: loveDelhi8, alt: "Football tournament participants" },
+      { src: loveDelhi9, alt: "Children learning session" },
+      { src: loveDelhi10, alt: "Team group photo" },
+      { src: loveDelhi11, alt: "Training session with participants" },
+      { src: loveDelhi12, alt: "Youth football champions with trophy" },
     ],
   },
   {
