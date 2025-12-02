@@ -86,16 +86,10 @@ const Programs = () => {
             return (
               <Card 
                 key={index} 
-                className={`overflow-hidden shadow-lg ${
-                  index % 2 === 0 ? 'md:grid md:grid-cols-2' : 'md:grid md:grid-cols-2'
-                }`}
+                className="overflow-hidden shadow-lg"
               >
                 {program.image && (
-                  <div 
-                    className={`flex items-center justify-center bg-muted/30 p-4 ${
-                      index % 2 === 0 ? 'md:order-1' : 'md:order-2'
-                    }`}
-                  >
+                  <div className="flex items-center justify-center bg-muted/30 p-4">
                     <img 
                       src={program.image} 
                       alt={program.title}
@@ -104,7 +98,7 @@ const Programs = () => {
                   </div>
                 )}
                 
-                <div className={`p-8 ${program.image ? (index % 2 === 0 ? 'md:order-2' : 'md:order-1') : ''}`}>
+                <div className="p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 rounded-full bg-primary/10">
                       <Icon className="h-6 w-6 text-primary" />
