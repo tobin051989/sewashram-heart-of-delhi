@@ -62,6 +62,15 @@ import sewaAshram11 from "@/assets/gallery/sewa-ashram-11.jfif";
 import sewaAshram12 from "@/assets/gallery/sewa-ashram-12.jpeg";
 import sewaAshram13 from "@/assets/gallery/sewa-ashram-13.jpeg";
 
+// Women Empowerment images
+import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
+import womenEmpowerment2 from "@/assets/gallery/women-empowerment-2.jpeg";
+import womenEmpowerment3 from "@/assets/gallery/women-empowerment-3.jpg";
+import womenEmpowerment4 from "@/assets/gallery/women-empowerment-4.jpg";
+import womenEmpowerment5 from "@/assets/gallery/women-empowerment-5.jpeg";
+import womenEmpowerment6 from "@/assets/gallery/women-empowerment-6.jpeg";
+import womenEmpowerment7 from "@/assets/gallery/women-empowerment-7.jpg";
+
 interface Album {
   id: string;
   title: string;
@@ -144,6 +153,21 @@ const albums: Album[] = [
       { src: sewaAshram11, alt: "Ashram life" },
       { src: sewaAshram12, alt: "Medical treatment at clinic" },
       { src: sewaAshram13, alt: "Residents at community gathering" },
+    ],
+  },
+  {
+    id: "women-empowerment",
+    title: "Women Empowerment",
+    description: "Empowering women through skill development, vocational training, and community support programs for single mothers and underprivileged women.",
+    coverImage: womenEmpowerment7,
+    images: [
+      { src: womenEmpowerment1, alt: "Woman auto-rickshaw driver" },
+      { src: womenEmpowerment2, alt: "Woman driving e-rickshaw" },
+      { src: womenEmpowerment3, alt: "Women in sewing training class" },
+      { src: womenEmpowerment4, alt: "Women learning tailoring skills" },
+      { src: womenEmpowerment5, alt: "Women attending community meeting" },
+      { src: womenEmpowerment6, alt: "Single mothers support group" },
+      { src: womenEmpowerment7, alt: "Women empowerment program participants" },
     ],
   },
 ];
