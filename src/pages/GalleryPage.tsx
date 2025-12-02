@@ -25,27 +25,6 @@ import loveDelhi5 from "@/assets/gallery/love-delhi-5.jpg";
 import loveDelhi6 from "@/assets/gallery/love-delhi-6.jpg";
 import loveDelhi7 from "@/assets/gallery/love-delhi-7.jpg";
 import loveDelhi8 from "@/assets/gallery/love-delhi-8.jpg";
-import loveDelhi9 from "@/assets/gallery/love-delhi-9.jpg";
-import loveDelhi10 from "@/assets/gallery/love-delhi-10.jpg";
-import loveDelhi11 from "@/assets/gallery/love-delhi-11.jpg";
-import loveDelhi12 from "@/assets/gallery/love-delhi-12.jpg";
-import loveDelhi13 from "@/assets/gallery/love-delhi-13.jpg";
-import loveDelhi14 from "@/assets/gallery/love-delhi-14.jpg";
-import loveDelhi15 from "@/assets/gallery/love-delhi-15.jpg";
-import loveDelhi16 from "@/assets/gallery/love-delhi-16.jpg";
-import loveDelhi17 from "@/assets/gallery/love-delhi-17.jpg";
-import loveDelhi18 from "@/assets/gallery/love-delhi-18.jfif";
-import loveDelhi19 from "@/assets/gallery/love-delhi-19.jpeg";
-import loveDelhi20 from "@/assets/gallery/love-delhi-20.jpeg";
-import loveDelhi21 from "@/assets/gallery/love-delhi-21.jpeg";
-import loveDelhi22 from "@/assets/gallery/love-delhi-22.jpeg";
-import loveDelhi23 from "@/assets/gallery/love-delhi-23.jpeg";
-import loveDelhi24 from "@/assets/gallery/love-delhi-24.jpeg";
-import loveDelhi25 from "@/assets/gallery/love-delhi-25.jpeg";
-import loveDelhi26 from "@/assets/gallery/love-delhi-26.jpeg";
-import loveDelhi27 from "@/assets/gallery/love-delhi-27.jpeg";
-import loveDelhi28 from "@/assets/gallery/love-delhi-28.jpeg";
-import loveDelhi29 from "@/assets/gallery/love-delhi-29.jpg";
 
 // Sewa Ashram Residents images
 import sewaAshram1 from "@/assets/gallery/sewa-ashram-1.jpg";
@@ -116,27 +95,6 @@ const albums: Album[] = [
       { src: loveDelhi6, alt: "Equipping citizenry workshop" },
       { src: loveDelhi7, alt: "Conference presentation" },
       { src: loveDelhi8, alt: "Football tournament participants" },
-      { src: loveDelhi9, alt: "Children learning session" },
-      { src: loveDelhi10, alt: "Team group photo" },
-      { src: loveDelhi11, alt: "Training session with participants" },
-      { src: loveDelhi12, alt: "Children studying together" },
-      { src: loveDelhi13, alt: "Child reading storybook" },
-      { src: loveDelhi14, alt: "Boys learning from textbook" },
-      { src: loveDelhi15, alt: "Children doing craft activities" },
-      { src: loveDelhi16, alt: "Classroom learning session" },
-      { src: loveDelhi17, alt: "Group of students with peace sign" },
-      { src: loveDelhi18, alt: "Love Delhi Initiative activity" },
-      { src: loveDelhi19, alt: "Child doing art and craft" },
-      { src: loveDelhi20, alt: "Child drawing with sketch pens" },
-      { src: loveDelhi21, alt: "Child coloring environmental drawing" },
-      { src: loveDelhi22, alt: "Boys drawing together" },
-      { src: loveDelhi23, alt: "Boy sketching globe artwork" },
-      { src: loveDelhi24, alt: "Children's environmental drawings" },
-      { src: loveDelhi25, alt: "Girls drawing together" },
-      { src: loveDelhi26, alt: "Girls in drawing session" },
-      { src: loveDelhi27, alt: "Collection of children's artwork" },
-      { src: loveDelhi28, alt: "Child with craft mask" },
-      { src: loveDelhi29, alt: "Youth football champions with trophy" },
     ],
   },
   {
