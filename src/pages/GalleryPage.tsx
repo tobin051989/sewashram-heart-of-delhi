@@ -47,6 +47,16 @@ import loveDelhi27 from "@/assets/gallery/love-delhi-27.jpeg";
 import loveDelhi28 from "@/assets/gallery/love-delhi-28.jpeg";
 import loveDelhi29 from "@/assets/gallery/love-delhi-29.jpg";
 
+// Sewa Ashram Residents images
+import sewaAshram1 from "@/assets/gallery/sewa-ashram-1.jpg";
+import sewaAshram2 from "@/assets/gallery/sewa-ashram-2.jpg";
+import sewaAshram3 from "@/assets/gallery/sewa-ashram-3.jpeg";
+import sewaAshram4 from "@/assets/gallery/sewa-ashram-4.jpg";
+import sewaAshram5 from "@/assets/gallery/sewa-ashram-5.jpg";
+import sewaAshram6 from "@/assets/gallery/sewa-ashram-6.jpg";
+import sewaAshram7 from "@/assets/gallery/sewa-ashram-7.jpg";
+import sewaAshram8 from "@/assets/gallery/sewa-ashram-8.jpg";
+
 interface Album {
   id: string;
   title: string;
@@ -108,6 +118,22 @@ const albums: Album[] = [
       { src: loveDelhi27, alt: "Collection of children's artwork" },
       { src: loveDelhi28, alt: "Child with craft mask" },
       { src: loveDelhi29, alt: "Youth football champions with trophy" },
+    ],
+  },
+  {
+    id: "sewa-ashram-residents",
+    title: "Sewa Ashram Residents",
+    description: "Moments from our Sewa Ashram, where residents receive care, rehabilitation, and a supportive community environment.",
+    coverImage: sewaAshram4,
+    images: [
+      { src: sewaAshram1, alt: "Medical checkup at Sewa Ashram" },
+      { src: sewaAshram2, alt: "Nurse providing wound care" },
+      { src: sewaAshram3, alt: "Tree plantation activity" },
+      { src: sewaAshram4, alt: "Community gathering session" },
+      { src: sewaAshram5, alt: "Group photo of residents" },
+      { src: sewaAshram6, alt: "Resident playing tabla drums" },
+      { src: sewaAshram7, alt: "Children at the ashram" },
+      { src: sewaAshram8, alt: "Counseling session" },
     ],
   },
 ];
