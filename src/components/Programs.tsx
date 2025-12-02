@@ -86,7 +86,9 @@ const Programs = () => {
             return (
               <Card 
                 key={index} 
-                className="overflow-hidden shadow-lg"
+                className={`overflow-hidden shadow-lg ${
+                  program.image ? 'md:grid md:grid-cols-2' : ''
+                }`}
               >
                 {program.image && (
                   <div className="flex items-center justify-center bg-muted/30 p-4">
