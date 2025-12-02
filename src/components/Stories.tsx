@@ -95,9 +95,9 @@ const Stories = () => {
 
         <div className="space-y-8 max-w-7xl mx-auto">
           {stories.map((story, index) => (
-            <Card key={story.id} className="overflow-hidden shadow-lg animate-fade-in h-[85vh]" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className={`grid md:grid-cols-2 gap-0 h-full ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
-                <div className={`relative ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
+            <Card key={story.id} className="overflow-hidden shadow-lg animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className={`grid md:grid-cols-2 gap-0 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
+                <div className={`relative min-h-[400px] md:min-h-[500px] ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
                   {story.images.length > 1 ? (
                     <div className="grid grid-cols-2 h-full">
                       {story.images.map((img, imgIndex) => (
@@ -118,8 +118,8 @@ const Stories = () => {
                   )}
                 </div>
                 
-                <CardContent className="p-6 md:p-8 flex flex-col h-full">
-                  <div className="mb-4 flex-shrink-0">
+                <CardContent className="p-6 md:p-8 flex flex-col">
+                  <div className="mb-4">
                     <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                       {story.title}
                     </h2>
@@ -128,16 +128,16 @@ const Stories = () => {
                     </p>
                   </div>
 
-                  <div className="space-y-3 text-sm text-muted-foreground leading-relaxed flex-1 overflow-y-auto pr-2">
+                  <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
                     {story.content.map((paragraph, pIndex) => (
                       <p key={pIndex}>{paragraph}</p>
                     ))}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-border flex-shrink-0">
+                  <div className="mt-6 pt-4 border-t border-border">
                     <div className="flex gap-3">
-                      <Quote className="h-5 w-5 text-primary flex-shrink-0" />
-                      <p className="text-sm md:text-base italic text-foreground">
+                      <Quote className="h-6 w-6 text-primary flex-shrink-0" />
+                      <p className="text-base md:text-lg italic text-foreground">
                         {story.quote}
                       </p>
                     </div>
