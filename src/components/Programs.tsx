@@ -5,6 +5,7 @@ import healthcareImage from "@/assets/healthcare.jpg";
 import educationImage from "@/assets/education.jpg";
 import womenImage from "@/assets/women-empowerment.jpg";
 import ldiImage from "@/assets/ldi.jpg";
+import communityImage from "@/assets/community-engagement.jpg";
 
 const Programs = () => {
   const programs = [
@@ -66,6 +67,7 @@ const Programs = () => {
     {
       title: "Community Engagement",
       icon: HandHeart,
+      image: communityImage,
       description: "Through home visits and community meetings, we connect with families, support school enrollments, and link communities with welfare schemes, healthcare, and livelihood programs.",
       ctas: ["Join Our Community"],
     },
