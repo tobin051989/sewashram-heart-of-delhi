@@ -56,6 +56,16 @@ import sewaAshram5 from "@/assets/gallery/sewa-ashram-5.jpg";
 import sewaAshram6 from "@/assets/gallery/sewa-ashram-6.jpg";
 import sewaAshram7 from "@/assets/gallery/sewa-ashram-7.jpg";
 import sewaAshram8 from "@/assets/gallery/sewa-ashram-8.jpg";
+import sewaAshram9 from "@/assets/gallery/sewa-ashram-9.jpg";
+import sewaAshram10 from "@/assets/gallery/sewa-ashram-10.jpeg";
+import sewaAshram11 from "@/assets/gallery/sewa-ashram-11.jpg";
+import sewaAshram12 from "@/assets/gallery/sewa-ashram-12.jpg";
+import sewaAshram13 from "@/assets/gallery/sewa-ashram-13.jpg";
+import sewaAshram14 from "@/assets/gallery/sewa-ashram-14.jfif";
+import sewaAshram15 from "@/assets/gallery/sewa-ashram-15.jfif";
+import sewaAshram16 from "@/assets/gallery/sewa-ashram-16.jpeg";
+import sewaAshram17 from "@/assets/gallery/sewa-ashram-17.jpeg";
+import sewaAshram18 from "@/assets/gallery/sewa-ashram-18.jpeg";
 
 // Women Empowerment images
 import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
@@ -143,6 +153,16 @@ const albums: Album[] = [
       { src: sewaAshram6, alt: "Resident playing tabla drums" },
       { src: sewaAshram7, alt: "Children at the ashram" },
       { src: sewaAshram8, alt: "Counseling session" },
+      { src: sewaAshram9, alt: "Resident in wheelchair smiling" },
+      { src: sewaAshram10, alt: "Residents with battery rickshaw" },
+      { src: sewaAshram11, alt: "Child smiling at the ashram" },
+      { src: sewaAshram12, alt: "Resident bathing" },
+      { src: sewaAshram13, alt: "Smiling resident portrait" },
+      { src: sewaAshram14, alt: "Resident at the ashram" },
+      { src: sewaAshram15, alt: "Life at the ashram" },
+      { src: sewaAshram16, alt: "Vijay Bahadur portrait" },
+      { src: sewaAshram17, alt: "Medical treatment at clinic" },
+      { src: sewaAshram18, alt: "Residents at community gathering" },
     ],
   },
   {
