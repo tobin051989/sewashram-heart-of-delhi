@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center">
-            <Heart className="h-8 w-8 text-primary mr-3" />
+            <img src={logo} alt="Delhi House Society Logo" className="h-14 w-auto mr-3" />
             <div>
               <h2 className="text-xl font-bold text-foreground">Delhi House Society</h2>
               <p className="text-xs text-muted-foreground">Sewa Ashram</p>

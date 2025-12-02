@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center mb-4">
-              <Heart className="h-6 w-6 text-primary mr-2" />
+              <img src={logo} alt="Delhi House Society Logo" className="h-12 w-auto mr-2" />
               <div>
                 <h3 className="font-bold text-lg">Delhi House Society</h3>
                 <p className="text-sm text-background/80">Sewa Ashram</p>
