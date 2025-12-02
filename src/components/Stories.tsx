@@ -3,7 +3,6 @@ import { Quote } from "lucide-react";
 import sureshKumarImg from "@/assets/stories/suresh-kumar.jpeg";
 import radhaImg from "@/assets/stories/radha.jpeg";
 import narenderSinghImg from "@/assets/stories/narender-singh.jpg";
-import surajImg from "@/assets/stories/suraj.jpg";
 
 const Stories = () => {
   const stories = [
@@ -47,20 +46,6 @@ const Stories = () => {
         "Looking ahead, Narender dreams of starting his own business with the skills he has gained. Until then, he remains dedicated to his work at the Ashram, continuing to learn and grow. And if you ever visit Sewa Ashram, don't hesitate to challenge him to a game of carom - he's always up for it!"
       ],
       quote: "If I'm feeling bad, I read the Bible. I know Jesus is my true friend, and I feel that very strongly."
-    },
-    {
-      id: 5,
-      title: "From Homelessness to Hope",
-      name: "Suraj",
-      images: [surajImg],
-      content: [
-        "On June 29, 2004, Suraj and his mother were found in the courtyard of Lok Nayak (LNJP) Hospital near Delhi Gate. They had been living on the streets for at least four months, with his mother doing all she could to care for him, begging for food and money while battling epilepsy and advanced tuberculosis. Her health had declined drastically. While Suraj was taken to the Rescue Center in Yamuna Bazar, she was admitted to the hospital for emergency treatment. Sadly, she passed away within hours, never regaining consciousness and leaving no information behind about herself or her son.",
-        "Just two days later, Suraj arrived at Sewa Ashram for long-term medical care. His fight against tuberculosis lasted three years, during which he also underwent extensive physiotherapy, as he was paralyzed from the waist down. Through consistent and compassionate care, Suraj began his slow but steady recovery, and Sewa Ashram became the place he would call home.",
-        "In 2008, he began attending school, confronting every obstacle with quiet courage. Over time, he completed his 12th grade and is now in the second year of a Bachelor of Arts program.",
-        "Beyond academics, Suraj is exploring his creativity through graphic design and video production, acquiring editing skills that hold promise for a fulfilling career. Due to his physical condition, commuting to college and training centers had long been a challenge- public transport simply wasn't an option. Until recently, he depended entirely on the Ashram's vehicle or ad hoc arrangements. But in 2025, a new chapter began with the arrival of a NeoFly Base wheelchair, complete with a NeoBolt battery-powered attachment. This mobility solution has given Suraj a newfound sense of autonomy, allowing him to pursue his goals more freely and with confidence.",
-        "Suraj's journey hasn't been easy, but he's come a long way from where he started. What stands out most is his quiet determination and the steady support he's received over the years. With each small step, through education, creativity, and now greater mobility - he's building a future shaped not by what he's been through, but by who he's becoming. His story reminds us that real change takes time, patience, and people who don't give up."
-      ],
-      quote: "Real change takes time, patience, and people who don't give up."
     }
   ];
 
