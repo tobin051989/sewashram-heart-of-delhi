@@ -46,7 +46,13 @@ const Team = () => {
     { 
       name: "Mr. Sumit K. Chetty", 
       role: "Treasurer, DHS",
-      bio: []
+      bio: [
+        "Mr. Sumit K. Chetty is a finance professional with over a decade of experience across the nonprofit, education, and corporate sectors. He specializes in accounting, taxation, compliance, audit, and financial reporting, ensuring full alignment with statutory requirements and organizational policies. His work reflects a strong commitment to financial integrity, transparency, and sustainable stewardship.",
+        "Over the years, Sumit has supported various organizations by overseeing their financial systems, strengthening reporting frameworks, and establishing internal control practices. His expertise also includes budgeting, strategic finance, and digital transformation, areas through which he consistently contributes to long-term institutional health and impact.",
+        "Alongside his professional work, Sumit serves on the Board of Delhi House Society (DHS), where he provides financial oversight, strategic input, and broader organizational support. His guidance helps advance the organization's mission of compassion, justice, and holistic community development among Delhi's most vulnerable communities.",
+        "Sumit has recently completed the CFO Program at IIM Kozhikode and the Executive Program in Business Finance from IIM Ahmedabad.",
+        "He lives in Greater Noida with his wife and two sons."
+      ]
     },
     { 
       name: "N. Christina", 
