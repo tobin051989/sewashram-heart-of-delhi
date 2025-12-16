@@ -97,13 +97,13 @@ const ImageSlideshow = ({ images, title }: ImageSlideshowProps) => {
   }, [images.length]);
 
   return (
-    <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg bg-muted/30">
+    <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg bg-muted/20">
       {images.map((image, idx) => (
         <img
           key={idx}
           src={image}
           alt={`${title} - Image ${idx + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
             idx === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         />
