@@ -180,7 +180,7 @@ const About = () => {
                         src={member.image}
                         alt={member.name}
                         className={`w-full h-full object-cover ${
-                          member.name === "Mr. Samir Deokuliar" 
+                          ["Mr. Samir Deokuliar", "Mr. Satyavir Chakrapani", "Ms. Esther Anupama Ghosh"].includes(member.name)
                             ? "scale-150 object-[center_25%]" 
                             : "object-top"
                         }`}
