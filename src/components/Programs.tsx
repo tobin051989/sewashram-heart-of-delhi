@@ -79,6 +79,16 @@ import loveDelhi7 from "@/assets/gallery/love-delhi-new-7.jpg";
 import loveDelhi8 from "@/assets/gallery/love-delhi-new-8.jpg";
 import loveDelhi9 from "@/assets/gallery/love-delhi-new-9.jpg";
 import loveDelhi10 from "@/assets/gallery/love-delhi-new-10.jpg";
+import loveDelhi11 from "@/assets/gallery/love-delhi-new-11.jpg";
+import loveDelhi12 from "@/assets/gallery/love-delhi-new-12.jpeg";
+import loveDelhi13 from "@/assets/gallery/love-delhi-new-13.jpeg";
+import loveDelhi14 from "@/assets/gallery/love-delhi-new-14.jpeg";
+import loveDelhi15 from "@/assets/gallery/love-delhi-new-15.jpeg";
+import loveDelhi16 from "@/assets/gallery/love-delhi-new-16.jpeg";
+import loveDelhi17 from "@/assets/gallery/love-delhi-new-17.jpeg";
+import loveDelhi18 from "@/assets/gallery/love-delhi-new-18.jpeg";
+import loveDelhi19 from "@/assets/gallery/love-delhi-new-19.jpeg";
+import loveDelhi20 from "@/assets/gallery/love-delhi-new-20.jpeg";
 
 // Community Engagement images
 import community1 from "@/assets/gallery/community-1.jpeg";
@@ -168,7 +178,7 @@ const Programs = () => {
     {
       title: "Love Delhi Initiative (LDI)",
       icon: Lightbulb,
-      images: [loveDelhi1, loveDelhi2, loveDelhi3, loveDelhi4, loveDelhi5, loveDelhi6, loveDelhi7, loveDelhi8, loveDelhi9, loveDelhi10],
+      images: [loveDelhi1, loveDelhi2, loveDelhi3, loveDelhi4, loveDelhi5, loveDelhi6, loveDelhi7, loveDelhi8, loveDelhi9, loveDelhi10, loveDelhi11, loveDelhi12, loveDelhi13, loveDelhi14, loveDelhi15, loveDelhi16, loveDelhi17, loveDelhi18, loveDelhi19, loveDelhi20],
       tagline: "Empowering Youth • Strengthening Communities • Building a Better Delhi-NCR",
       description: "The Love Delhi Initiative (LDI) brings together youth, community leaders, and civic organizations to spark positive change and build a compassionate, collaborative, and socially responsible Delhi-NCR. Through diverse programs, livelihood support and strategic partnerships, LDI equips young people, strengthens communities, and promotes collective action to create a more vibrant, empowered, and inclusive city.",
       detailsHeader: "What We Do",
