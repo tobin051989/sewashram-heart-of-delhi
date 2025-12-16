@@ -75,6 +75,9 @@ const Hero = () => {
         </div>
       ))}
       
+      {/* Full-section backdrop overlay */}
+      <div className="absolute inset-0 z-[5] bg-black/40" />
+      
       {/* Slide indicators */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {heroImages.map((_, index) => (
@@ -92,7 +95,7 @@ const Hero = () => {
       </div>
       
       <div className="container-custom section-padding relative z-10 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-in bg-black/40 rounded-2xl p-6 md:p-10">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
             Transforming Lives, Restoring Hope in Delhi and Beyond
           </h1>
