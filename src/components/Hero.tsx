@@ -58,12 +58,18 @@ const Hero = () => {
           className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
-          style={{
-            backgroundImage: `linear-gradient(rgba(20, 15, 10, 0.4), rgba(20, 15, 10, 0.5)), url(${img})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center top',
-          }}
-        />
+        >
+          <div
+            className={`absolute inset-0 ${
+              index === currentIndex ? "animate-ken-burns" : ""
+            }`}
+            style={{
+              backgroundImage: `linear-gradient(rgba(20, 15, 10, 0.4), rgba(20, 15, 10, 0.5)), url(${img})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+            }}
+          />
+        </div>
       ))}
       
       {/* Slide indicators */}
