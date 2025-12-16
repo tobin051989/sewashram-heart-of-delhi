@@ -89,6 +89,12 @@ import loveDelhi17 from "@/assets/gallery/love-delhi-new-17.jpeg";
 import loveDelhi18 from "@/assets/gallery/love-delhi-new-18.jpeg";
 import loveDelhi19 from "@/assets/gallery/love-delhi-new-19.jpeg";
 import loveDelhi20 from "@/assets/gallery/love-delhi-new-20.jpeg";
+import loveDelhi21 from "@/assets/gallery/love-delhi-new-21.jpeg";
+import loveDelhi22 from "@/assets/gallery/love-delhi-new-22.jpeg";
+import loveDelhi23 from "@/assets/gallery/love-delhi-new-23.jpeg";
+import loveDelhi24 from "@/assets/gallery/love-delhi-new-24.jpeg";
+import loveDelhi25 from "@/assets/gallery/love-delhi-new-25.jpeg";
+import loveDelhi26 from "@/assets/gallery/love-delhi-new-26.jpg";
 
 // Community Engagement images
 import community1 from "@/assets/gallery/community-1.jpeg";
@@ -178,7 +184,7 @@ const Programs = () => {
     {
       title: "Love Delhi Initiative (LDI)",
       icon: Lightbulb,
-      images: [loveDelhi1, loveDelhi2, loveDelhi3, loveDelhi4, loveDelhi5, loveDelhi6, loveDelhi7, loveDelhi8, loveDelhi9, loveDelhi10, loveDelhi11, loveDelhi12, loveDelhi13, loveDelhi14, loveDelhi15, loveDelhi16, loveDelhi17, loveDelhi18, loveDelhi19, loveDelhi20],
+      images: [loveDelhi1, loveDelhi2, loveDelhi3, loveDelhi4, loveDelhi5, loveDelhi6, loveDelhi7, loveDelhi8, loveDelhi9, loveDelhi10, loveDelhi11, loveDelhi12, loveDelhi13, loveDelhi14, loveDelhi15, loveDelhi16, loveDelhi17, loveDelhi18, loveDelhi19, loveDelhi20, loveDelhi21, loveDelhi22, loveDelhi23, loveDelhi24, loveDelhi25, loveDelhi26],
       tagline: "Empowering Youth • Strengthening Communities • Building a Better Delhi-NCR",
       description: "The Love Delhi Initiative (LDI) brings together youth, community leaders, and civic organizations to spark positive change and build a compassionate, collaborative, and socially responsible Delhi-NCR. Through diverse programs, livelihood support and strategic partnerships, LDI equips young people, strengthens communities, and promotes collective action to create a more vibrant, empowered, and inclusive city.",
       detailsHeader: "What We Do",
