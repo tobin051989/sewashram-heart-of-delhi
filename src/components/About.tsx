@@ -26,42 +26,49 @@ const About = () => {
       role: "Board Chairman",
       image: pramodSingh,
       linkedin: "https://www.linkedin.com/in/pramod-singh-1b1b1b1b/",
+      imageStyle: "scale-125 object-[center_20%]",
     },
     {
       name: "Mr. Satyavir Chakrapani",
       role: "General Secretary",
       image: satyavirChakrapani,
       linkedin: "https://www.linkedin.com/in/satyavir-chakrapani/",
+      imageStyle: "scale-150 object-[center_25%]",
     },
     {
       name: "Mr. Sumit K. Chetty",
       role: "Treasurer",
       image: sumitChetty,
       linkedin: null,
+      imageStyle: "scale-110 object-[center_15%]",
     },
     {
       name: "Ms. Esther Anupama Ghosh",
       role: "Member",
       image: estherGhosh,
       linkedin: "https://www.linkedin.com/in/esther-anupama-ghosh/",
+      imageStyle: "scale-150 object-[center_25%]",
     },
     {
       name: "Mr. Samir Deokuliar",
       role: "Member",
       image: samirDeokuliar,
       linkedin: "https://www.linkedin.com/in/samir-deokuliar/",
+      imageStyle: "scale-[1.75] object-[center_20%]",
     },
     {
       name: "Ms. Ekta Ahuja John",
       role: "Member",
       image: ektaJohn,
       linkedin: "https://www.linkedin.com/in/ekta-ahuja-john/",
+      imageStyle: "scale-125 object-[center_15%]",
     },
     {
       name: "Ms. N. Christina",
       role: "Member",
       image: null,
       linkedin: null,
+      imageStyle: "",
     },
   ];
 
@@ -179,11 +186,7 @@ const About = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className={`w-full h-full object-cover ${
-                          ["Mr. Samir Deokuliar", "Mr. Satyavir Chakrapani", "Ms. Esther Anupama Ghosh"].includes(member.name)
-                            ? "scale-150 object-[center_25%]" 
-                            : "object-top"
-                        }`}
+                        className={`w-full h-full object-cover ${member.imageStyle}`}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-primary/10">
