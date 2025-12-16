@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Faith from "@/components/Faith";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Mail, Phone, Globe, Building, CreditCard } from "lucide-react";
 import donateQR from "@/assets/donate-qr.jpeg";
@@ -38,6 +39,9 @@ const DonatePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Faith & Belief Section */}
+      <Faith />
 
       {/* QR Code Section */}
       <section className="py-4 bg-background">
