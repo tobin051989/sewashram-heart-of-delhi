@@ -245,8 +245,7 @@ const DonatePage = () => {
                 <a
                   key={statement.year}
                   href={statement.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download={`Delhi-House-Society-Audited-Financial-Statements-Year-Ended-March-31-${statement.year}.pdf`}
                   className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all group"
                 >
                   <FileText className="h-5 w-5 text-primary flex-shrink-0" />
