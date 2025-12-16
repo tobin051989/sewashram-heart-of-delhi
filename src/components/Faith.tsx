@@ -15,9 +15,8 @@ const Faith = () => {
             </div>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              We believe every person is created in the image of God and deserves love, dignity, and opportunity. 
-              Our faith in God's word calls us to serve selflessly, to be salt and light in a broken world, 
-              and to bless others regardless of religion, caste, creed, or gender.
+              We believe we are called to serve selflessly, to be a healing balm in a hurting world, 
+              and to bless others regardless of religion, caste, colour, creed, or gender.
             </p>
           </Card>
         </div>

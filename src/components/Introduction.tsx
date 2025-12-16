@@ -10,7 +10,7 @@ const Introduction = () => {
     },
     {
       icon: Heart,
-      text: "What began when our founder, Ton Snellaert, was inspired by the Biblical call to \"loose the chains of injustice\" and bring hope to the poorest of the poor, has grown into a thriving community of compassion, rehabilitation, and empowerment.",
+      text: "What began as quiet whispers in the heart of our founder, Dutch monk Ton Snellaert, calling him to break the chains of injustice, stand with the poorest of the poor, and restore dignity to broken lives, has grown into a thriving community of compassion, rehabilitation, and empowerment.",
       color: "text-accent"
     },
     {

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Users } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // Import hero slideshow images
 import hero01 from "@/assets/hero/hero-01.jpg";
@@ -110,9 +111,12 @@ const Hero = () => {
               size="lg" 
               variant="outline"
               className="bg-white/10 hover:bg-white/20 text-white border-white/30 hover:border-white/50 backdrop-blur-sm px-6 md:px-8 py-5 md:py-6 text-base md:text-lg"
+              asChild
             >
-              <Users className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-              Volunteer With Us – Be Part of the Change
+              <Link to="/contact">
+                <Users className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                Volunteer With Us – Be Part of the Change
+              </Link>
             </Button>
           </div>
         </div>
