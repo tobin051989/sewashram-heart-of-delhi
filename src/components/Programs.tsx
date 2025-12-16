@@ -76,10 +76,12 @@ import loveDelhi4 from "@/assets/gallery/love-delhi-4.jpg";
 import loveDelhi5 from "@/assets/gallery/love-delhi-5.jpg";
 import loveDelhi6 from "@/assets/gallery/love-delhi-6.jpg";
 
-// Community Engagement (using sewa ashram images for community)
-import sewaAshram7 from "@/assets/gallery/sewa-ashram-7.jpg";
-import sewaAshram8 from "@/assets/gallery/sewa-ashram-8.jpg";
-import sewaAshram9 from "@/assets/gallery/sewa-ashram-9.jpg";
+// Community Engagement images
+import community1 from "@/assets/gallery/community-1.jpeg";
+import community2 from "@/assets/gallery/community-2.jpg";
+import community3 from "@/assets/gallery/community-3.jpg";
+import community4 from "@/assets/gallery/community-4.jpg";
+import community5 from "@/assets/gallery/community-5.jpg";
 
 interface ImageSlideshowProps {
   images: string[];
@@ -180,7 +182,7 @@ const Programs = () => {
     {
       title: "Community Engagement",
       icon: HandHeart,
-      images: [sewaAshram7, sewaAshram8, sewaAshram9],
+      images: [community1, community2, community3, community4, community5],
       description: "Through home visits and community meetings, we connect with families, support school enrolments, and link communities with welfare schemes, healthcare, and livelihood programs.",
       ctas: ["Join Our Community"],
     },
