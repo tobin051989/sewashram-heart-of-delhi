@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { HeartPulse, GraduationCap, Users2, Lightbulb, HandHeart, ChevronLeft, ChevronRight } from "lucide-react";
+import { HeartPulse, GraduationCap, Users2, Lightbulb, HandHeart } from "lucide-react";
 
 // Sewa Ashram / Healthcare images
 import sewaAshram1 from "@/assets/gallery/sewa-ashram-1.jpg";
@@ -96,14 +96,6 @@ const ImageSlideshow = ({ images, title }: ImageSlideshowProps) => {
     return () => clearInterval(timer);
   }, [images.length]);
 
-  const goToPrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
   return (
     <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg bg-muted/30">
       {images.map((image, idx) => (
@@ -116,36 +108,6 @@ const ImageSlideshow = ({ images, title }: ImageSlideshowProps) => {
           }`}
         />
       ))}
-      
-      {/* Navigation Arrows */}
-      <button
-        onClick={goToPrev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
-        aria-label="Previous image"
-      >
-        <ChevronLeft className="h-5 w-5 text-foreground" />
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
-        aria-label="Next image"
-      >
-        <ChevronRight className="h-5 w-5 text-foreground" />
-      </button>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-        {images.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              idx === currentIndex ? "bg-primary" : "bg-background/60"
-            }`}
-            aria-label={`Go to image ${idx + 1}`}
-          />
-        ))}
-      </div>
     </div>
   );
 };
