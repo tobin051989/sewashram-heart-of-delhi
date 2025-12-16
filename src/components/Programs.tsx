@@ -69,12 +69,16 @@ import womenEmpowerment5 from "@/assets/gallery/women-empowerment-5.jpeg";
 import womenEmpowerment6 from "@/assets/gallery/women-empowerment-6.jpeg";
 
 // Love Delhi Initiative images
-import loveDelhi1 from "@/assets/gallery/love-delhi-1.jpg";
-import loveDelhi2 from "@/assets/gallery/love-delhi-2.jpg";
-import loveDelhi3 from "@/assets/gallery/love-delhi-3.jpg";
-import loveDelhi4 from "@/assets/gallery/love-delhi-4.jpg";
-import loveDelhi5 from "@/assets/gallery/love-delhi-5.jpg";
-import loveDelhi6 from "@/assets/gallery/love-delhi-6.jpg";
+import loveDelhi1 from "@/assets/gallery/love-delhi-new-1.jpg";
+import loveDelhi2 from "@/assets/gallery/love-delhi-new-2.jpg";
+import loveDelhi3 from "@/assets/gallery/love-delhi-new-3.jpg";
+import loveDelhi4 from "@/assets/gallery/love-delhi-new-4.jpg";
+import loveDelhi5 from "@/assets/gallery/love-delhi-new-5.jpg";
+import loveDelhi6 from "@/assets/gallery/love-delhi-new-6.jpg";
+import loveDelhi7 from "@/assets/gallery/love-delhi-new-7.jpg";
+import loveDelhi8 from "@/assets/gallery/love-delhi-new-8.jpg";
+import loveDelhi9 from "@/assets/gallery/love-delhi-new-9.jpg";
+import loveDelhi10 from "@/assets/gallery/love-delhi-new-10.jpg";
 
 // Community Engagement images
 import community1 from "@/assets/gallery/community-1.jpeg";
@@ -164,7 +168,7 @@ const Programs = () => {
     {
       title: "Love Delhi Initiative (LDI)",
       icon: Lightbulb,
-      images: [loveDelhi1, loveDelhi2, loveDelhi3, loveDelhi4, loveDelhi5, loveDelhi6],
+      images: [loveDelhi1, loveDelhi2, loveDelhi3, loveDelhi4, loveDelhi5, loveDelhi6, loveDelhi7, loveDelhi8, loveDelhi9, loveDelhi10],
       tagline: "Empowering Youth • Strengthening Communities • Building a Better Delhi-NCR",
       description: "The Love Delhi Initiative (LDI) brings together youth, community leaders, and civic organizations to spark positive change and build a compassionate, collaborative, and socially responsible Delhi-NCR. Through diverse programs, livelihood support and strategic partnerships, LDI equips young people, strengthens communities, and promotes collective action to create a more vibrant, empowered, and inclusive city.",
       detailsHeader: "What We Do",
