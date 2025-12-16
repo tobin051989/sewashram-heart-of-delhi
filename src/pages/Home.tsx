@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Introduction from "@/components/Introduction";
-import Faith from "@/components/Faith";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
@@ -11,7 +10,6 @@ const Home = () => {
       <Navigation />
       <Hero />
       <Introduction />
-      <Faith />
       <Newsletter />
       <Footer />
     </div>
