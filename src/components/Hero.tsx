@@ -13,6 +13,12 @@ import hero07 from "@/assets/hero/hero-07.jpg";
 import hero08 from "@/assets/hero/hero-08.jpg";
 import hero09 from "@/assets/hero/hero-09.jpeg";
 import hero10 from "@/assets/hero/hero-10.jpg";
+import hero11 from "@/assets/hero/hero-11.jpg";
+import hero12 from "@/assets/hero/hero-12.jpeg";
+import hero13 from "@/assets/hero/hero-13.jpg";
+import hero14 from "@/assets/hero/hero-14.jpg";
+import hero15 from "@/assets/hero/hero-15.jpg";
+import hero16 from "@/assets/hero/hero-16.jpeg";
 
 const heroImages = [
   hero01,
@@ -25,6 +31,12 @@ const heroImages = [
   hero08,
   hero09,
   hero10,
+  hero11,
+  hero12,
+  hero13,
+  hero14,
+  hero15,
+  hero16,
 ];
 
 const Hero = () => {
