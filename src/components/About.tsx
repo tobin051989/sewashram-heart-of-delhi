@@ -174,12 +174,12 @@ const About = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
               {boardMembers.map((member, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden bg-muted">
+                  <div className="w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
                     {member.image ? (
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-primary/10">
