@@ -22,6 +22,16 @@ import learningCentre7 from "@/assets/gallery/learning-centre-new-7.jpg";
 import learningCentre8 from "@/assets/gallery/learning-centre-new-8.jpg";
 import learningCentre9 from "@/assets/gallery/learning-centre-new-9.jpg";
 import learningCentre10 from "@/assets/gallery/learning-centre-new-10.jpg";
+import learningCentre11 from "@/assets/gallery/learning-centre-new-11.jpg";
+import learningCentre12 from "@/assets/gallery/learning-centre-new-12.jpg";
+import learningCentre13 from "@/assets/gallery/learning-centre-new-13.jpg";
+import learningCentre14 from "@/assets/gallery/learning-centre-new-14.jpg";
+import learningCentre15 from "@/assets/gallery/learning-centre-new-15.jpg";
+import learningCentre16 from "@/assets/gallery/learning-centre-new-16.jpg";
+import learningCentre17 from "@/assets/gallery/learning-centre-new-17.jpg";
+import learningCentre18 from "@/assets/gallery/learning-centre-new-18.jpg";
+import learningCentre19 from "@/assets/gallery/learning-centre-new-19.jpg";
+import learningCentre20 from "@/assets/gallery/learning-centre-new-20.jpg";
 
 // Women Empowerment images
 import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
@@ -133,7 +143,7 @@ const Programs = () => {
     {
       title: "Education – Learning Centres",
       icon: GraduationCap,
-      images: [learningCentre1, learningCentre2, learningCentre3, learningCentre4, learningCentre5, learningCentre6, learningCentre7, learningCentre8, learningCentre9, learningCentre10],
+      images: [learningCentre1, learningCentre2, learningCentre3, learningCentre4, learningCentre5, learningCentre6, learningCentre7, learningCentre8, learningCentre9, learningCentre10, learningCentre11, learningCentre12, learningCentre13, learningCentre14, learningCentre15, learningCentre16, learningCentre17, learningCentre18, learningCentre19, learningCentre20],
       description: "Our Learning Centers in Narela, Bawana, and other parts of Delhi provide quality education and hope for more than 200 children each year. These centers support children from low-income and marginalized families, helping them build strong educational foundations and confidence for the future.",
       details: [
         "Preschool and daycare for early childhood development",
