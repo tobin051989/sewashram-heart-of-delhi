@@ -26,7 +26,7 @@ const DonatePage = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-b from-primary/10 to-background">
+      <section className="pt-24 pb-8 bg-gradient-to-b from-primary/10 to-background">
         <div className="container-custom section-padding">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -40,7 +40,7 @@ const DonatePage = () => {
       </section>
 
       {/* QR Code Section */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="container-custom section-padding">
           <div className="flex flex-col items-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">Quick Donate</h2>
@@ -59,7 +59,7 @@ const DonatePage = () => {
       </section>
 
       {/* Supporters Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-10 bg-muted/30">
         <div className="container-custom section-padding">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">Supporters</h2>
           
@@ -84,7 +84,7 @@ const DonatePage = () => {
       </section>
 
       {/* Account Details Section */}
-      <section className="py-16 bg-background">
+      <section className="py-10 bg-background">
         <div className="container-custom section-padding">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">Donation Account Details</h2>
           
@@ -235,7 +235,7 @@ const DonatePage = () => {
       </section>
 
       {/* Audited Financial Statements Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-10 bg-muted/30">
         <div className="container-custom section-padding">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">Audited Financial Statements</h2>
           
