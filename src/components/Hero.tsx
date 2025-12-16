@@ -1,43 +1,93 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Users } from "lucide-react";
-import heroImage from "@/assets/hero-community.jpg";
+import { useEffect, useState } from "react";
+
+// Import community images for slideshow
+import sewaAshram1 from "@/assets/gallery/sewa-ashram-1.jpg";
+import sewaAshram2 from "@/assets/gallery/sewa-ashram-2.jpg";
+import sewaAshram5 from "@/assets/gallery/sewa-ashram-5.jpg";
+import loveDelhi1 from "@/assets/gallery/love-delhi-1.jpg";
+import loveDelhi3 from "@/assets/gallery/love-delhi-3.jpg";
+import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
+import learningCentre1 from "@/assets/gallery/learning-centre-1.jpeg";
+
+const heroImages = [
+  sewaAshram1,
+  loveDelhi1,
+  sewaAshram2,
+  womenEmpowerment1,
+  loveDelhi3,
+  sewaAshram5,
+  learningCentre1,
+];
 
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `linear-gradient(rgba(20, 15, 10, 0.6), rgba(20, 15, 10, 0.7)), url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      {/* Slideshow background */}
+      {heroImages.map((img, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            backgroundImage: `linear-gradient(rgba(20, 15, 10, 0.55), rgba(20, 15, 10, 0.65)), url(${img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      ))}
+      
+      {/* Slide indicators */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === currentIndex 
+                ? "bg-white w-6" 
+                : "bg-white/50 hover:bg-white/70"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
       
       <div className="container-custom section-padding relative z-10 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-balance leading-tight">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
             Transforming Lives, Restoring Hope in Delhi and Beyond
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto px-2">
             Empowering the homeless, children, and marginalized communities through care, education, and livelihoods.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4 md:pt-8 px-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-5 md:py-6 text-base md:text-lg shadow-lg hover:shadow-xl transition-all"
             >
-              <Heart className="mr-2 h-5 w-5" />
+              <Heart className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               Donate Now – Support a Life Today
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="bg-white/10 hover:bg-white/20 text-white border-white/30 hover:border-white/50 backdrop-blur-sm px-8 py-6 text-lg"
+              className="bg-white/10 hover:bg-white/20 text-white border-white/30 hover:border-white/50 backdrop-blur-sm px-6 md:px-8 py-5 md:py-6 text-base md:text-lg"
             >
-              <Users className="mr-2 h-5 w-5" />
+              <Users className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               Volunteer With Us – Be Part of the Change
             </Button>
           </div>
