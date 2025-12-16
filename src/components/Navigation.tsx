@@ -41,8 +41,8 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-sm 2xl:text-base">
-              Donate
+            <Button className="bg-primary hover:bg-primary/90 text-sm 2xl:text-base" asChild>
+              <Link to="/donate">Donate</Link>
             </Button>
           </div>
 
@@ -70,8 +70,8 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button className="w-full mt-4 bg-primary hover:bg-primary/90">
-                Donate
+              <Button className="w-full mt-4 bg-primary hover:bg-primary/90" asChild>
+                <Link to="/donate" onClick={() => setIsOpen(false)}>Donate</Link>
               </Button>
             </div>
           </div>
