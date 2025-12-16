@@ -76,7 +76,7 @@ const Hero = () => {
       ))}
       
       {/* Full-section backdrop overlay */}
-      <div className="absolute inset-0 z-[5] bg-black/40" />
+      <div className="absolute inset-0 z-[5] bg-black/35" />
       
       {/* Slide indicators */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
