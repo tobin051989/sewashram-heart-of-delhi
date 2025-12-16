@@ -2,23 +2,29 @@ import { Button } from "@/components/ui/button";
 import { Heart, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 
-// Import community images for slideshow
-import sewaAshram1 from "@/assets/gallery/sewa-ashram-1.jpg";
-import sewaAshram2 from "@/assets/gallery/sewa-ashram-2.jpg";
-import sewaAshram5 from "@/assets/gallery/sewa-ashram-5.jpg";
-import loveDelhi1 from "@/assets/gallery/love-delhi-1.jpg";
-import loveDelhi3 from "@/assets/gallery/love-delhi-3.jpg";
-import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
-import learningCentre1 from "@/assets/gallery/learning-centre-1.jpeg";
+// Import hero slideshow images
+import hero01 from "@/assets/hero/hero-01.jpg";
+import hero02 from "@/assets/hero/hero-02.jfif";
+import hero03 from "@/assets/hero/hero-03.png";
+import hero04 from "@/assets/hero/hero-04.jpg";
+import hero05 from "@/assets/hero/hero-05.jpg";
+import hero06 from "@/assets/hero/hero-06.jpg";
+import hero07 from "@/assets/hero/hero-07.jpg";
+import hero08 from "@/assets/hero/hero-08.jpg";
+import hero09 from "@/assets/hero/hero-09.jpeg";
+import hero10 from "@/assets/hero/hero-10.jpg";
 
 const heroImages = [
-  sewaAshram1,
-  loveDelhi1,
-  sewaAshram2,
-  womenEmpowerment1,
-  loveDelhi3,
-  sewaAshram5,
-  learningCentre1,
+  hero01,
+  hero02,
+  hero03,
+  hero04,
+  hero05,
+  hero06,
+  hero07,
+  hero08,
+  hero09,
+  hero10,
 ];
 
 const Hero = () => {
