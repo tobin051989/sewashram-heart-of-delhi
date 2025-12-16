@@ -71,16 +71,20 @@ const Team = () => {
   ];
 
   const staffMembers = [
-    { name: "Satya Chakrapani", role: "Chief Functionary" },
-    { name: "Keshav Pandey", role: "DHS Team Leader" },
+    { name: "Satyavir Chakrapani", role: "General Secretary", email: "gen.secy@delhihouse.org" },
+    { name: "Keshav Pandey", role: "DHS Team Leader", email: "keshav@delhihouse.org" },
+    { name: "Sumrengchung Hmangte", role: "LDI Coordinator", email: "lovedelhiinitiative@gmail.com" },
+    { name: "NK Greenson", role: "Manager, Accounts", email: "greenson.shikhar@gmail.com" },
     { name: "Suresh Kumar", role: "Accounts" },
-    { name: "Greenson", role: "Manager, Accounts" },
+    { name: "Mary Ngaihte Peter", role: "Communications Lead", email: "communication@delhihouse.org" },
+    { name: "Tia", role: "Researcher" },
     { name: "Prakash Chander Arya", role: "Team Leader, Daily Operation" },
     { name: "Sarin Thapa", role: "Team Leader, Daily Development" },
     { name: "Bipul Borgohain", role: "Team Leader, Healthcare" },
     { name: "Savita", role: "Team Leader, Learning Center" },
-    { name: "Mary Ngaihte Peter", role: "Communications Lead" },
-    { name: "Tia", role: "Researcher" },
+    { name: "Dr. Ashish Rohatgi", role: "Doctor MBBS DTCD MD" },
+    { name: "Lalitha Viswanathan", role: "Nurse" },
+    { name: "Dr. Gaurav Kumar Arya", role: "Physiotherapist" },
   ];
 
   return (
@@ -155,6 +159,11 @@ const Team = () => {
                   <div>
                     <p className="font-semibold text-foreground">{member.name}</p>
                     <p className="text-sm text-muted-foreground">{member.role}</p>
+                    {member.email && (
+                      <a href={`mailto:${member.email}`} className="text-sm text-primary hover:underline">
+                        {member.email}
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
