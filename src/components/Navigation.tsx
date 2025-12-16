@@ -21,49 +21,50 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm shadow-sm z-50 border-b border-border">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="Delhi House Society Logo" className="h-14 w-auto mr-3" />
-            <div>
-              <h2 className="text-xl font-bold text-foreground">Delhi House Society</h2>
-              <p className="text-xs text-muted-foreground">Sewa Ashram</p>
+        <div className="flex items-center justify-between h-16 sm:h-20 px-3 sm:px-4 lg:px-8">
+          <Link to="/" className="flex items-center min-w-0">
+            <img src={logo} alt="Delhi House Society Logo" className="h-10 sm:h-14 w-auto mr-2 sm:mr-3 flex-shrink-0" />
+            <div className="min-w-0">
+              <h2 className="text-base sm:text-xl font-bold text-foreground truncate">Delhi House Society</h2>
+              <p className="text-xs text-muted-foreground hidden sm:block">Sewa Ashram</p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Desktop Navigation - only show on xl screens due to many items */}
+          <div className="hidden xl:flex items-center space-x-4 2xl:space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm 2xl:text-base whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90">
+            <Button className="bg-primary hover:bg-primary/90 text-sm 2xl:text-base">
               Donate
             </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile/Tablet menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-foreground hover:text-primary transition-colors"
+            className="xl:hidden p-2 rounded-md text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile/Tablet Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-border">
-            <div className="px-4 pt-2 pb-4 space-y-2">
+          <div className="xl:hidden border-t border-border bg-background">
+            <div className="px-4 pt-2 pb-4 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block py-2 text-foreground hover:text-primary transition-colors font-medium"
+                  className="block py-3 text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium rounded-md px-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
