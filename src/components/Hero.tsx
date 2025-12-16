@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Heart, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import donateQR from "@/assets/donate-qr.jpeg";
 
 // Import hero slideshow images
 import hero01 from "@/assets/hero/hero-01.jpg";
@@ -100,13 +102,32 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4 md:pt-8 px-4">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-5 md:py-6 text-base md:text-lg shadow-lg hover:shadow-xl transition-all"
-            >
-              <Heart className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-              Donate Now – Support a Life Today
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-5 md:py-6 text-base md:text-lg shadow-lg hover:shadow-xl transition-all"
+                >
+                  <Heart className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                  Donate Now – Support a Life Today
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-center text-2xl">Donate to Support Us</DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col items-center gap-4 py-4">
+                  <img 
+                    src={donateQR} 
+                    alt="Donation QR Code" 
+                    className="w-64 h-auto rounded-lg"
+                  />
+                  <p className="text-sm text-muted-foreground text-center">
+                    Scan the QR code to donate and support a life today
+                  </p>
+                </div>
+              </DialogContent>
+            </Dialog>
             <Button 
               size="lg" 
               variant="outline"
