@@ -67,7 +67,7 @@ const Hero = () => {
               index === currentIndex ? "animate-ken-burns" : ""
             }`}
             style={{
-              backgroundImage: `linear-gradient(rgba(20, 15, 10, 0.4), rgba(20, 15, 10, 0.5)), url(${img})`,
+              backgroundImage: `url(${img})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center top',
             }}
