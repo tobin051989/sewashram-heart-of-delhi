@@ -12,12 +12,16 @@ import sewaAshram5 from "@/assets/gallery/sewa-ashram-5.jpg";
 import sewaAshram6 from "@/assets/gallery/sewa-ashram-6.jpg";
 
 // Learning Centre images
-import learningCentre1 from "@/assets/gallery/learning-centre-1.jpeg";
-import learningCentre2 from "@/assets/gallery/learning-centre-2.jpg";
-import learningCentre3 from "@/assets/gallery/learning-centre-3.jpg";
-import learningCentre4 from "@/assets/gallery/learning-centre-4.jpg";
-import learningCentre5 from "@/assets/gallery/learning-centre-5.jpg";
-import learningCentre6 from "@/assets/gallery/learning-centre-6.jpg";
+import learningCentre1 from "@/assets/gallery/learning-centre-new-1.jpg";
+import learningCentre2 from "@/assets/gallery/learning-centre-new-2.jpg";
+import learningCentre3 from "@/assets/gallery/learning-centre-new-3.jpeg";
+import learningCentre4 from "@/assets/gallery/learning-centre-new-4.jpg";
+import learningCentre5 from "@/assets/gallery/learning-centre-new-5.jfif";
+import learningCentre6 from "@/assets/gallery/learning-centre-new-6.jpg";
+import learningCentre7 from "@/assets/gallery/learning-centre-new-7.jpg";
+import learningCentre8 from "@/assets/gallery/learning-centre-new-8.jpg";
+import learningCentre9 from "@/assets/gallery/learning-centre-new-9.jpg";
+import learningCentre10 from "@/assets/gallery/learning-centre-new-10.jpg";
 
 // Women Empowerment images
 import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
@@ -129,7 +133,7 @@ const Programs = () => {
     {
       title: "Education – Learning Centres",
       icon: GraduationCap,
-      images: [learningCentre1, learningCentre2, learningCentre3, learningCentre4, learningCentre5, learningCentre6],
+      images: [learningCentre1, learningCentre2, learningCentre3, learningCentre4, learningCentre5, learningCentre6, learningCentre7, learningCentre8, learningCentre9, learningCentre10],
       description: "Our Learning Centers in Narela, Bawana, and other parts of Delhi provide quality education and hope for more than 200 children each year. These centers support children from low-income and marginalized families, helping them build strong educational foundations and confidence for the future.",
       details: [
         "Preschool and daycare for early childhood development",
