@@ -61,12 +61,16 @@ import learningCentre46 from "@/assets/gallery/learning-centre-new-46.jpeg";
 import learningCentre47 from "@/assets/gallery/learning-centre-new-47.jpeg";
 
 // Women Empowerment images
-import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
-import womenEmpowerment2 from "@/assets/gallery/women-empowerment-2.jpeg";
-import womenEmpowerment3 from "@/assets/gallery/women-empowerment-3.jpg";
-import womenEmpowerment4 from "@/assets/gallery/women-empowerment-4.jpg";
-import womenEmpowerment5 from "@/assets/gallery/women-empowerment-5.jpeg";
-import womenEmpowerment6 from "@/assets/gallery/women-empowerment-6.jpeg";
+import womenEmpowerment1 from "@/assets/gallery/women-empowerment-new-1.jpeg";
+import womenEmpowerment2 from "@/assets/gallery/women-empowerment-new-2.jpg";
+import womenEmpowerment3 from "@/assets/gallery/women-empowerment-new-3.jpeg";
+import womenEmpowerment4 from "@/assets/gallery/women-empowerment-new-4.jpg";
+import womenEmpowerment5 from "@/assets/gallery/women-empowerment-new-5.jpeg";
+import womenEmpowerment6 from "@/assets/gallery/women-empowerment-new-6.jpg";
+import womenEmpowerment7 from "@/assets/gallery/women-empowerment-new-7.jpeg";
+import womenEmpowerment8 from "@/assets/gallery/women-empowerment-new-8.jpeg";
+import womenEmpowerment9 from "@/assets/gallery/women-empowerment-new-9.jpeg";
+import womenEmpowerment10 from "@/assets/gallery/women-empowerment-new-10.jpeg";
 
 // Love Delhi Initiative images
 import loveDelhi1 from "@/assets/gallery/love-delhi-new-1.jpg";
@@ -169,7 +173,7 @@ const Programs = () => {
     {
       title: "Women's Empowerment & Livelihoods",
       icon: Users2,
-      images: [womenEmpowerment1, womenEmpowerment2, womenEmpowerment3, womenEmpowerment4, womenEmpowerment5, womenEmpowerment6],
+      images: [womenEmpowerment1, womenEmpowerment2, womenEmpowerment3, womenEmpowerment4, womenEmpowerment5, womenEmpowerment6, womenEmpowerment7, womenEmpowerment8, womenEmpowerment9, womenEmpowerment10],
       description: "We empower women, especially single and abandoned mothers to rebuild their lives with dignity and independence. Through skill training, counseling, and community support, women gain the confidence and resources to create brighter futures for themselves and their children.",
       details: [
         "Vocational training in tailoring, literacy, and financial management",
