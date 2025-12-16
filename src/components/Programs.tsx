@@ -52,6 +52,13 @@ import learningCentre37 from "@/assets/gallery/learning-centre-new-37.jpeg";
 import learningCentre38 from "@/assets/gallery/learning-centre-new-38.jpeg";
 import learningCentre39 from "@/assets/gallery/learning-centre-new-39.jpeg";
 import learningCentre40 from "@/assets/gallery/learning-centre-new-40.jpeg";
+import learningCentre41 from "@/assets/gallery/learning-centre-new-41.jpeg";
+import learningCentre42 from "@/assets/gallery/learning-centre-new-42.jpeg";
+import learningCentre43 from "@/assets/gallery/learning-centre-new-43.jpeg";
+import learningCentre44 from "@/assets/gallery/learning-centre-new-44.jpeg";
+import learningCentre45 from "@/assets/gallery/learning-centre-new-45.jpeg";
+import learningCentre46 from "@/assets/gallery/learning-centre-new-46.jpeg";
+import learningCentre47 from "@/assets/gallery/learning-centre-new-47.jpeg";
 
 // Women Empowerment images
 import womenEmpowerment1 from "@/assets/gallery/women-empowerment-1.jpeg";
@@ -163,7 +170,7 @@ const Programs = () => {
     {
       title: "Education – Learning Centres",
       icon: GraduationCap,
-      images: [learningCentre1, learningCentre2, learningCentre3, learningCentre4, learningCentre5, learningCentre6, learningCentre7, learningCentre8, learningCentre9, learningCentre10, learningCentre11, learningCentre12, learningCentre13, learningCentre14, learningCentre15, learningCentre16, learningCentre17, learningCentre18, learningCentre19, learningCentre20, learningCentre21, learningCentre22, learningCentre23, learningCentre24, learningCentre25, learningCentre26, learningCentre27, learningCentre28, learningCentre29, learningCentre30, learningCentre31, learningCentre32, learningCentre33, learningCentre34, learningCentre35, learningCentre36, learningCentre37, learningCentre38, learningCentre39, learningCentre40],
+      images: [learningCentre1, learningCentre2, learningCentre3, learningCentre4, learningCentre5, learningCentre6, learningCentre7, learningCentre8, learningCentre9, learningCentre10, learningCentre11, learningCentre12, learningCentre13, learningCentre14, learningCentre15, learningCentre16, learningCentre17, learningCentre18, learningCentre19, learningCentre20, learningCentre21, learningCentre22, learningCentre23, learningCentre24, learningCentre25, learningCentre26, learningCentre27, learningCentre28, learningCentre29, learningCentre30, learningCentre31, learningCentre32, learningCentre33, learningCentre34, learningCentre35, learningCentre36, learningCentre37, learningCentre38, learningCentre39, learningCentre40, learningCentre41, learningCentre42, learningCentre43, learningCentre44, learningCentre45, learningCentre46, learningCentre47],
       description: "Our Learning Centers in Narela, Bawana, and other parts of Delhi provide quality education and hope for more than 200 children each year. These centers support children from low-income and marginalized families, helping them build strong educational foundations and confidence for the future.",
       details: [
         "Preschool and daycare for early childhood development",
