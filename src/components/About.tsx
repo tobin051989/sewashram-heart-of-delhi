@@ -179,7 +179,11 @@ const About = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover object-top"
+                        className={`w-full h-full object-cover ${
+                          member.name === "Mr. Samir Deokuliar" 
+                            ? "scale-150 object-[center_25%]" 
+                            : "object-top"
+                        }`}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-primary/10">
