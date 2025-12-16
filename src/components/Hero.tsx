@@ -92,7 +92,7 @@ const Hero = () => {
       </div>
       
       <div className="container-custom section-padding relative z-10 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-in">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-in bg-black/50 backdrop-blur-sm rounded-2xl p-6 md:p-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
             Transforming Lives, Restoring Hope in Delhi and Beyond
           </h1>
