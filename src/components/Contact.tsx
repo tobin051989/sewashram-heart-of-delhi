@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Globe, Facebook, Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin, Globe, Facebook, Instagram, ExternalLink } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -33,13 +34,24 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
                 <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
+                <div className="flex-1">
                   <p className="font-semibold text-foreground mb-1">Address</p>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-3">
                     Khasra 47/25 & 48/21, Krishna Nagar,<br />
                     Singhu Border Road, Narela,<br />
                     New Delhi – 110040
                   </p>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Sewa+Ashram+Krishna+Nagar+Singhu+Border+Road+Narela+New+Delhi+110040" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline" size="sm" className="gap-2 hover:bg-primary hover:text-primary-foreground transition-colors">
+                      <MapPin className="h-4 w-4" />
+                      View on Google Maps
+                      <ExternalLink className="h-3 w-3" />
+                    </Button>
+                  </a>
                 </div>
               </div>
 
