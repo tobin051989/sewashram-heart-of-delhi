@@ -17,7 +17,7 @@ const Contact = () => {
           <Card className="p-8 md:p-12 shadow-lg">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-2">Satya Chakrapani</h3>
-              <p className="text-muted-foreground">Chief Functionary</p>
+              <p className="text-muted-foreground">General Secretary</p>
               <p className="text-lg font-semibold text-primary mt-2">Delhi House Society – Sewa Ashram</p>
             </div>
 
