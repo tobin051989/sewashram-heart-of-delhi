@@ -95,10 +95,12 @@ const GetInvolved = () => {
               Volunteer With Us
             </Button>
           </Link>
-          <Button size="lg" variant="outline" className="px-8">
-            <Handshake className="mr-2 h-5 w-5" />
-            Partner With Us
-          </Button>
+          <Link to="/contact">
+            <Button size="lg" variant="outline" className="px-8">
+              <Handshake className="mr-2 h-5 w-5" />
+              Partner With Us
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
