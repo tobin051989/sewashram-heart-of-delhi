@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Facebook, Instagram } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -16,9 +16,18 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 md:p-12 shadow-lg">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2">Satya Chakrapani</h3>
-              <p className="text-muted-foreground">General Secretary</p>
-              <p className="text-lg font-semibold text-primary mt-2">Delhi House Society – Sewa Ashram</p>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-2xl font-bold">Satya Chakrapani</h3>
+                  <p className="text-muted-foreground">General Secretary</p>
+                  <p className="text-lg font-semibold text-primary">Delhi House Society – Sewa Ashram</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Keshav Pandey</h3>
+                  <p className="text-muted-foreground">Team Lead</p>
+                  <p className="text-lg font-semibold text-primary">Delhi House Society – Sewa Ashram</p>
+                </div>
+              </div>
             </div>
 
             <div className="space-y-6">
@@ -42,8 +51,8 @@ const Contact = () => {
                     <a href="mailto:gen.secy@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
                       gen.secy@delhihouse.org
                     </a>
-                    <a href="mailto:office@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
-                      office@delhihouse.org
+                    <a href="mailto:keshav@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
+                      keshav@delhihouse.org
                     </a>
                     <a href="mailto:communication@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
                       communication@delhihouse.org
@@ -74,6 +83,26 @@ const Contact = () => {
                   <a href="http://www.delhihouse.org" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                     www.delhihouse.org
                   </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
+                <div className="flex gap-2">
+                  <Facebook className="h-6 w-6 text-primary flex-shrink-0" />
+                  <Instagram className="h-6 w-6 text-primary flex-shrink-0" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-2">Social Media</p>
+                  <div className="space-y-1">
+                    <a href="https://www.facebook.com/delhihouse.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                      <Facebook className="h-4 w-4" />
+                      www.facebook.com/delhihouse.org
+                    </a>
+                    <a href="https://www.instagram.com/delhihousesocietys/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                      <Instagram className="h-4 w-4" />
+                      www.instagram.com/delhihousesocietys/
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
