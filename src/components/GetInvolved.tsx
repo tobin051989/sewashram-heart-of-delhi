@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Handshake, GraduationCap, Home, Utensils, Gift, Building2, TrendingUp, Package, Calendar, Building, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const GetInvolved = () => {
   const ways = [
@@ -88,10 +89,12 @@ const GetInvolved = () => {
             <Heart className="mr-2 h-5 w-5" />
             Donate Today
           </Button>
-          <Button size="lg" variant="outline" className="px-8">
-            <Users className="mr-2 h-5 w-5" />
-            Volunteer With Us
-          </Button>
+          <Link to="/contact">
+            <Button size="lg" variant="outline" className="px-8">
+              <Users className="mr-2 h-5 w-5" />
+              Volunteer With Us
+            </Button>
+          </Link>
           <Button size="lg" variant="outline" className="px-8">
             <Handshake className="mr-2 h-5 w-5" />
             Partner With Us
