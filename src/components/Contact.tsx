@@ -42,7 +42,7 @@ const Contact = () => {
                     New Delhi – 110040
                   </p>
                   <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Sewa+Ashram+Krishna+Nagar+Singhu+Border+Road+Narela+New+Delhi+110040" 
+                    href="https://maps.google.com/?q=28.8521,77.0931" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
