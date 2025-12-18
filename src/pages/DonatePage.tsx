@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Faith from "@/components/Faith";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Mail, Phone, Globe, Building, CreditCard } from "lucide-react";
-import donateQR from "@/assets/donate-qr.jpeg";
+import donateQR from "@/assets/donate-qr-new.jpg";
 
 const financialStatements = [
   { year: "2024", url: "https://delhihouse.org/wp-content/uploads/2024/10/Delhi-House-Society-Audited-Financial-Statements-Year-Ended-March-31-2024.pdf" },
@@ -94,24 +94,45 @@ const DonatePage = () => {
           
           <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* Indian Residents */}
-            <Card className="border-primary/20">
+            <Card className="border-primary/20 md:col-span-2">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Building className="h-5 w-5" />
                   Indian Residents (INR)
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6">
                 <p className="text-sm text-muted-foreground">
                   All Indian contributions made to Delhi House Society are eligible for tax deduction of 50% u/s 80G of the Income Tax Act 1961.
                 </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Account Name:</span> Delhi House Society</p>
-                  <p><span className="font-semibold">Account No:</span> 380902010006469</p>
-                  <p><span className="font-semibold">Bank:</span> Union Bank of India</p>
-                  <p><span className="font-semibold">Branch:</span> Ansari Road Branch, Dariyaganj, Delhi</p>
-                  <p><span className="font-semibold">IFSC Code:</span> UBIN0538094</p>
+                
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {/* RBL Bank Account */}
+                  <div className="space-y-2 text-sm p-4 bg-muted/30 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-3">Account 1 - RBL Bank</h4>
+                    <p><span className="font-semibold">Account Name:</span> Delhi House Society</p>
+                    <p><span className="font-semibold">Account No:</span> 309013239156</p>
+                    <p><span className="font-semibold">Bank:</span> RBL Bank Limited</p>
+                    <p><span className="font-semibold">Branch:</span> Dwarka, New Delhi</p>
+                    <p><span className="font-semibold">IFSC Code:</span> RATN0000266</p>
+                  </div>
+                  
+                  {/* Union Bank Account */}
+                  <div className="space-y-2 text-sm p-4 bg-muted/30 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-3">Account 2 - Union Bank</h4>
+                    <p><span className="font-semibold">Account Name:</span> Delhi House Society</p>
+                    <p><span className="font-semibold">Account No:</span> 380902010006469</p>
+                    <p><span className="font-semibold">Bank:</span> Union Bank of India</p>
+                    <p><span className="font-semibold">Branch:</span> Ansari Road Branch, Dariyaganj, Delhi</p>
+                    <p><span className="font-semibold">IFSC Code:</span> UBIN0538094</p>
+                  </div>
                 </div>
+                
+                <div className="text-sm p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  <p className="font-semibold text-foreground mb-1">UPI Payment</p>
+                  <p className="text-muted-foreground">9311968001@okbizaxis</p>
+                </div>
+                
                 <p className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-md">
                   Contact office@delhihouse.org and supply full name, address, PAN Number and Mobile number of the contributor, else it will be treated as anonymous and will be subject to taxation.
                 </p>
