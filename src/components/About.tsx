@@ -113,7 +113,7 @@ const About = () => {
                 <h3 className="text-2xl font-bold mb-4">Our History</h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    The journey began in the mid-1990s when Ton Snellaert, moved by compassion, began rescuing the sick and abandoned from the streets of Yamuna Bazaar, offering them emergency healthcare and a home filled with love.
+                    The journey began in the mid-nineties when Ton Snellaert, moved by compassion, began rescuing the sick and abandoned from the streets of Yamuna Bazaar, offering them emergency healthcare and a home filled with love.
                   </p>
                   <p>
                     In 1999, the Ashram shifted to Narela, where it started humbly with mud and thatched huts. Over time, the community grew stronger, expanding its services to house up to 150 residents, with a medical clinic for regular and emergency care and safe living spaces.

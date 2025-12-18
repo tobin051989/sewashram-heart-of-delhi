@@ -14,7 +14,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm text-background/70 leading-relaxed">
-              Transforming lives and restoring hope since the mid-1990s. 
+              Transforming lives and restoring hope since the mid-nineties. 
               Serving Delhi's most vulnerable with compassion, dignity, and love.
             </p>
           </div>
