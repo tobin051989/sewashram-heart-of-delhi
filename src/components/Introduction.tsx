@@ -5,7 +5,7 @@ const Introduction = () => {
   const cards = [
     {
       icon: Calendar,
-      text: "Since the mid-1990s, Delhi House Society – Sewa Ashram has been a sanctuary of healing and transformation for Delhi's most vulnerable: the homeless, sick, and abandoned.",
+      text: "Since the mid-nineties, Delhi House Society – Sewa Ashram has been a sanctuary of healing and transformation for Delhi's most vulnerable: the homeless, sick, and abandoned.",
       color: "text-primary"
     },
     {
