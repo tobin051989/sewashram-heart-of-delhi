@@ -12,7 +12,7 @@ import GovernancePage from "./pages/GovernancePage";
 import TeamPage from "./pages/TeamPage";
 import GetInvolvedPage from "./pages/GetInvolvedPage";
 import ContactPage from "./pages/ContactPage";
-
+import PoliciesPage from "./pages/PoliciesPage";
 import DonatePage from "./pages/DonatePage";
 import NotFound from "./pages/NotFound";
 
@@ -32,9 +32,9 @@ const App = () => (
           <Route path="/stories" element={<StoriesPage />} />
           <Route path="/governance" element={<GovernancePage />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route path="/policies" element={<PoliciesPage />} />
           <Route path="/get-involved" element={<GetInvolvedPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          
           <Route path="/donate" element={<DonatePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
