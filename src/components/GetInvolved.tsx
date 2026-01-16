@@ -1,22 +1,69 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Users, Handshake, GraduationCap, Home, Utensils, Gift, Building2, TrendingUp, Package, Calendar, Building, Globe } from "lucide-react";
+import { Heart, Users, Handshake, GraduationCap, Home, Utensils, Building2, TrendingUp, Package, Calendar, Building, Globe, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const GetInvolved = () => {
-  const ways = [
-    { icon: Heart, title: "Donate", description: "Support healthcare, education, and livelihood programs." },
-    { icon: Users, title: "Volunteer", description: "Contribute your time and skills." },
-    { icon: Handshake, title: "Partner", description: "Collaborate through CSR or funding initiatives." },
-    { icon: GraduationCap, title: "Sponsor a Child", description: "Support a child's education monthly." },
-    { icon: Home, title: "Sponsor a Bed", description: "Provide daily care and medication for a patient." },
-    { icon: Utensils, title: "Sponsor a Meal", description: "Offer nutritious meals for residents." },
-    { icon: Heart, title: "Provide Medical Support", description: "Contribute towards medicines and rehabilitation." },
-    { icon: Building2, title: "Adopt a Project", description: "Support Learning Centres or Women's Empowerment." },
-    { icon: TrendingUp, title: "Sponsor Skill Development", description: "Train women and youth in employable skills." },
-    { icon: Package, title: "Give In-Kind", description: "Donate clothes, medical supplies, or educational materials." },
-    { icon: Calendar, title: "Celebrate with Purpose", description: "Mark special occasions by sponsoring a meal or child." },
-    { icon: Building, title: "Corporate Partnership", description: "Employee giving drives, health camps, or volunteering days." },
+  const waysWithDonation = [
+    { 
+      icon: GraduationCap, 
+      title: "Sponsor a Child", 
+      description: "Support a child's education through monthly sponsorship.",
+      cost: "Monthly cost per child: Rs 1501/-",
+      hasLink: true
+    },
+    { 
+      icon: Home, 
+      title: "Sponsor a Bed", 
+      description: "Provide daily care, medication, and support for a patient.",
+      cost: "Monthly cost per patient: Rs 1801/-",
+      hasLink: true
+    },
+    { 
+      icon: Utensils, 
+      title: "Sponsor a Meal", 
+      description: "Offer nutritious meals for residents.",
+      cost: "Cost of providing one day's meals (Breakfast, Lunch & Dinner): Rs 10001/-",
+      hasLink: true
+    },
+    { 
+      icon: Stethoscope, 
+      title: "Provide Medical Support", 
+      description: "Contribute towards medicines, treatment, and rehabilitation for patients.",
+      cost: "Provide Medical Support Rs. 2501/- per person per month",
+      note: "(Support may be given through financial contributions or in-kind medicines)",
+      hasLink: false
+    },
+    { 
+      icon: Building2, 
+      title: "Adopt a Project", 
+      description: "Support ongoing initiatives such as Learning Centres or Women's Empowerment programmes.",
+      hasLink: true
+    },
+    { 
+      icon: TrendingUp, 
+      title: "Sponsor Skill Development", 
+      description: "Enable women and youth to gain employable skills through vocational training and capacity-building programmes.",
+      hasLink: true
+    },
+  ];
+
+  const otherWays = [
+    { 
+      icon: Package, 
+      title: "Give In-Kind", 
+      description: "Donate clothes, medical supplies, educational materials, or essential items."
+    },
+    { 
+      icon: Calendar, 
+      title: "Celebrate with Purpose", 
+      description: "Mark birthdays, anniversaries, or special occasions by sponsoring a meal or supporting a child."
+    },
+    { 
+      icon: Building, 
+      title: "Corporate Partnership", 
+      description: "Partner with us through employee giving drives, health camps, skill programmes, or volunteering initiatives."
+    },
   ];
 
   return (
@@ -36,14 +83,50 @@ const GetInvolved = () => {
           <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
         </div>
 
+        {/* Ways with donation links */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {ways.map((way, index) => {
+          {waysWithDonation.map((way, index) => {
             const Icon = way.icon;
             return (
               <Card key={index} className="p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
                     <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold mb-2">{way.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{way.description}</p>
+                    {way.cost && (
+                      <p className="text-sm font-semibold text-primary bg-primary/10 px-3 py-2 rounded-md mb-2">
+                        {way.cost}
+                      </p>
+                    )}
+                    {way.note && (
+                      <p className="text-xs text-muted-foreground italic">{way.note}</p>
+                    )}
+                    {way.hasLink && (
+                      <Link to="/donate" className="inline-block mt-2">
+                        <span className="text-sm text-primary hover:underline font-medium">
+                          Donate Now →
+                        </span>
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Other ways to help */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {otherWays.map((way, index) => {
+            const Icon = way.icon;
+            return (
+              <Card key={index} className="p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-accent/10 flex-shrink-0">
+                    <Icon className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-2">{way.title}</h3>
