@@ -33,7 +33,7 @@ const About = () => {
       role: "General Secretary",
       image: satyavirChakrapani,
       linkedin: "https://www.linkedin.com/in/satyavir-chakrapani/",
-      imageStyle: "scale-[1.25] object-[center_20%]",
+      imageStyle: "scale-[1.0] object-[center_15%]",
     },
     {
       name: "Mr. Sumit K. Chetty",
