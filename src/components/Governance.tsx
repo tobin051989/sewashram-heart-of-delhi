@@ -28,7 +28,7 @@ const Governance = () => {
       name: "Mr. Satyavir Chakrapani", 
       role: "General Secretary, DHS",
       image: satyavirChakrapani,
-      linkedin: "https://www.linkedin.com/in/satyavir-chakrapani/",
+      linkedin: "https://www.linkedin.com/in/satyavir-chakrapani-9679286/",
       imageStyle: "scale-[1.0] object-[center_15%]",
       bio: [
         "Mr. Satyavir Chakrapani is a first-generation serial entrepreneur whose journey embodies the power of collective wisdom and purposeful innovation. As CEO of Shikhar Urban & Rural Enterprises (SURE), Managing Director of Shikhar Microfinance Pvt. Ltd., and part of the founding team of the Shikhar Group, he brings extensive experience in microfinance, social enterprise, development finance, and livelihood enhancement initiatives.",
@@ -41,7 +41,7 @@ const Governance = () => {
       name: "Mr. Pramod Kumar Singh", 
       role: "Board Chairman, Delhi House Society",
       image: pramodSingh,
-      linkedin: "https://www.linkedin.com/in/pramod-singh-1b1b1b1b/",
+      linkedin: "https://www.linkedin.com/in/pramod-singh-612a099/",
       imageStyle: "scale-[1.2] object-[center_25%]",
       bio: [
         "Mr. Pramod Kumar Singh, Advocate and Fellow Company Secretary, has over 33 years of experience in corporate and legal practice. He is the Founder of Lux Veritas, a New Delhi based business law firm that applies a business-minded and ethical approach to legal solutions. Under his leadership, the firm has advised clients across sectors in India and abroad, representing them before various courts and tribunals, including the NCLT, SEBI, and several High Courts. Lux Veritas is recognized for its focus on integrity, client trust, and value-driven representation in corporate, banking, and cross-border matters.",
@@ -68,7 +68,7 @@ const Governance = () => {
       name: "Ms. Esther Anupama Ghosh", 
       role: "Board Member, DHS",
       image: estherGhosh,
-      linkedin: "https://www.linkedin.com/in/esther-anupama-ghosh/",
+      linkedin: "https://www.linkedin.com/in/esther-ghosh-87a3401b3/",
       imageStyle: "scale-[1.25] object-[center_20%]",
       bio: [
         "Ms. Esther Anupama Ghosh has over 20 years of experience in the social development sector. She is currently working with StreamAsia Advisors Pvt. Ltd. and has previously held key roles with organizations such as World Vision, Emmanuel Hospital Association, Christian Aid, and EFICOR, along with experience as a freelance consultant.",
@@ -81,7 +81,7 @@ const Governance = () => {
       name: "Mr. Samir Deokuliar", 
       role: "Board Member, DHS",
       image: samirDeokuliar,
-      linkedin: "https://www.linkedin.com/in/samir-deokuliar/",
+      linkedin: "https://www.linkedin.com/in/samirdeokuliar/",
       imageStyle: "scale-[1.35] object-[center_22%]",
       bio: [
         "Mr. Samir Deokuliar is a global speaker and coach known for his deep insights into human relationships. He has addressed audiences across continents on themes of leadership, faith, and team-building, and hosted a daily motivational show on Indian national television that reached over 15 million viewers.",
@@ -93,7 +93,7 @@ const Governance = () => {
       name: "Ms. Ekta Ahuja John", 
       role: "Board Member, DHS",
       image: ektaJohn,
-      linkedin: "https://www.linkedin.com/in/ekta-ahuja-john/",
+      linkedin: "https://www.linkedin.com/in/ekta-ahuja-john-163397a4/",
       imageStyle: "scale-[1.2] object-[center_18%]",
       bio: [
         "Ms. Ekta Ahuja John is an experienced professional with over twenty years of experience across the corporate, social, and international education sectors. She is currently the Admissions Marketing Coordinator at Woodstock School, where she brings together her skills in customer service, client relationship management, marketing, and business development.",
