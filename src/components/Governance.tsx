@@ -51,31 +51,6 @@ const Governance = () => {
       ]
     },
     { 
-      name: "Ms. Esther Anupama Ghosh", 
-      role: "Board Member, DHS",
-      image: estherGhosh,
-      linkedin: "https://www.linkedin.com/in/esther-anupama-ghosh/",
-      imageStyle: "scale-[1.25] object-[center_20%]",
-      bio: [
-        "Ms. Esther Anupama Ghosh has over 20 years of experience in the social development sector. She is currently working with StreamAsia Advisors Pvt. Ltd. and has previously held key roles with organizations such as World Vision, Emmanuel Hospital Association, Christian Aid, and EFICOR, along with experience as a freelance consultant.",
-        "Her track record includes securing and managing large grants from major institutional donors and foundations. She has led program design and implementation across diverse sectors, including child protection, public health, disaster management, livelihoods, and environmental protection. She also conducts training on project design and management.",
-        "As a consultant, Ms. Ghosh has supported NGOs across South Asia, including India, Sri Lanka, Bangladesh, and the Solomon Islands. After spending much of her career in Delhi, she is now based in Mumbai.",
-        "With a long-standing association with Delhi House Society (DHS), Ms. Ghosh has played a key role in its journey over the years. Having earlier served as Board Chair and now continuing as a Board Member, she remains closely engaged in strengthening DHS's mission to bring compassion, dignity, and transformation to the communities it serves."
-      ]
-    },
-    { 
-      name: "Ms. Ekta Ahuja John", 
-      role: "Board Member, DHS",
-      image: ektaJohn,
-      linkedin: "https://www.linkedin.com/in/ekta-ahuja-john/",
-      imageStyle: "scale-[1.2] object-[center_18%]",
-      bio: [
-        "Ms. Ekta Ahuja John is an experienced professional with over twenty years of experience across the corporate, social, and international education sectors. She is currently the Admissions Marketing Coordinator at Woodstock School, where she brings together her skills in customer service, client relationship management, marketing, and business development.",
-        "Over the past two decades, Ms. John has worked in the corporate world, the social sector, and now in international education, giving her a unique perspective and the ability to view challenges through multiple lenses. Her diverse experience has shaped her understanding of people, systems, and impact. She has also worked extensively in training, quality management, and operations, leading teams across various functions to improve efficiency and strengthen organizational culture.",
-        "Passionate about social transformation, Ms. John is actively involved with Delhi House Society (DHS) as a Board member, where she supports its mission of compassion, dignity, and empowerment for the marginalized. She believes in the power of empathy and collaboration to create lasting change and brings this philosophy into every role she undertakes."
-      ]
-    },
-    { 
       name: "Mr. Sumit K. Chetty", 
       role: "Treasurer, DHS",
       image: sumitChetty,
@@ -90,6 +65,19 @@ const Governance = () => {
       ]
     },
     { 
+      name: "Ms. Esther Anupama Ghosh", 
+      role: "Board Member, DHS",
+      image: estherGhosh,
+      linkedin: "https://www.linkedin.com/in/esther-anupama-ghosh/",
+      imageStyle: "scale-[1.25] object-[center_20%]",
+      bio: [
+        "Ms. Esther Anupama Ghosh has over 20 years of experience in the social development sector. She is currently working with StreamAsia Advisors Pvt. Ltd. and has previously held key roles with organizations such as World Vision, Emmanuel Hospital Association, Christian Aid, and EFICOR, along with experience as a freelance consultant.",
+        "Her track record includes securing and managing large grants from major institutional donors and foundations. She has led program design and implementation across diverse sectors, including child protection, public health, disaster management, livelihoods, and environmental protection. She also conducts training on project design and management.",
+        "As a consultant, Ms. Ghosh has supported NGOs across South Asia, including India, Sri Lanka, Bangladesh, and the Solomon Islands. After spending much of her career in Delhi, she is now based in Mumbai.",
+        "With a long-standing association with Delhi House Society (DHS), Ms. Ghosh has played a key role in its journey over the years. Having earlier served as Board Chair and now continuing as a Board Member, she remains closely engaged in strengthening DHS's mission to bring compassion, dignity, and transformation to the communities it serves."
+      ]
+    },
+    { 
       name: "Mr. Samir Deokuliar", 
       role: "Board Member, DHS",
       image: samirDeokuliar,
@@ -99,6 +87,18 @@ const Governance = () => {
         "Mr. Samir Deokuliar is a global speaker and coach known for his deep insights into human relationships. He has addressed audiences across continents on themes of leadership, faith, and team-building, and hosted a daily motivational show on Indian national television that reached over 15 million viewers.",
         "Founder of Humane and author of the Ten Nuggets series, Mr. Deokuliar has coached leaders from organizations such as PwC, WHO, the World Bank, St. Stephen's College, and EFICOR. He also serves on the Board of Delhi House Society (Sewa Ashram) and other non-profits, offering strategic guidance and leadership development support.",
         "Deeply committed to nurturing communities and personal transformation, he provides spiritual counsel to Dwaar in Delhi. As someone who values work–family harmony, Samir is a devoted husband to his wife and a loving father to two adult children."
+      ]
+    },
+    { 
+      name: "Ms. Ekta Ahuja John", 
+      role: "Board Member, DHS",
+      image: ektaJohn,
+      linkedin: "https://www.linkedin.com/in/ekta-ahuja-john/",
+      imageStyle: "scale-[1.2] object-[center_18%]",
+      bio: [
+        "Ms. Ekta Ahuja John is an experienced professional with over twenty years of experience across the corporate, social, and international education sectors. She is currently the Admissions Marketing Coordinator at Woodstock School, where she brings together her skills in customer service, client relationship management, marketing, and business development.",
+        "Over the past two decades, Ms. John has worked in the corporate world, the social sector, and now in international education, giving her a unique perspective and the ability to view challenges through multiple lenses. Her diverse experience has shaped her understanding of people, systems, and impact. She has also worked extensively in training, quality management, and operations, leading teams across various functions to improve efficiency and strengthen organizational culture.",
+        "Passionate about social transformation, Ms. John is actively involved with Delhi House Society (DHS) as a Board member, where she supports its mission of compassion, dignity, and empowerment for the marginalized. She believes in the power of empathy and collaboration to create lasting change and brings this philosophy into every role she undertakes."
       ]
     },
     { 
