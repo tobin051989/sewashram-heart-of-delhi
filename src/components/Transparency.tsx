@@ -20,10 +20,6 @@ const Transparency = () => {
                   We are committed to stewardship, transparency, and accountability. 
                   Every rupee donated directly supports programs that heal, educate, and empower.
                 </p>
-                <Button className="bg-secondary hover:bg-secondary/90">
-                  <FileText className="mr-2 h-5 w-5" />
-                  See Our Impact Reports
-                </Button>
               </div>
             </div>
           </Card>
