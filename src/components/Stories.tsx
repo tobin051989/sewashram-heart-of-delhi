@@ -160,7 +160,9 @@ const Stories = () => {
                   <img 
                     src={story.images[0]} 
                     alt={story.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className={`w-full h-full group-hover:scale-105 transition-transform duration-700 ${
+                      story.id === 2 ? 'object-contain bg-muted/30' : 'object-cover'
+                    }`}
                   />
                   {story.imageCaption && (
                     <div className="absolute bottom-4 left-4 right-4 z-20">
