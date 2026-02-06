@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Mail, Phone, Globe, Building, CreditCard, Copy, Check } from "lucide-react";
+import { FileText, Mail, Phone, Globe, Building, Copy, Check } from "lucide-react";
 import { useState } from "react";
 import donateQR from "@/assets/donate-qr-clean.png";
 
@@ -62,7 +62,6 @@ const DonatePage = () => {
           </div>
         </div>
       </section>
-
 
       {/* QR Code Section */}
       <section className="py-2 md:py-4 bg-gradient-to-b from-primary/5 to-background">
@@ -173,100 +172,6 @@ const DonatePage = () => {
               </CardContent>
             </Card>
 
-            {/* European Residents */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-primary">
-                  <Globe className="h-5 w-5" />
-                  European Residents (EUR)
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  Make a SEPA direct deposit in EUR.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Account Name:</span> Delhi House e.V.</p>
-                  <p><span className="font-semibold">Address:</span> Waldsaum 33, 45134 Essen, Germany</p>
-                  <p><span className="font-semibold">IBAN:</span> DE97 6601007506145097 50</p>
-                  <p><span className="font-semibold">BIC:</span> PBNKDEFF (Postbank Karlsruhe)</p>
-                </div>
-                <p className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-md">
-                  Contact office@delhihouse.de to receive a receipt in German language for income tax deduction.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Swiss Residents */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-primary">
-                  <CreditCard className="h-5 w-5" />
-                  Swiss Residents (CHF)
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  Make a direct deposit in CHF.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Account Name:</span> Verein JayaHo</p>
-                  <p><span className="font-semibold">Location:</span> 3000 Bern</p>
-                  <p><span className="font-semibold">IBAN:</span> CH07 0900 0000 3051 5590 9</p>
-                </div>
-                <p className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-md">
-                  Contact verein@jayaho.ch to receive a receipt in German language for income tax deduction.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* New Zealand Residents */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-primary">
-                  <CreditCard className="h-5 w-5" />
-                  New Zealand Residents (NZD)
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  Make a direct deposit in NZD at ANZ.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Account Name:</span> Cry for the World Foundation</p>
-                  <p><span className="font-semibold">Account:</span> 01 0819 0374190 30</p>
-                  <p><span className="font-semibold">Branch:</span> 37, Rotherham St, Riccarton, Christchurch</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Australian Residents */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-primary">
-                  <Globe className="h-5 w-5" />
-                  Australian Residents (AUD)
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  Go to our partner Interserve Australia's webpage to donate.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Website:</span>{" "}
-                    <a href="https://interserve.org.au/give/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      interserve.org.au/give/
-                    </a>
-                  </p>
-                  <p><span className="font-semibold">Recipient Number:</span> 1299.82</p>
-                  <p><span className="font-semibold">Project:</span> Delhi House Society</p>
-                </div>
-                <p className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-md">
-                  Select "Interserve worker or Project" in the dropdown, enter the Recipient Number and "Delhi House Society". Choose "Once-off" or "Regularly" for your giving type. Giving can be via credit/debit card, bank transfer or cheque.
-                </p>
-              </CardContent>
-            </Card>
-
             {/* Other Countries */}
             <Card className="border-primary/20">
               <CardHeader>
@@ -324,4 +229,3 @@ const DonatePage = () => {
 };
 
 export default DonatePage;
-
