@@ -155,13 +155,13 @@ const Stories = () => {
             >
               <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                 {/* Image Section */}
-                <div className={`relative min-h-[350px] lg:min-h-[500px] ${index % 2 === 1 ? 'lg:col-start-2' : ''} group overflow-hidden`}>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
+                <div className={`relative ${story.id === 2 ? 'min-h-[300px]' : 'min-h-[350px] lg:min-h-[500px]'} ${index % 2 === 1 ? 'lg:col-start-2' : ''} group overflow-hidden flex items-center justify-center ${story.id === 2 ? 'bg-muted/20' : ''}`}>
+                  {story.id !== 2 && <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>}
                   <img 
                     src={story.images[0]} 
                     alt={story.name}
-                    className={`w-full h-full group-hover:scale-105 transition-transform duration-700 ${
-                      story.id === 2 ? 'object-contain bg-muted/30' : 'object-cover'
+                    className={`w-full transition-transform duration-700 ${
+                      story.id === 2 ? 'h-auto object-contain p-2' : 'h-full object-cover group-hover:scale-105'
                     }`}
                   />
                   {story.imageCaption && (
