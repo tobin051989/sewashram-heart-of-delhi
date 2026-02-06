@@ -17,7 +17,7 @@ const Governance = () => {
       role: "General Secretary, DHS",
       image: satyavirChakrapani,
       linkedin: "https://www.linkedin.com/in/satyavir-chakrapani/",
-      imageStyle: "scale-[1.25] object-[center_20%]",
+      imageStyle: "scale-[1.0] object-[center_15%]",
       bio: [
         "Mr. Satyavir Chakrapani is a first-generation serial entrepreneur whose journey embodies the power of collective wisdom and purposeful innovation. As CEO of Shikhar Urban & Rural Enterprises (SURE), Managing Director of Shikhar Microfinance Pvt. Ltd., and part of the founding team of the Shikhar Group, he brings extensive experience in microfinance, social enterprise, development finance, and livelihood enhancement initiatives.",
         "Driven by an enduring passion for innovation and growth, Mr. Chakrapani has held leadership roles with OWIF, Opportunity International, and Interserve. His work spans MSME development, livelihoods, animal husbandry, veterinary health, women's empowerment, education, children's nutrition, and youth entrepreneurship and mentoring.",
