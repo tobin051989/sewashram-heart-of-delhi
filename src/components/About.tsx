@@ -3,7 +3,7 @@ import { Heart, Target, Eye, Award, Users, Linkedin } from "lucide-react";
 
 // Board member images
 import pramodSingh from "@/assets/board/pramod-singh.jfif";
-import satyavirChakrapani from "@/assets/board/satyavir-chakrapani-new.jpeg";
+import satyavirChakrapani from "@/assets/board/satyavir-chakrapani-new.png";
 import sumitChetty from "@/assets/board/sumit-chetty.jpeg";
 import estherGhosh from "@/assets/board/esther-ghosh.jpg";
 import samirDeokuliar from "@/assets/board/samir-deokuliar.jpg";
