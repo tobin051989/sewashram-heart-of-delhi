@@ -155,16 +155,16 @@ const Governance = () => {
                   <h4 className="font-semibold text-sm text-foreground mt-3">{member.name}</h4>
                   <p className="text-xs text-muted-foreground mb-1">{member.role}</p>
                   {member.linkedin && (
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
+                    <span
+                      className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors cursor-pointer"
                       aria-label={`${member.name}'s LinkedIn profile`}
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(member.linkedin!, '_blank', 'noopener,noreferrer');
+                      }}
                     >
                       <Linkedin className="h-4 w-4" />
-                    </a>
+                    </span>
                   )}
                 </button>
               ))}
@@ -197,15 +197,13 @@ const Governance = () => {
                   <div className="flex items-center gap-2 justify-center sm:justify-start">
                     <h3 className="text-2xl font-bold text-foreground">{selectedMember.name}</h3>
                     {selectedMember.linkedin && (
-                      <a
-                        href={selectedMember.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
+                      <span
+                        className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors cursor-pointer"
                         aria-label={`${selectedMember.name}'s LinkedIn profile`}
+                        onClick={() => window.open(selectedMember.linkedin!, '_blank', 'noopener,noreferrer')}
                       >
                         <Linkedin className="h-5 w-5" />
-                      </a>
+                      </span>
                     )}
                   </div>
                   <p className="text-muted-foreground mt-1">{selectedMember.role}</p>
