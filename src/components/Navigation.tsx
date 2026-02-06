@@ -33,17 +33,17 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation - only show on xl screens due to many items */}
-          <div className="hidden xl:flex items-center space-x-2 2xl:space-x-4 flex-shrink-0">
+          <div className="hidden xl:flex items-center space-x-1.5 2xl:space-x-3 flex-shrink-0">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium text-xs 2xl:text-sm whitespace-nowrap"
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-xs 2xl:text-sm" asChild>
+            <Button className="bg-primary hover:bg-primary/90 text-sm" asChild>
               <Link to="/donate">Donate</Link>
             </Button>
           </div>
