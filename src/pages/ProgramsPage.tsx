@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Programs from "@/components/Programs";
-import Faith from "@/components/Faith";
 import Footer from "@/components/Footer";
 
 const ProgramsPage = () => {
@@ -9,7 +8,6 @@ const ProgramsPage = () => {
       <Navigation />
       <div className="pt-20">
         <Programs />
-        <Faith />
       </div>
       <Footer />
     </div>
