@@ -174,7 +174,7 @@ const GetInvolved = () => {
               Donate Today
             </Button>
           </Link>
-          <Link to="/donate">
+          <Link to="/contact">
             <Button size="lg" variant="outline" className="px-8">
               <Users className="mr-2 h-5 w-5" />
               Volunteer With Us
