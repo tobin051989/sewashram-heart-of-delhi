@@ -133,40 +133,46 @@ const Governance = () => {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-start">
               {boardMembers.map((member, index) => (
-                <button
+              <div
                   key={index}
-                  className="flex flex-col items-center text-center group cursor-pointer bg-transparent border-none p-0"
-                  onClick={() => member.bio.length > 0 && setSelectedMember(member)}
-                  aria-label={`View ${member.name}'s profile`}
+                  className="flex flex-col items-center text-center group"
                 >
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/60 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className={`w-full h-full object-cover ${member.imageStyle} group-hover:scale-110 transition-transform duration-300`}
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-primary/10">
-                        <Users className="h-10 w-10 text-primary/50" />
-                      </div>
-                    )}
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => member.bio.length > 0 && setSelectedMember(member)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View ${member.name}'s profile`}
+                    onKeyDown={(e) => e.key === 'Enter' && member.bio.length > 0 && setSelectedMember(member)}
+                  >
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/60 group-hover:shadow-lg transition-all duration-300 flex-shrink-0 mx-auto">
+                      {member.image ? (
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className={`w-full h-full object-cover ${member.imageStyle} group-hover:scale-110 transition-transform duration-300`}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                          <Users className="h-10 w-10 text-primary/50" />
+                        </div>
+                      )}
+                    </div>
+                    <h4 className="font-semibold text-sm text-foreground mt-3">{member.name}</h4>
+                    <p className="text-xs text-muted-foreground mb-1">{member.role}</p>
                   </div>
-                  <h4 className="font-semibold text-sm text-foreground mt-3">{member.name}</h4>
-                  <p className="text-xs text-muted-foreground mb-1">{member.role}</p>
                   {member.linkedin && (
-                    <span
-                      className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors cursor-pointer"
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
                       aria-label={`${member.name}'s LinkedIn profile`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(member.linkedin!, '_blank', 'noopener,noreferrer');
-                      }}
                     >
                       <Linkedin className="h-4 w-4" />
-                    </span>
+                    </a>
                   )}
-                </button>
+                </div>
               ))}
             </div>
           </Card>
@@ -197,13 +203,15 @@ const Governance = () => {
                   <div className="flex items-center gap-2 justify-center sm:justify-start">
                     <h3 className="text-2xl font-bold text-foreground">{selectedMember.name}</h3>
                     {selectedMember.linkedin && (
-                      <span
-                        className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors cursor-pointer"
+                      <a
+                        href={selectedMember.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
                         aria-label={`${selectedMember.name}'s LinkedIn profile`}
-                        onClick={() => window.open(selectedMember.linkedin!, '_blank', 'noopener,noreferrer')}
                       >
                         <Linkedin className="h-5 w-5" />
-                      </span>
+                      </a>
                     )}
                   </div>
                   <p className="text-muted-foreground mt-1">{selectedMember.role}</p>
