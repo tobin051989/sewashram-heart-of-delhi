@@ -67,7 +67,7 @@ const DonatePage = () => {
       <Faith />
 
       {/* QR Code Section */}
-      <section className="py-6 md:py-10 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-2 md:py-4 bg-gradient-to-b from-primary/5 to-background">
         <div className="container-custom section-padding">
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-center">Quick Donate</h2>
