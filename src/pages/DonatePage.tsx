@@ -63,8 +63,6 @@ const DonatePage = () => {
         </div>
       </section>
 
-      {/* Faith & Belief Section */}
-      <Faith />
 
       {/* QR Code Section */}
       <section className="py-2 md:py-4 bg-gradient-to-b from-primary/5 to-background">
