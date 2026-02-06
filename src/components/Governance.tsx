@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 // Board member images
 import pramodSingh from "@/assets/board/pramod-singh.jfif";
-import satyavirChakrapani from "@/assets/board/satyavir-chakrapani.jpg";
+import satyavirChakrapani from "@/assets/board/satyavir-chakrapani-new.jpeg";
 import sumitChetty from "@/assets/board/sumit-chetty.jpeg";
 import estherGhosh from "@/assets/board/esther-ghosh.jpg";
 import samirDeokuliar from "@/assets/board/samir-deokuliar.jpg";
