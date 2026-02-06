@@ -50,10 +50,10 @@ const DonatePage = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-4 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container-custom section-padding">
+      <section className="pt-24 pb-2 bg-gradient-to-b from-primary/10 to-background">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
               Support Our Mission
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
@@ -67,7 +67,7 @@ const DonatePage = () => {
       <Faith />
 
       {/* QR Code Section */}
-      <section className="py-10 md:py-16 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-6 md:py-10 bg-gradient-to-b from-primary/5 to-background">
         <div className="container-custom section-padding">
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-center">Quick Donate</h2>

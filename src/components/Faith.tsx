@@ -3,7 +3,7 @@ import { BookOpen } from "lucide-react";
 
 const Faith = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="py-6 md:py-8 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 md:p-12 shadow-lg bg-gradient-to-br from-primary/5 via-card to-secondary/5">
