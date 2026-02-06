@@ -58,7 +58,7 @@ const DonatePage = () => {
               <img 
                 src={donateQR} 
                 alt="Donation QR Code - Scan to donate via UPI" 
-                className="w-72 sm:w-80 md:w-96 h-auto rounded-xl"
+                className="w-72 sm:w-80 md:w-96 h-auto rounded-xl bg-white p-2"
               />
               <div className="mt-4 text-center">
                 <p className="text-sm font-medium text-foreground">UPI ID</p>
