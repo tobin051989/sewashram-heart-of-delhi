@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Faith from "@/components/Faith";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Mail, Phone, Globe, Building, CreditCard } from "lucide-react";
-import donateQR from "@/assets/donate-qr-new.jpg";
+import donateQR from "@/assets/donate-qr-clean.png";
 
 const financialStatements = [
   { year: "2024", url: "https://delhihouse.org/wp-content/uploads/2024/10/Delhi-House-Society-Audited-Financial-Statements-Year-Ended-March-31-2024.pdf" },
