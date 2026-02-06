@@ -90,14 +90,6 @@ const Governance = () => {
       ]
     },
     { 
-      name: "N. Christina", 
-      role: "Board Member",
-      image: null,
-      linkedin: null,
-      imageStyle: "",
-      bio: []
-    },
-    { 
       name: "Mr. Samir Deokuliar", 
       role: "Board Member, DHS",
       image: samirDeokuliar,
@@ -108,6 +100,14 @@ const Governance = () => {
         "Founder of Humane and author of the Ten Nuggets series, Mr. Deokuliar has coached leaders from organizations such as PwC, WHO, the World Bank, St. Stephen's College, and EFICOR. He also serves on the Board of Delhi House Society (Sewa Ashram) and other non-profits, offering strategic guidance and leadership development support.",
         "Deeply committed to nurturing communities and personal transformation, he provides spiritual counsel to Dwaar in Delhi. As someone who values work–family harmony, Samir is a devoted husband to his wife and a loving father to two adult children."
       ]
+    },
+    { 
+      name: "N. Christina", 
+      role: "Board Member",
+      image: null,
+      linkedin: null,
+      imageStyle: "",
+      bio: []
     },
   ];
 
