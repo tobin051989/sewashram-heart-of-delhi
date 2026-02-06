@@ -131,15 +131,15 @@ const Governance = () => {
               <h3 className="text-2xl font-bold">Board of Directors</h3>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-start">
               {boardMembers.map((member, index) => (
                 <button
                   key={index}
-                  className="text-center group cursor-pointer bg-transparent border-none p-0"
+                  className="flex flex-col items-center text-center group cursor-pointer bg-transparent border-none p-0"
                   onClick={() => member.bio.length > 0 && setSelectedMember(member)}
                   aria-label={`View ${member.name}'s profile`}
                 >
-                  <div className="w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/60 group-hover:shadow-lg transition-all duration-300">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/60 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
                     {member.image ? (
                       <img
                         src={member.image}
@@ -152,7 +152,7 @@ const Governance = () => {
                       </div>
                     )}
                   </div>
-                  <h4 className="font-semibold text-sm text-foreground">{member.name}</h4>
+                  <h4 className="font-semibold text-sm text-foreground mt-3">{member.name}</h4>
                   <p className="text-xs text-muted-foreground mb-1">{member.role}</p>
                   {member.linkedin && (
                     <a
