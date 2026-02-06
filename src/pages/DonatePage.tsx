@@ -103,7 +103,7 @@ const DonatePage = () => {
           
           <div className="max-w-4xl mx-auto space-y-6">
             <p className="text-muted-foreground leading-relaxed">
-              Delhi House Society continues to exist because of the kind donations of people who believe in our work. While we do not believe in "hand-outs" simply for their own sake, we recognise that the extremely poor are disadvantaged on multiple levels, and require multiple interventions. The provision of healthcare, accommodation, education and other programs is not free, and we continue to rely on financial support to provide these essential services. If you are interested in supporting us in this way, please see the information below.
+              Our work at Delhi House Society is made possible by the generosity of those who believe in dignity, care, and opportunity for all. Your kindness helps us continue serving the most vulnerable and is deeply appreciated.
             </p>
             
             <div className="flex flex-wrap items-center gap-4 p-4 bg-card rounded-lg border border-border">
