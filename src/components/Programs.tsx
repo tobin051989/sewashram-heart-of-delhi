@@ -12,23 +12,7 @@ import sewaAshram5 from "@/assets/gallery/sewa-ashram-5.jpg";
 import sewaAshram6 from "@/assets/gallery/sewa-ashram-6.jpg";
 
 const Programs = () => {
-  const program = {
-    title: "Healthcare & Rehabilitation",
-    icon: HeartPulse,
-    images: [sewaAshram1, sewaAshram2, sewaAshram3, sewaAshram4, sewaAshram5, sewaAshram6],
-    description: "For over 25 years, Sewa Ashram has been the beating heart of Delhi House Society's mission, a place of healing, hope, and transformation for Delhi's most vulnerable. Established formally in 1999, the Ashram serves destitute and homeless individuals suffering from TB, HIV, malnutrition, mental illness, pulmonary diseases, and other chronic conditions.",
-    additionalText: "Many who arrive are not only physically unwell but also emotionally and spiritually broken. Our Healthcare & Rehabilitation Program provides comprehensive, person-centered care that goes beyond medicine.",
-    details: [
-      "Emergency Healthcare: Rescue and treatment for destitute individuals with life-threatening illnesses such as HIV, TB, and cancer.",
-      "Holistic Rehabilitation: Medical care, nutritious meals, counseling, physiotherapy, and life-skills training to restore strength and dignity.",
-      "Social Reintegration: Supporting recovered individuals in reconnecting with families and society to live independent, meaningful lives.",
-      "Community Building: Through Sewa Life Groups, we nurture belonging and leadership within local communities.",
-    ],
-    closingText: "Our medical staff, visiting doctor, and physiotherapist work closely with each resident throughout recovery. Healing often takes months, but it results in renewed strength, confidence, and community. Many choose to stay on, serving others as they were once served - continuing the cycle of care and compassion.",
-    ctas: ["Support Medical Care", "Sponsor Meals & Nutrition"],
-  };
-
-  const Icon = program.icon;
+  const images = [sewaAshram1, sewaAshram2, sewaAshram3, sewaAshram4, sewaAshram5, sewaAshram6];
 
   return (
     <section id="programs" className="section-padding bg-background">
@@ -36,60 +20,76 @@ const Programs = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Work</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive programs addressing the holistic needs of Delhi's most vulnerable communities
+            Comprehensive, holistic programs serving Delhi's most vulnerable communities
           </p>
           <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
         </div>
 
-        <Card className="overflow-hidden shadow-lg md:grid md:grid-cols-2">
+        <Card className="overflow-hidden shadow-lg md:grid md:grid-cols-2 mb-12">
           <div className="p-4">
-            <ImageSlideshow images={program.images} title={program.title} />
+            <ImageSlideshow images={images} title="Sewa Ashram" />
           </div>
           
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 rounded-full bg-primary/10">
-                <Icon className="h-6 w-6 text-primary" />
+                <HeartPulse className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold">{program.title}</h3>
+              <h3 className="text-2xl md:text-3xl font-bold">Sewa Ashram: A Place of Care, Healing, and Transformation</h3>
             </div>
             
             <p className="text-muted-foreground leading-relaxed mb-4">
-              {program.description}
+              Sewa Ashram, the flagship initiative of Delhi House Society (DHS), is dedicated to the care, rehabilitation, and restoration of destitute and marginalized individuals. Established in 1999 in Narela, Sewa Ashram has become a beacon of hope for those abandoned by society, offering a safe, dignified home and a pathway to healing and reintegration.
             </p>
 
             <p className="text-muted-foreground leading-relaxed mb-4">
-              {program.additionalText}
+              More than a shelter, Sewa Ashram is a sanctuary for individuals suffering from TB, HIV, malnutrition, mental illness, pulmonary diseases, and other chronic conditions often accompanied by deep social stigma. Many arrive physically weak, emotionally broken, and without family support. Through a holistic, person-centered approach, the Ashram addresses not only medical needs but also psychological, social, and spiritual well-being.
             </p>
 
-            <h4 className="font-semibold text-foreground mb-3">Key Areas of Impact:</h4>
-            
-            <ul className="space-y-2 mb-4">
-              {program.details.map((detail, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <div className="h-2 w-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                  <span className="text-muted-foreground text-sm">{detail}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
-              {program.closingText}
+            <p className="text-muted-foreground leading-relaxed">
+              Community health and healthcare services form the core and primary focus of DHS's work through Sewa Ashram. Our healthcare and rehabilitation services include medical treatment, TB and HIV testing, medications, nutritious meals, counseling, physiotherapy, and life-skills training. Care is provided in an inclusive environment that upholds dignity, compassion, and hope, irrespective of race, religion, or caste. A dedicated team of medical staff, including a visiting doctor, a nurse, and a physiotherapist, works closely with each resident throughout their recovery journey that often spans several months.
             </p>
-            
-            <div className="flex flex-wrap gap-3">
-              {program.ctas.map((cta, idx) => (
-                <Button 
-                  key={idx}
-                  variant={idx === 0 ? "default" : "outline"}
-                  className={idx === 0 ? "bg-primary hover:bg-primary/90" : ""}
-                >
-                  {cta}
-                </Button>
-              ))}
-            </div>
           </div>
         </Card>
+
+        <div className="max-w-4xl mx-auto space-y-10">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Healing That Restores Dignity and Independence</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Healing at Sewa Ashram often takes time, but it leads to renewed strength, confidence, and purpose. Recovered individuals are supported in reconnecting with their families and society, enabling them to lead independent and meaningful lives. Many residents choose to stay on and serve others, continuing the cycle of care and compassion that defines the Ashram community.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Facilities and Services</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Sewa Ashram accommodates up to 150 residents, with boarding facilities, medical infrastructure, and outdoor activity spaces. Alongside healthcare and rehabilitation, the Ashram fosters a strong sense of community through Sewa Life Groups, nurturing belonging, leadership, and mutual support within and beyond the Ashram.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">A Sanctuary of Hope</h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              For over 25 years, Sewa Ashram has been the beating heart of DHS's mission— a place where those with nowhere else to turn find care, dignity, and renewed hope. Guided by the values of holistic care and inclusivity, it continues to transform lives and create lasting impact across communities.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Beyond rehabilitation, Sewa Ashram supports long-term transformation through Learning Centers in Narela and Bawana, where children from underserved communities receive education, meals, and social support. Empowerment programs for single and abandoned mothers provide vocational training and literacy, helping women regain confidence and financial independence.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Together, these efforts rebuild lives, strengthen families, and create pathways to independence and belonging.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Expanding Impact Through Education and Empowerment</h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Recognizing that lasting transformation requires long-term investment, DHS has expanded its work beyond rehabilitation. Learning Centers in Narela and Bawana and other parts of Delhi provide children from impoverished backgrounds with education, meals, daycare, and social support, preparing them for formal schooling and brighter futures.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              In addition, empowerment programs for single and abandoned mothers offer vocational training in sewing and literacy, helping women regain confidence, skills, and financial independence.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
