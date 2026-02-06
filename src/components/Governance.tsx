@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Users, Linkedin } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Users, Linkedin, X } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 // Board member images
 import pramodSingh from "@/assets/board/pramod-singh.jfif";
@@ -10,8 +11,19 @@ import estherGhosh from "@/assets/board/esther-ghosh.jpg";
 import samirDeokuliar from "@/assets/board/samir-deokuliar.jpg";
 import ektaJohn from "@/assets/board/ekta-john.jpeg";
 
+interface BoardMember {
+  name: string;
+  role: string;
+  image: string | null;
+  linkedin: string | null;
+  imageStyle: string;
+  bio: string[];
+}
+
 const Governance = () => {
-  const boardMembers = [
+  const [selectedMember, setSelectedMember] = useState<BoardMember | null>(null);
+
+  const boardMembers: BoardMember[] = [
     { 
       name: "Mr. Satyavir Chakrapani", 
       role: "General Secretary, DHS",
@@ -110,68 +122,105 @@ const Governance = () => {
           <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <Card className="p-8 shadow-lg">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-8">
               <div className="p-3 rounded-full bg-primary/10">
                 <Users className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-2xl font-bold">Board of Directors</h3>
             </div>
-            
-            <Accordion type="single" collapsible className="space-y-2">
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
               {boardMembers.map((member, index) => (
-                <AccordionItem key={index} value={`board-${index}`} className="border rounded-lg bg-muted/30 px-4">
-                  <AccordionTrigger className="hover:no-underline py-4">
-                    <div className="flex items-center gap-4 text-left">
-                      <div className="w-14 h-14 rounded-full overflow-hidden bg-muted border-2 border-primary/20 flex-shrink-0">
-                        {member.image ? (
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className={`w-full h-full object-cover ${member.imageStyle}`}
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center bg-primary/10">
-                            <Users className="h-6 w-6 text-primary/50" />
-                          </div>
-                        )}
+                <button
+                  key={index}
+                  className="text-center group cursor-pointer bg-transparent border-none p-0"
+                  onClick={() => member.bio.length > 0 && setSelectedMember(member)}
+                  aria-label={`View ${member.name}'s profile`}
+                >
+                  <div className="w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/60 group-hover:shadow-lg transition-all duration-300">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className={`w-full h-full object-cover ${member.imageStyle} group-hover:scale-110 transition-transform duration-300`}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                        <Users className="h-10 w-10 text-primary/50" />
                       </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <p className="font-semibold text-foreground">{member.name}</p>
-                          {member.linkedin && (
-                            <a
-                              href={member.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
-                              aria-label={`${member.name}'s LinkedIn profile`}
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <Linkedin className="h-4 w-4" />
-                            </a>
-                          )}
-                        </div>
-                        <p className="text-sm text-muted-foreground">{member.role}</p>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  {member.bio && member.bio.length > 0 && (
-                    <AccordionContent className="pb-4 pl-[4.5rem]">
-                      <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
-                        {member.bio.map((paragraph, pIndex) => (
-                          <p key={pIndex}>{paragraph}</p>
-                        ))}
-                      </div>
-                    </AccordionContent>
+                    )}
+                  </div>
+                  <h4 className="font-semibold text-sm text-foreground">{member.name}</h4>
+                  <p className="text-xs text-muted-foreground mb-1">{member.role}</p>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
+                      aria-label={`${member.name}'s LinkedIn profile`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Linkedin className="h-4 w-4" />
+                    </a>
                   )}
-                </AccordionItem>
+                </button>
               ))}
-            </Accordion>
+            </div>
           </Card>
         </div>
       </div>
+
+      {/* Bio Popup Dialog */}
+      <Dialog open={!!selectedMember} onOpenChange={(open) => !open && setSelectedMember(null)}>
+        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
+          {selectedMember && (
+            <>
+              <DialogTitle className="sr-only">{selectedMember.name}</DialogTitle>
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6">
+                <div className="w-32 h-32 rounded-full overflow-hidden bg-muted border-2 border-primary/20 flex-shrink-0">
+                  {selectedMember.image ? (
+                    <img
+                      src={selectedMember.image}
+                      alt={selectedMember.name}
+                      className={`w-full h-full object-cover ${selectedMember.imageStyle}`}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                      <Users className="h-12 w-12 text-primary/50" />
+                    </div>
+                  )}
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="flex items-center gap-2 justify-center sm:justify-start">
+                    <h3 className="text-2xl font-bold text-foreground">{selectedMember.name}</h3>
+                    {selectedMember.linkedin && (
+                      <a
+                        href={selectedMember.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
+                        aria-label={`${selectedMember.name}'s LinkedIn profile`}
+                      >
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-muted-foreground mt-1">{selectedMember.role}</p>
+                </div>
+              </div>
+              <div className="w-full h-px bg-border mb-6"></div>
+              <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+                {selectedMember.bio.map((paragraph, pIndex) => (
+                  <p key={pIndex}>{paragraph}</p>
+                ))}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
