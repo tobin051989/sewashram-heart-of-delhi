@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Faith from "@/components/Faith";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Mail, Phone, Globe, Building, CreditCard, Copy, Check } from "lucide-react";
 import { useState } from "react";

@@ -42,7 +42,7 @@ const Contact = () => {
                     New Delhi – 110040
                   </p>
                   <a 
-                    href="https://maps.google.com/?q=28.8521,77.0931" 
+                    href="https://maps.app.goo.gl/zuLB8Hh7Xmjc3hvTA" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
