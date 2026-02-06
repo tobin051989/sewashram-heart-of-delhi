@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import About from "@/components/About";
+import Faith from "@/components/Faith";
 import Footer from "@/components/Footer";
 
 const AboutPage = () => {
@@ -8,6 +9,7 @@ const AboutPage = () => {
       <Navigation />
       <div className="pt-20">
         <About />
+        <Faith />
       </div>
       <Footer />
     </div>
