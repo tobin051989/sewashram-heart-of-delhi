@@ -168,6 +168,11 @@ const Governance = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
                       aria-label={`${member.name}'s LinkedIn profile`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const w = window.top || window;
+                        w.open(member.linkedin!, '_blank', 'noopener,noreferrer');
+                      }}
                     >
                       <Linkedin className="h-4 w-4" />
                     </a>
@@ -209,6 +214,11 @@ const Governance = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
                         aria-label={`${selectedMember.name}'s LinkedIn profile`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const w = window.top || window;
+                          w.open(selectedMember.linkedin!, '_blank', 'noopener,noreferrer');
+                        }}
                       >
                         <Linkedin className="h-5 w-5" />
                       </a>
