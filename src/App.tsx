@@ -14,6 +14,7 @@ import GetInvolvedPage from "./pages/GetInvolvedPage";
 import ContactPage from "./pages/ContactPage";
 import PoliciesPage from "./pages/PoliciesPage";
 import DonatePage from "./pages/DonatePage";
+import LearningCentresPage from "./pages/LearningCentresPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
+          <Route path="/learning-centres" element={<LearningCentresPage />} />
           <Route path="/stories" element={<StoriesPage />} />
           <Route path="/governance" element={<GovernancePage />} />
           <Route path="/team" element={<TeamPage />} />

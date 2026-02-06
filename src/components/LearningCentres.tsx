@@ -1,0 +1,274 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { GraduationCap, Users2, Lightbulb, HandHeart } from "lucide-react";
+import ImageSlideshow from "@/components/ImageSlideshow";
+
+// Learning Centre images
+import learningCentre1 from "@/assets/gallery/learning-centre-new-1.jpg";
+import learningCentre2 from "@/assets/gallery/learning-centre-new-2.jpg";
+import learningCentre3 from "@/assets/gallery/learning-centre-new-3.jpeg";
+import learningCentre4 from "@/assets/gallery/learning-centre-new-4.jpg";
+import learningCentre5 from "@/assets/gallery/learning-centre-new-5.jfif";
+import learningCentre6 from "@/assets/gallery/learning-centre-new-6.jpg";
+import learningCentre7 from "@/assets/gallery/learning-centre-new-7.jpg";
+import learningCentre8 from "@/assets/gallery/learning-centre-new-8.jpg";
+import learningCentre9 from "@/assets/gallery/learning-centre-new-9.jpg";
+import learningCentre10 from "@/assets/gallery/learning-centre-new-10.jpg";
+import learningCentre11 from "@/assets/gallery/learning-centre-new-11.jpg";
+import learningCentre12 from "@/assets/gallery/learning-centre-new-12.jpg";
+import learningCentre13 from "@/assets/gallery/learning-centre-new-13.jpg";
+import learningCentre14 from "@/assets/gallery/learning-centre-new-14.jpg";
+import learningCentre15 from "@/assets/gallery/learning-centre-new-15.jpg";
+import learningCentre16 from "@/assets/gallery/learning-centre-new-16.jpg";
+import learningCentre17 from "@/assets/gallery/learning-centre-new-17.jpg";
+import learningCentre18 from "@/assets/gallery/learning-centre-new-18.jpg";
+import learningCentre19 from "@/assets/gallery/learning-centre-new-19.jpg";
+import learningCentre20 from "@/assets/gallery/learning-centre-new-20.jpg";
+import learningCentre21 from "@/assets/gallery/learning-centre-new-21.jpg";
+import learningCentre22 from "@/assets/gallery/learning-centre-new-22.jpg";
+import learningCentre23 from "@/assets/gallery/learning-centre-new-23.jpg";
+import learningCentre24 from "@/assets/gallery/learning-centre-new-24.jpeg";
+import learningCentre25 from "@/assets/gallery/learning-centre-new-25.jpg";
+import learningCentre26 from "@/assets/gallery/learning-centre-new-26.jpg";
+import learningCentre27 from "@/assets/gallery/learning-centre-new-27.jpg";
+import learningCentre28 from "@/assets/gallery/learning-centre-new-28.jpg";
+import learningCentre29 from "@/assets/gallery/learning-centre-new-29.jpg";
+import learningCentre30 from "@/assets/gallery/learning-centre-new-30.jpg";
+import learningCentre31 from "@/assets/gallery/learning-centre-new-31.jpg";
+import learningCentre32 from "@/assets/gallery/learning-centre-new-32.jfif";
+import learningCentre33 from "@/assets/gallery/learning-centre-new-33.jpeg";
+import learningCentre34 from "@/assets/gallery/learning-centre-new-34.jpeg";
+import learningCentre35 from "@/assets/gallery/learning-centre-new-35.jpeg";
+import learningCentre36 from "@/assets/gallery/learning-centre-new-36.jpeg";
+import learningCentre37 from "@/assets/gallery/learning-centre-new-37.jpeg";
+import learningCentre38 from "@/assets/gallery/learning-centre-new-38.jpeg";
+import learningCentre39 from "@/assets/gallery/learning-centre-new-39.jpeg";
+import learningCentre40 from "@/assets/gallery/learning-centre-new-40.jpeg";
+import learningCentre41 from "@/assets/gallery/learning-centre-new-41.jpeg";
+import learningCentre42 from "@/assets/gallery/learning-centre-new-42.jpeg";
+import learningCentre43 from "@/assets/gallery/learning-centre-new-43.jpeg";
+import learningCentre44 from "@/assets/gallery/learning-centre-new-44.jpeg";
+import learningCentre45 from "@/assets/gallery/learning-centre-new-45.jpeg";
+import learningCentre46 from "@/assets/gallery/learning-centre-new-46.jpeg";
+import learningCentre47 from "@/assets/gallery/learning-centre-new-47.jpeg";
+
+// Women Empowerment images
+import womenEmpowerment1 from "@/assets/gallery/women-empowerment-new-1.jpeg";
+import womenEmpowerment2 from "@/assets/gallery/women-empowerment-new-2.jpg";
+import womenEmpowerment3 from "@/assets/gallery/women-empowerment-new-3.jpeg";
+import womenEmpowerment4 from "@/assets/gallery/women-empowerment-new-4.jpg";
+import womenEmpowerment5 from "@/assets/gallery/women-empowerment-new-5.jpeg";
+import womenEmpowerment6 from "@/assets/gallery/women-empowerment-new-6.jpg";
+import womenEmpowerment7 from "@/assets/gallery/women-empowerment-new-7.jpeg";
+import womenEmpowerment8 from "@/assets/gallery/women-empowerment-new-8.jpeg";
+import womenEmpowerment9 from "@/assets/gallery/women-empowerment-new-9.jpeg";
+import womenEmpowerment10 from "@/assets/gallery/women-empowerment-new-10.jpeg";
+
+// Love Delhi Initiative images
+import loveDelhi1 from "@/assets/gallery/love-delhi-new-1.jpg";
+import loveDelhi2 from "@/assets/gallery/love-delhi-new-2.jpg";
+import loveDelhi3 from "@/assets/gallery/love-delhi-new-3.jpg";
+import loveDelhi4 from "@/assets/gallery/love-delhi-new-4.jpg";
+import loveDelhi5 from "@/assets/gallery/love-delhi-new-5.jpg";
+import loveDelhi6 from "@/assets/gallery/love-delhi-new-6.jpg";
+import loveDelhi7 from "@/assets/gallery/love-delhi-new-7.jpg";
+import loveDelhi8 from "@/assets/gallery/love-delhi-new-8.jpg";
+import loveDelhi9 from "@/assets/gallery/love-delhi-new-9.jpg";
+import loveDelhi10 from "@/assets/gallery/love-delhi-new-10.jpg";
+import loveDelhi11 from "@/assets/gallery/love-delhi-new-11.jpg";
+import loveDelhi12 from "@/assets/gallery/love-delhi-new-12.jpeg";
+import loveDelhi13 from "@/assets/gallery/love-delhi-new-13.jpeg";
+import loveDelhi14 from "@/assets/gallery/love-delhi-new-14.jpeg";
+import loveDelhi15 from "@/assets/gallery/love-delhi-new-15.jpeg";
+import loveDelhi16 from "@/assets/gallery/love-delhi-new-16.jpeg";
+import loveDelhi17 from "@/assets/gallery/love-delhi-new-17.jpeg";
+import loveDelhi18 from "@/assets/gallery/love-delhi-new-18.jpeg";
+import loveDelhi19 from "@/assets/gallery/love-delhi-new-19.jpeg";
+import loveDelhi20 from "@/assets/gallery/love-delhi-new-20.jpeg";
+import loveDelhi21 from "@/assets/gallery/love-delhi-new-21.jpeg";
+import loveDelhi22 from "@/assets/gallery/love-delhi-new-22.jpeg";
+import loveDelhi23 from "@/assets/gallery/love-delhi-new-23.jpeg";
+import loveDelhi24 from "@/assets/gallery/love-delhi-new-24.jpeg";
+import loveDelhi25 from "@/assets/gallery/love-delhi-new-25.jpeg";
+import loveDelhi26 from "@/assets/gallery/love-delhi-new-26.jpg";
+
+// Community Engagement images
+import community1 from "@/assets/gallery/community-1.jpeg";
+import community2 from "@/assets/gallery/community-2.jpg";
+import community3 from "@/assets/gallery/community-3.jpg";
+import community4 from "@/assets/gallery/community-4.jpg";
+import community5 from "@/assets/gallery/community-5.jpg";
+
+interface ProgramData {
+  title: string;
+  icon: React.ComponentType<{ className?: string }>;
+  images: string[];
+  description: string;
+  additionalText?: string;
+  details?: string[];
+  detailsHeader?: string;
+  closingText?: string;
+  highlight?: string;
+  tagline?: string;
+  ctas: string[];
+}
+
+const LearningCentres = () => {
+  const programs: ProgramData[] = [
+    {
+      title: "Education – Learning Centres",
+      icon: GraduationCap,
+      images: [learningCentre1, learningCentre2, learningCentre3, learningCentre4, learningCentre5, learningCentre6, learningCentre7, learningCentre8, learningCentre9, learningCentre10, learningCentre11, learningCentre12, learningCentre13, learningCentre14, learningCentre15, learningCentre16, learningCentre17, learningCentre18, learningCentre19, learningCentre20, learningCentre21, learningCentre22, learningCentre23, learningCentre24, learningCentre25, learningCentre26, learningCentre27, learningCentre28, learningCentre29, learningCentre30, learningCentre31, learningCentre32, learningCentre33, learningCentre34, learningCentre35, learningCentre36, learningCentre37, learningCentre38, learningCentre39, learningCentre40, learningCentre41, learningCentre42, learningCentre43, learningCentre44, learningCentre45, learningCentre46, learningCentre47],
+      description: "Our Learning Centers in Narela, Bawana, and other parts of Delhi provide quality education and hope for more than 200 children each year. These centers support children from low-income and marginalized families, helping them build strong educational foundations and confidence for the future.",
+      details: [
+        "Preschool and daycare for early childhood development",
+        "Non-formal education for out-of-school children",
+        "Bridge and remedial classes for continued learning",
+        "Creative sessions in art, storytelling, music, and sports",
+        "Parent engagement and community awareness activities",
+      ],
+      closingText: "Through these initiatives, our Learning Centers nurture curiosity, creativity, and character empowering children and families to move toward lasting transformation.",
+      ctas: ["Support Education", "Sponsor School Essentials"],
+    },
+    {
+      title: "Women's Empowerment & Livelihoods",
+      icon: Users2,
+      images: [womenEmpowerment1, womenEmpowerment2, womenEmpowerment3, womenEmpowerment4, womenEmpowerment5, womenEmpowerment6, womenEmpowerment7, womenEmpowerment8, womenEmpowerment9, womenEmpowerment10],
+      description: "We empower women, especially single and abandoned mothers to rebuild their lives with dignity and independence. Through skill training, counseling, and community support, women gain the confidence and resources to create brighter futures for themselves and their children.",
+      details: [
+        "Vocational training in tailoring, literacy, and financial management",
+        "Employment linkages with local factories and livelihood guidance",
+        "Childcare and educational support for children aged 5–18",
+        "Access to healthcare, nutrition, and emotional counseling",
+        "Self-Help Groups and peer networks for savings and mutual support",
+      ],
+      highlight: "Currently, over 30 women and their children are part of this growing program.",
+      ctas: ["Empower Women Today"],
+    },
+    {
+      title: "Love Delhi Initiative (LDI)",
+      icon: Lightbulb,
+      images: [loveDelhi1, loveDelhi2, loveDelhi3, loveDelhi4, loveDelhi5, loveDelhi6, loveDelhi7, loveDelhi8, loveDelhi9, loveDelhi10, loveDelhi11, loveDelhi12, loveDelhi13, loveDelhi14, loveDelhi15, loveDelhi16, loveDelhi17, loveDelhi18, loveDelhi19, loveDelhi20, loveDelhi21, loveDelhi22, loveDelhi23, loveDelhi24, loveDelhi25, loveDelhi26],
+      tagline: "Empowering Youth • Strengthening Communities • Building a Better Delhi-NCR",
+      description: "The Love Delhi Initiative (LDI) brings together youth, community leaders, and civic organizations to spark positive change and build a compassionate, collaborative, and socially responsible Delhi-NCR. Through diverse programs, livelihood support and strategic partnerships, LDI equips young people, strengthens communities, and promotes collective action to create a more vibrant, empowered, and inclusive city.",
+      detailsHeader: "What We Do",
+      details: [
+        "Celebrate Changemakers: Honour senior social workers, highlight grassroots contributions, and build partnerships for citywide social impact.",
+        "Youth Leadership & Skilling: Organize youth conferences, leadership workshops, and career-skilling programs to inspire young people to become agents of change.",
+        "Entrepreneurship & Mentorship: Support young entrepreneurs through business workshops, one-on-one mentoring, and networking with industry experts.",
+        "Civic Engagement & Cleanliness Drives: Conduct civic-awareness trainings and lead Swachh Dilli clean-up drives in collaboration with MCD and community volunteers.",
+        "Community Development & Relief: Facilitate consultations with NGOs and local leaders to design strategies that strengthen communities across NCR. Provide coordinated relief and rehabilitation support during crises, emergencies, and vulnerable situations.",
+        "Education & Learning Centres: Support and expand Learning Centres in underserved areas, offering NFE (non-formal education), remedial classes, and teacher training.",
+        "Sports, Arts & Community Events: Use sports tournaments, arts programs, cultural events and citywide gatherings to build unity, collaboration, and positive youth engagement.",
+      ],
+      ctas: ["Engage with LDI Programs"],
+    },
+    {
+      title: "Community Engagement",
+      icon: HandHeart,
+      images: [community1, community2, community3, community4, community5],
+      description: "Through home visits and community meetings, we connect with families, support school enrolments, and link communities with welfare schemes, healthcare, and livelihood programs.",
+      ctas: ["Join Our Community"],
+    },
+  ];
+
+  return (
+    <section className="section-padding bg-background">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Education & Community Programs</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Empowering communities through education, women's empowerment, and civic engagement
+          </p>
+          <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
+        </div>
+
+        <div className="space-y-16">
+          {programs.map((program, index) => {
+            const Icon = program.icon;
+            return (
+              <Card 
+                key={index} 
+                className="overflow-hidden shadow-lg md:grid md:grid-cols-2"
+              >
+                <div className="p-4">
+                  <ImageSlideshow images={program.images} title={program.title} />
+                </div>
+                
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-3 rounded-full bg-primary/10">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold">{program.title}</h3>
+                  </div>
+
+                  {program.tagline && (
+                    <p className="text-primary font-semibold mb-4 italic">
+                      {program.tagline}
+                    </p>
+                  )}
+                  
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    {program.description}
+                  </p>
+
+                  {program.additionalText && (
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {program.additionalText}
+                    </p>
+                  )}
+
+                  {program.detailsHeader && (
+                    <h4 className="font-semibold text-foreground mb-3">{program.detailsHeader}</h4>
+                  )}
+
+                  {!program.detailsHeader && program.details && (
+                    <h4 className="font-semibold text-foreground mb-3">Key Areas of Impact:</h4>
+                  )}
+                  
+                  {program.details && (
+                    <ul className="space-y-2 mb-4">
+                      {program.details.map((detail, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="h-2 w-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                          <span className="text-muted-foreground text-sm">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {program.closingText && (
+                    <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+                      {program.closingText}
+                    </p>
+                  )}
+                  
+                  {program.highlight && (
+                    <p className="text-foreground font-medium mb-6 p-4 bg-accent/10 rounded-md">
+                      {program.highlight}
+                    </p>
+                  )}
+                  
+                  <div className="flex flex-wrap gap-3">
+                    {program.ctas.map((cta, idx) => (
+                      <Button 
+                        key={idx}
+                        variant={idx === 0 ? "default" : "outline"}
+                        className={idx === 0 ? "bg-primary hover:bg-primary/90" : ""}
+                      >
+                        {cta}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LearningCentres;
