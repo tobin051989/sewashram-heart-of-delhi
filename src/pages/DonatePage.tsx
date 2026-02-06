@@ -173,7 +173,7 @@ const DonatePage = () => {
             </Card>
 
             {/* Other Countries */}
-            <Card className="border-primary/20">
+            <Card className="border-primary/20 md:col-span-2">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Globe className="h-5 w-5" />
