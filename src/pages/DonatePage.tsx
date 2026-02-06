@@ -2,7 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Faith from "@/components/Faith";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Mail, Phone, Globe, Building, CreditCard } from "lucide-react";
+import { FileText, Mail, Phone, Globe, Building, CreditCard, Copy, Check } from "lucide-react";
+import { useState } from "react";
 import donateQR from "@/assets/donate-qr-clean.png";
 
 const financialStatements = [
@@ -20,6 +21,28 @@ const financialStatements = [
   { year: "2013", url: "https://delhihouse.org/wp-content/uploads/2018/05/Delhi-House-Society-Audited-Financial-Statements-Year-Ended-March-31-2013.pdf" },
   { year: "2012", url: "https://delhihouse.org/wp-content/uploads/2018/05/Delhi-House-Society-Audited-Financial-Statements-Year-Ended-March-31-2012.pdf" },
 ];
+
+const UPI_ID = "9311968001@okbizaxis";
+
+const CopyUpiButton = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(UPI_ID);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="p-1.5 rounded-md hover:bg-muted transition-colors text-muted-foreground hover:text-primary"
+      aria-label="Copy UPI ID"
+    >
+      {copied ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+    </button>
+  );
+};
 
 const DonatePage = () => {
   return (
@@ -60,9 +83,12 @@ const DonatePage = () => {
                 alt="Donation QR Code - Scan to donate via UPI" 
                 className="w-full h-auto object-cover"
               />
-              <div className="py-3 text-center bg-card">
+              <div className="py-3 px-4 text-center bg-card">
                 <p className="text-sm font-medium text-foreground">UPI ID</p>
-                <p className="text-primary font-semibold select-all">9311968001@okbizaxis</p>
+                <div className="flex items-center justify-center gap-2 mt-1">
+                  <p className="text-primary font-semibold select-all">9311968001@okbizaxis</p>
+                  <CopyUpiButton />
+                </div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground mt-6 text-center max-w-sm">
