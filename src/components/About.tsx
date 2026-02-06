@@ -1,13 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { Heart, Target, Eye, Award, Users, Linkedin } from "lucide-react";
-
-// Board member images
-import pramodSingh from "@/assets/board/pramod-singh.jfif";
-import satyavirChakrapani from "@/assets/board/satyavir-chakrapani.jpg";
-import sumitChetty from "@/assets/board/sumit-chetty.jpeg";
-import estherGhosh from "@/assets/board/esther-ghosh.jpg";
-import samirDeokuliar from "@/assets/board/samir-deokuliar.jpg";
-import ektaJohn from "@/assets/board/ekta-john.jpeg";
+import { Heart, Target, Eye, Award, Users, User } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const About = () => {
   const values = [
@@ -21,54 +14,61 @@ const About = () => {
   ];
 
   const boardMembers = [
-    {
-      name: "Mr. Pramod Kumar Singh",
-      role: "Board Chairman",
-      image: pramodSingh,
-      linkedin: "https://www.linkedin.com/in/pramod-singh-1b1b1b1b/",
-      imageStyle: "scale-[1.2] object-[center_25%]",
+    { 
+      name: "Mr. Satyavir Chakrapani", 
+      role: "General Secretary, DHS",
+      bio: [
+        "Mr. Satyavir Chakrapani is a first-generation serial entrepreneur whose journey embodies the power of collective wisdom and purposeful innovation. As CEO of Shikhar Urban & Rural Enterprises (SURE), Managing Director of Shikhar Microfinance Pvt. Ltd., and part of the founding team of the Shikhar Group, he brings extensive experience in microfinance, social enterprise, development finance, and livelihood enhancement initiatives.",
+        "Driven by an enduring passion for innovation and growth, Mr. Chakrapani has held leadership roles with OWIF, Opportunity International, and Interserve. His work spans MSME development, livelihoods, animal husbandry, veterinary health, women's empowerment, education, children's nutrition, and youth entrepreneurship and mentoring.",
+        "Through Shikhar Microfinance and SURE, he has empowered thousands by promoting financial inclusion and skill development. His ventures including Vets on Call, Powerseed Ventures, and OneThe416 Technologies, reflect his deep belief in \"Business as Mission,\" integrating enterprise with social transformation.",
+        "As Chief Functionary of Delhi House Society, Mr. Chakrapani provides strategic leadership to Sewa Ashram in Delhi and also serves as Board Chair of Interserve India."
+      ]
     },
-    {
-      name: "Mr. Satyavir Chakrapani",
-      role: "General Secretary",
-      image: satyavirChakrapani,
-      linkedin: "https://www.linkedin.com/in/satyavir-chakrapani/",
-      imageStyle: "scale-[1.25] object-[center_20%]",
+    { 
+      name: "Mr. Pramod Kumar Singh", 
+      role: "Board Chairman, Delhi House Society",
+      bio: [
+        "Mr. Pramod Kumar Singh, Advocate and Fellow Company Secretary, has over 33 years of experience in corporate and legal practice. He is the Founder of Lux Veritas, a New Delhi based business law firm that applies a business-minded and ethical approach to legal solutions.",
+        "As Board Chair of Delhi House Society (DHS), Mr. Singh provides strategic guidance and legal oversight, helping strengthen the organization's mission of compassion, justice, and transformation among Delhi's most vulnerable communities.",
+        "He lives in New Delhi with his wife, Pratibha, and they are blessed with two married children."
+      ]
     },
-    {
-      name: "Mr. Sumit K. Chetty",
-      role: "Treasurer",
-      image: sumitChetty,
-      linkedin: null,
-      imageStyle: "scale-[1.2] object-[center_22%]",
+    { 
+      name: "Ms. Esther Anupama Ghosh", 
+      role: "Board Member, DHS",
+      bio: [
+        "Ms. Esther Anupama Ghosh has over 20 years of experience in the social development sector. She is currently working with StreamAsia Advisors Pvt. Ltd. and has previously held key roles with organizations such as World Vision, Emmanuel Hospital Association, Christian Aid, and EFICOR.",
+        "With a long-standing association with Delhi House Society (DHS), Ms. Ghosh has played a key role in its journey over the years. Having earlier served as Board Chair and now continuing as a Board Member, she remains closely engaged in strengthening DHS's mission."
+      ]
     },
-    {
-      name: "Ms. Esther Anupama Ghosh",
-      role: "Member",
-      image: estherGhosh,
-      linkedin: "https://www.linkedin.com/in/esther-anupama-ghosh/",
-      imageStyle: "scale-[1.25] object-[center_20%]",
+    { 
+      name: "Ms. Ekta Ahuja John", 
+      role: "Board Member, DHS",
+      bio: [
+        "Ms. Ekta Ahuja John is an experienced professional with over twenty years of experience across the corporate, social, and international education sectors.",
+        "Passionate about social transformation, Ms. John is actively involved with Delhi House Society (DHS) as a Board member, where she supports its mission of compassion, dignity, and empowerment for the marginalized."
+      ]
     },
-    {
-      name: "Mr. Samir Deokuliar",
-      role: "Member",
-      image: samirDeokuliar,
-      linkedin: "https://www.linkedin.com/in/samir-deokuliar/",
-      imageStyle: "scale-[1.35] object-[center_22%]",
+    { 
+      name: "Mr. Sumit K. Chetty", 
+      role: "Treasurer, DHS",
+      bio: [
+        "Mr. Sumit K. Chetty is a finance professional with over a decade of experience across the nonprofit, education, and corporate sectors. He specializes in accounting, taxation, compliance, audit, and financial reporting.",
+        "Sumit serves on the Board of Delhi House Society (DHS), where he provides financial oversight, strategic input, and broader organizational support."
+      ]
     },
-    {
-      name: "Ms. Ekta Ahuja John",
-      role: "Member",
-      image: ektaJohn,
-      linkedin: "https://www.linkedin.com/in/ekta-ahuja-john/",
-      imageStyle: "scale-[1.2] object-[center_18%]",
+    { 
+      name: "N. Christina", 
+      role: "Board Member",
+      bio: []
     },
-    {
-      name: "Ms. N. Christina",
-      role: "Member",
-      image: null,
-      linkedin: null,
-      imageStyle: "",
+    { 
+      name: "Mr. Samir Deokuliar", 
+      role: "Board Member, DHS",
+      bio: [
+        "Mr. Samir Deokuliar is a global speaker and coach known for his deep insights into human relationships. He has addressed audiences across continents on themes of leadership, faith, and team-building.",
+        "He also serves on the Board of Delhi House Society (Sewa Ashram) and other non-profits, offering strategic guidance and leadership development support."
+      ]
     },
   ];
 
@@ -178,38 +178,30 @@ const About = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            <Accordion type="single" collapsible className="space-y-2">
               {boardMembers.map((member, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className={`w-full h-full object-cover ${member.imageStyle}`}
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-primary/10">
-                        <Users className="h-10 w-10 text-primary/50" />
+                <AccordionItem key={index} value={`board-${index}`} className="border rounded-lg bg-muted/30 px-4">
+                  <AccordionTrigger className="hover:no-underline py-4">
+                    <div className="flex items-start gap-3 text-left">
+                      <User className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">{member.name}</p>
+                        <p className="text-sm text-muted-foreground">{member.role}</p>
                       </div>
-                    )}
-                  </div>
-                  <h4 className="font-semibold text-sm text-foreground">{member.name}</h4>
-                  <p className="text-xs text-muted-foreground mb-1">{member.role}</p>
-                  {member.linkedin && (
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
-                      aria-label={`${member.name}'s LinkedIn profile`}
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
+                    </div>
+                  </AccordionTrigger>
+                  {member.bio && member.bio.length > 0 && (
+                    <AccordionContent className="pb-4 pl-8">
+                      <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                        {member.bio.map((paragraph, pIndex) => (
+                          <p key={pIndex}>{paragraph}</p>
+                        ))}
+                      </div>
+                    </AccordionContent>
                   )}
-                </div>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </Card>
 
           {/* Our Inspiration */}
