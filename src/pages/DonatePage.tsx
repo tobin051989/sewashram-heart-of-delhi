@@ -44,19 +44,29 @@ const DonatePage = () => {
       <Faith />
 
       {/* QR Code Section */}
-      <section className="py-4 bg-background">
+      <section className="py-10 md:py-16 bg-gradient-to-b from-primary/5 to-background">
         <div className="container-custom section-padding">
           <div className="flex flex-col items-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">Quick Donate</h2>
-            <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-center">Quick Donate</h2>
+            <p className="text-muted-foreground mb-8 text-center max-w-md">
+              Scan the QR code below with any UPI app to make an instant donation
+            </p>
+            <div className="relative bg-card rounded-2xl p-8 md:p-10 shadow-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                UPI Payment
+              </div>
               <img 
                 src={donateQR} 
-                alt="Donation QR Code" 
-                className="w-64 h-auto rounded-lg"
+                alt="Donation QR Code - Scan to donate via UPI" 
+                className="w-72 sm:w-80 md:w-96 h-auto rounded-xl"
               />
+              <div className="mt-4 text-center">
+                <p className="text-sm font-medium text-foreground">UPI ID</p>
+                <p className="text-primary font-semibold select-all">9311968001@okbizaxis</p>
+              </div>
             </div>
-            <p className="text-muted-foreground mt-4 text-center">
-              Scan the QR code to donate instantly
+            <p className="text-sm text-muted-foreground mt-6 text-center max-w-sm">
+              Supports Google Pay, PhonePe, Paytm & all UPI apps
             </p>
           </div>
         </div>
