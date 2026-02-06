@@ -24,7 +24,7 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm shadow-sm z-50 border-b border-border">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 sm:h-20 px-3 sm:px-4 lg:px-8">
-          <Link to="/" className="flex items-center min-w-0">
+          <Link to="/" className="flex items-center min-w-0 flex-shrink-0 mr-4">
             <img src={logo} alt="Delhi House Society Logo" className="h-10 sm:h-14 w-auto mr-2 sm:mr-3 flex-shrink-0" />
             <div className="min-w-0">
               <h2 className="text-base sm:text-xl font-bold text-foreground truncate">Delhi House Society</h2>
@@ -33,17 +33,17 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation - only show on xl screens due to many items */}
-          <div className="hidden xl:flex items-center space-x-4 2xl:space-x-6">
+          <div className="hidden xl:flex items-center space-x-2 2xl:space-x-4 flex-shrink-0">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium text-sm 2xl:text-base whitespace-nowrap"
+                className="text-foreground hover:text-primary transition-colors font-medium text-xs 2xl:text-sm whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-sm 2xl:text-base" asChild>
+            <Button className="bg-primary hover:bg-primary/90 text-xs 2xl:text-sm" asChild>
               <Link to="/donate">Donate</Link>
             </Button>
           </div>
