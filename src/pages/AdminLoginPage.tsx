@@ -26,23 +26,26 @@ const AdminLoginPage = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    if (isSignUp) {
-      const { error } = await signUp(email, password);
-      setIsLoading(false);
-      if (error) {
-        toast({ title: "Sign up failed", description: error.message, variant: "destructive" });
+    try {
+      if (isSignUp) {
+        const { error } = await signUp(email, password);
+        if (error) {
+          toast({ title: "Sign up failed", description: error.message, variant: "destructive" });
+        } else {
+          toast({ title: "Account created!", description: "Please check your email to verify your account, then ask the site admin to grant you admin access." });
+        }
       } else {
-        toast({ title: "Account created!", description: "Please check your email to verify your account, then ask the site admin to grant you admin access." });
+        const { error } = await signIn(email, password);
+        if (error) {
+          toast({ title: "Login failed", description: error.message, variant: "destructive" });
+        } else {
+          toast({ title: "Welcome back!" });
+        }
       }
-    } else {
-      const { error } = await signIn(email, password);
+    } catch (err: any) {
+      toast({ title: "Something went wrong", description: err?.message || "Please try again.", variant: "destructive" });
+    } finally {
       setIsLoading(false);
-      if (error) {
-        toast({ title: "Login failed", description: error.message, variant: "destructive" });
-      } else {
-        toast({ title: "Welcome back!" });
-        // Navigation is handled by the useEffect watching user/isAdmin
-      }
     }
   };
 
