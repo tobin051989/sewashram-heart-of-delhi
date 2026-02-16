@@ -41,7 +41,7 @@ const AdminLoginPage = () => {
         toast({ title: "Login failed", description: error.message, variant: "destructive" });
       } else {
         toast({ title: "Welcome back!" });
-        navigate("/admin");
+        // Navigation is handled by the useEffect watching user/isAdmin
       }
     }
   };
