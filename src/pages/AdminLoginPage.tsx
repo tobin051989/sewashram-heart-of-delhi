@@ -27,6 +27,12 @@ const AdminLoginPage = () => {
     e.preventDefault();
     setIsLoading(true);
 
+    // Safety timeout - never stay stuck more than 15 seconds
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+      toast({ title: "Request timed out", description: "Please try again.", variant: "destructive" });
+    }, 15000);
+
     try {
       if (isSignUp) {
         const { error } = await signUp(email, password);
@@ -40,25 +46,33 @@ const AdminLoginPage = () => {
         if (error) {
           toast({ title: "Login failed", description: error.message, variant: "destructive" });
         } else {
-          // Directly check admin role and navigate instead of waiting for context
-          const { data: { session } } = await supabase.auth.getSession();
-          if (session?.user) {
-            const { data: isAdminResult } = await supabase.rpc("has_role", {
-              _user_id: session.user.id,
-              _role: "admin",
-            });
-            if (isAdminResult) {
-              toast({ title: "Welcome back!" });
-              navigate("/admin");
-              return;
+          // Directly check admin role and navigate
+          try {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session?.user) {
+              const { data: isAdminResult } = await supabase.rpc("has_role", {
+                _user_id: session.user.id,
+                _role: "admin",
+              });
+              if (isAdminResult) {
+                toast({ title: "Welcome back!" });
+                clearTimeout(timeout);
+                // Use window.location as fallback to ensure redirect works
+                window.location.href = "/admin";
+                return;
+              }
             }
+            toast({ title: "Login successful", description: "But you don't have admin access.", variant: "destructive" });
+          } catch (rpcErr) {
+            console.error("Admin check failed:", rpcErr);
+            toast({ title: "Login successful", description: "Could not verify admin access. Please try refreshing.", variant: "destructive" });
           }
-          toast({ title: "Login successful", description: "But you don't have admin access.", variant: "destructive" });
         }
       }
     } catch (err: any) {
       toast({ title: "Something went wrong", description: err?.message || "Please try again.", variant: "destructive" });
     } finally {
+      clearTimeout(timeout);
       setIsLoading(false);
     }
   };
