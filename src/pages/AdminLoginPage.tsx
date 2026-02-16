@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import Navigation from "@/components/Navigation";
@@ -13,21 +13,36 @@ const AdminLoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { signIn } = useAuth();
+  const [isSignUp, setIsSignUp] = useState(false);
+  const { signIn, signUp, user, isAdmin } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  useEffect(() => {
+    if (user && isAdmin) navigate("/admin");
+  }, [user, isAdmin, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    const { error } = await signIn(email, password);
-    setIsLoading(false);
 
-    if (error) {
-      toast({ title: "Login failed", description: error.message, variant: "destructive" });
+    if (isSignUp) {
+      const { error } = await signUp(email, password);
+      setIsLoading(false);
+      if (error) {
+        toast({ title: "Sign up failed", description: error.message, variant: "destructive" });
+      } else {
+        toast({ title: "Account created!", description: "Please check your email to verify your account, then ask the site admin to grant you admin access." });
+      }
     } else {
-      toast({ title: "Welcome back!" });
-      navigate("/admin");
+      const { error } = await signIn(email, password);
+      setIsLoading(false);
+      if (error) {
+        toast({ title: "Login failed", description: error.message, variant: "destructive" });
+      } else {
+        toast({ title: "Welcome back!" });
+        navigate("/admin");
+      }
     }
   };
 
@@ -42,7 +57,7 @@ const AdminLoginPage = () => {
                 <Lock className="h-8 w-8 text-primary" />
               </div>
             </div>
-            <CardTitle className="text-2xl">Admin Login</CardTitle>
+            <CardTitle className="text-2xl">{isSignUp ? "Create Admin Account" : "Admin Login"}</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -59,11 +74,19 @@ const AdminLoginPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                minLength={6}
               />
               <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Signing in..." : "Sign In"}
+                {isLoading ? "Please wait..." : isSignUp ? "Sign Up" : "Sign In"}
               </Button>
             </form>
+            <button
+              type="button"
+              className="w-full mt-4 text-sm text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => setIsSignUp(!isSignUp)}
+            >
+              {isSignUp ? "Already have an account? Sign in" : "Need an account? Sign up"}
+            </button>
           </CardContent>
         </Card>
       </div>
