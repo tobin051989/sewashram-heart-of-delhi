@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,20 @@ const AdminLoginPage = () => {
         if (error) {
           toast({ title: "Login failed", description: error.message, variant: "destructive" });
         } else {
-          toast({ title: "Welcome back!" });
+          // Directly check admin role and navigate instead of waiting for context
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.user) {
+            const { data: isAdminResult } = await supabase.rpc("has_role", {
+              _user_id: session.user.id,
+              _role: "admin",
+            });
+            if (isAdminResult) {
+              toast({ title: "Welcome back!" });
+              navigate("/admin");
+              return;
+            }
+          }
+          toast({ title: "Login successful", description: "But you don't have admin access.", variant: "destructive" });
         }
       }
     } catch (err: any) {
