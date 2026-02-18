@@ -4,9 +4,9 @@ import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Plus, Upload, Send, Trash2, Eye, EyeOff, FileText } from "lucide-react";
+import { Plus, Send, Trash2, Eye, EyeOff, FileText, ImageIcon } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -20,6 +20,7 @@ interface Newsletter {
   title: string;
   content: string | null;
   pdf_url: string | null;
+  thumbnail_url: string | null;
   published: boolean;
   created_at: string;
 }
@@ -29,6 +30,8 @@ const NewsletterManager = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [pdfFile, setPdfFile] = useState<File | null>(null);
+  const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
+  const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null);
   const [isCreating, setIsCreating] = useState(false);
   const [isSending, setIsSending] = useState<string | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -37,13 +40,23 @@ const NewsletterManager = () => {
 
   const fetchNewsletters = async () => {
     const { data, error } = await supabase
-      .from("newsletters" as any)
-      .select("*")
+      .from("newsletters")
+      .select("id, title, content, pdf_url, thumbnail_url, published, created_at")
       .order("created_at", { ascending: false });
-    if (!error && data) setNewsletters(data as any);
+    if (!error && data) setNewsletters(data as Newsletter[]);
   };
 
   useEffect(() => { fetchNewsletters(); }, []);
+
+  const handleThumbnailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setThumbnailFile(file);
+    if (file) {
+      setThumbnailPreview(URL.createObjectURL(file));
+    } else {
+      setThumbnailPreview(null);
+    }
+  };
 
   const handleCreate = async () => {
     if (!title.trim()) {
@@ -53,6 +66,7 @@ const NewsletterManager = () => {
     setIsCreating(true);
 
     let pdfUrl: string | null = null;
+    let thumbnailUrl: string | null = null;
 
     if (pdfFile) {
       const fileName = `${Date.now()}-${pdfFile.name}`;
@@ -66,18 +80,33 @@ const NewsletterManager = () => {
         return;
       }
 
-      const { data: urlData } = supabase.storage
-        .from("newsletters")
-        .getPublicUrl(fileName);
+      const { data: urlData } = supabase.storage.from("newsletters").getPublicUrl(fileName);
       pdfUrl = urlData.publicUrl;
     }
 
+    if (thumbnailFile) {
+      const thumbName = `thumbnails/${Date.now()}-${thumbnailFile.name}`;
+      const { error: thumbError } = await supabase.storage
+        .from("newsletters")
+        .upload(thumbName, thumbnailFile);
+
+      if (thumbError) {
+        toast({ title: "Thumbnail upload failed", description: thumbError.message, variant: "destructive" });
+        setIsCreating(false);
+        return;
+      }
+
+      const { data: thumbUrlData } = supabase.storage.from("newsletters").getPublicUrl(thumbName);
+      thumbnailUrl = thumbUrlData.publicUrl;
+    }
+
     const { error } = await supabase
-      .from("newsletters" as any)
+      .from("newsletters")
       .insert({
         title: title.trim(),
         content: content.trim() || null,
         pdf_url: pdfUrl,
+        thumbnail_url: thumbnailUrl,
         created_by: user!.id,
         published: false,
       } as any);
@@ -89,6 +118,8 @@ const NewsletterManager = () => {
       setTitle("");
       setContent("");
       setPdfFile(null);
+      setThumbnailFile(null);
+      setThumbnailPreview(null);
       setDialogOpen(false);
       fetchNewsletters();
     }
@@ -96,15 +127,12 @@ const NewsletterManager = () => {
   };
 
   const togglePublish = async (id: string, published: boolean) => {
-    await supabase
-      .from("newsletters" as any)
-      .update({ published: !published } as any)
-      .eq("id", id);
+    await supabase.from("newsletters").update({ published: !published } as any).eq("id", id);
     fetchNewsletters();
   };
 
   const deleteNewsletter = async (id: string) => {
-    await supabase.from("newsletters" as any).delete().eq("id", id);
+    await supabase.from("newsletters").delete().eq("id", id);
     fetchNewsletters();
     toast({ title: "Newsletter deleted" });
   };
@@ -112,25 +140,18 @@ const NewsletterManager = () => {
   const sendNewsletter = async (newsletter: Newsletter) => {
     setIsSending(newsletter.id);
     try {
-      const { data: { session } } = await supabase.auth.getSession();
       const response = await supabase.functions.invoke("send-newsletter", {
         body: { newsletterId: newsletter.id },
       });
 
-      if (response.error) {
-        throw new Error(response.error.message);
-      }
+      if (response.error) throw new Error(response.error.message);
 
       toast({
         title: "Newsletter sent!",
         description: `Sent to ${response.data?.sent || 0} contacts.`,
       });
     } catch (error: any) {
-      toast({
-        title: "Failed to send",
-        description: error.message,
-        variant: "destructive",
-      });
+      toast({ title: "Failed to send", description: error.message, variant: "destructive" });
     }
     setIsSending(null);
   };
@@ -143,7 +164,7 @@ const NewsletterManager = () => {
           <DialogTrigger asChild>
             <Button><Plus className="h-4 w-4 mr-2" /> Create Newsletter</Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-lg">
+          <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Create Newsletter</DialogTitle>
             </DialogHeader>
@@ -157,8 +178,25 @@ const NewsletterManager = () => {
                 placeholder="Newsletter content (optional if uploading PDF)"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                rows={8}
+                rows={6}
               />
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  <ImageIcon className="h-4 w-4 inline mr-1" /> Thumbnail Image (optional)
+                </label>
+                <Input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleThumbnailChange}
+                />
+                {thumbnailPreview && (
+                  <img
+                    src={thumbnailPreview}
+                    alt="Thumbnail preview"
+                    className="mt-2 w-full h-32 object-cover rounded-lg border"
+                  />
+                )}
+              </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Upload PDF (optional)
@@ -189,7 +227,18 @@ const NewsletterManager = () => {
           {newsletters.map((nl) => (
             <Card key={nl.id}>
               <CardContent className="p-6">
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  {nl.thumbnail_url ? (
+                    <img
+                      src={nl.thumbnail_url}
+                      alt={nl.title}
+                      className="w-20 h-20 object-cover rounded-lg flex-shrink-0 border"
+                    />
+                  ) : (
+                    <div className="w-20 h-20 rounded-lg flex-shrink-0 border bg-muted flex items-center justify-center">
+                      <FileText className="h-8 w-8 text-muted-foreground opacity-50" />
+                    </div>
+                  )}
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-lg text-foreground">{nl.title}</h3>
                     <p className="text-sm text-muted-foreground mt-1">
@@ -215,26 +264,13 @@ const NewsletterManager = () => {
                     )}
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => togglePublish(nl.id, nl.published)}
-                    >
+                    <Button variant="outline" size="sm" onClick={() => togglePublish(nl.id, nl.published)}>
                       {nl.published ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => sendNewsletter(nl)}
-                      disabled={isSending === nl.id}
-                    >
+                    <Button variant="outline" size="sm" onClick={() => sendNewsletter(nl)} disabled={isSending === nl.id}>
                       <Send className="h-4 w-4" />
                     </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => deleteNewsletter(nl.id)}
-                    >
+                    <Button variant="outline" size="sm" onClick={() => deleteNewsletter(nl.id)}>
                       <Trash2 className="h-4 w-4 text-destructive" />
                     </Button>
                   </div>

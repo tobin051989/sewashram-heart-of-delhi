@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Download, Calendar } from "lucide-react";
+import { FileText, Download, Calendar, ImageIcon } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -17,6 +17,7 @@ interface Newsletter {
   title: string;
   content: string | null;
   pdf_url: string | null;
+  thumbnail_url: string | null;
   created_at: string;
 }
 
@@ -26,16 +27,16 @@ const NewslettersPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetch = async () => {
+    const fetchNewsletters = async () => {
       const { data } = await supabase
-        .from("newsletters" as any)
-        .select("id, title, content, pdf_url, created_at")
+        .from("newsletters")
+        .select("id, title, content, pdf_url, thumbnail_url, created_at")
         .eq("published", true)
         .order("created_at", { ascending: false });
-      if (data) setNewsletters(data as any);
+      if (data) setNewsletters(data as Newsletter[]);
       setLoading(false);
     };
-    fetch();
+    fetchNewsletters();
   }, []);
 
   return (
@@ -64,52 +65,52 @@ const NewslettersPage = () => {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {newsletters.map((nl) => (
-                <Card key={nl.id} className="hover:shadow-lg transition-shadow cursor-pointer group">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                        <FileText className="h-6 w-6 text-primary" />
+                <Card key={nl.id} className="hover:shadow-lg transition-shadow overflow-hidden group">
+                  {/* Thumbnail */}
+                  <div className="relative w-full h-48 bg-muted overflow-hidden">
+                    {nl.thumbnail_url ? (
+                      <img
+                        src={nl.thumbnail_url}
+                        alt={nl.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-primary/5">
+                        <ImageIcon className="h-12 w-12 text-primary/30" />
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">
-                          {nl.title}
-                        </h3>
-                        <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
-                          <Calendar className="h-3.5 w-3.5" />
-                          {new Date(nl.created_at).toLocaleDateString("en-IN", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
-                        </div>
-                        {nl.content && (
-                          <p className="text-sm text-muted-foreground mt-3 line-clamp-3">
-                            {nl.content}
-                          </p>
-                        )}
-                        <div className="flex gap-2 mt-4">
-                          {nl.content && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => setSelected(nl)}
-                            >
-                              Read
-                            </Button>
-                          )}
-                          {nl.pdf_url && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              asChild
-                            >
-                              <a href={nl.pdf_url} target="_blank" rel="noopener noreferrer">
-                                <Download className="h-4 w-4 mr-1" /> Download PDF
-                              </a>
-                            </Button>
-                          )}
-                        </div>
-                      </div>
+                    )}
+                  </div>
+
+                  <CardContent className="p-5">
+                    <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors leading-snug mb-2">
+                      {nl.title}
+                    </h3>
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground mb-3">
+                      <Calendar className="h-3.5 w-3.5 flex-shrink-0" />
+                      {new Date(nl.created_at).toLocaleDateString("en-IN", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </div>
+                    {nl.content && (
+                      <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                        {nl.content}
+                      </p>
+                    )}
+                    <div className="flex gap-2">
+                      {nl.content && (
+                        <Button variant="outline" size="sm" onClick={() => setSelected(nl)}>
+                          Read
+                        </Button>
+                      )}
+                      {nl.pdf_url && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={nl.pdf_url} target="_blank" rel="noopener noreferrer">
+                            <Download className="h-4 w-4 mr-1" /> Download PDF
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -121,6 +122,15 @@ const NewslettersPage = () => {
 
       <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
         <DialogContent className="sm:max-w-2xl max-h-[80vh] overflow-y-auto">
+          {selected?.thumbnail_url && (
+            <div className="w-full h-48 overflow-hidden rounded-lg mb-2">
+              <img
+                src={selected.thumbnail_url}
+                alt={selected.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
           <DialogHeader>
             <DialogTitle className="text-2xl">{selected?.title}</DialogTitle>
           </DialogHeader>

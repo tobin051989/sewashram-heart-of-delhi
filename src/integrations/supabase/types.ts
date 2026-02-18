@@ -46,6 +46,7 @@ export type Database = {
           id: string
           pdf_url: string | null
           published: boolean
+          thumbnail_url: string | null
           title: string
           updated_at: string
         }
@@ -56,6 +57,7 @@ export type Database = {
           id?: string
           pdf_url?: string | null
           published?: boolean
+          thumbnail_url?: string | null
           title: string
           updated_at?: string
         }
@@ -66,6 +68,7 @@ export type Database = {
           id?: string
           pdf_url?: string | null
           published?: boolean
+          thumbnail_url?: string | null
           title?: string
           updated_at?: string
         }
