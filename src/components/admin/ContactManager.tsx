@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Plus, Trash2, Users, Upload } from "lucide-react";
+import { Plus, Trash2, Users, Upload, Download } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -93,6 +93,24 @@ const ContactManager = () => {
     toast({ title: "Contact removed" });
   };
 
+  const exportCSV = () => {
+    if (contacts.length === 0) {
+      toast({ title: "No contacts to export", variant: "destructive" });
+      return;
+    }
+    const header = "Email,Name,Subscribed,Created At\n";
+    const rows = contacts.map(c =>
+      `"${c.email}","${c.name || ""}","${c.subscribed}","${c.created_at}"`
+    ).join("\n");
+    const blob = new Blob([header + rows], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `contacts-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-3">
@@ -100,6 +118,9 @@ const ContactManager = () => {
           Contacts ({contacts.length})
         </h2>
         <div className="flex gap-2">
+          <Button variant="outline" onClick={exportCSV}>
+            <Download className="h-4 w-4 mr-2" /> Export CSV
+          </Button>
           <Dialog open={bulkDialogOpen} onOpenChange={setBulkDialogOpen}>
             <DialogTrigger asChild>
               <Button variant="outline"><Upload className="h-4 w-4 mr-2" /> Bulk Add</Button>
