@@ -12,7 +12,9 @@ const Newsletter = () => {
   const [subscribed, setSubscribed] = useState(false);
   const { toast } = useToast();
 
-  const handleSubscribe = async () => {
+  const handleSubscribe = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    console.log("handleSubscribe called, email:", email);
     const trimmed = email.trim();
     if (!trimmed || !trimmed.includes("@")) {
       toast({ title: "Please enter a valid email address", variant: "destructive" });
@@ -61,21 +63,21 @@ const Newsletter = () => {
             </p>
             
             {!subscribed && (
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <Input 
                   type="email" 
                   placeholder="Enter your email" 
                   className="flex-1"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
                   disabled={loading}
+                  required
                 />
-                <Button className="bg-primary hover:bg-primary/90" onClick={handleSubscribe} disabled={loading}>
+                <Button type="submit" className="bg-primary hover:bg-primary/90" disabled={loading}>
                   {loading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
                   Subscribe Now
                 </Button>
-              </div>
+              </form>
             )}
           </Card>
         </div>
