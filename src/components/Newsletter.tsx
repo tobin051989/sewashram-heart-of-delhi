@@ -22,14 +22,26 @@ const Newsletter = () => {
     }
 
     setLoading(true);
-    const { error } = await supabase
-      .from("contacts")
-      .upsert({ email: trimmed, subscribed: true }, { onConflict: "email" });
+    
+    let lastError: any = null;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const { error } = await supabase
+        .from("contacts")
+        .upsert({ email: trimmed, subscribed: true }, { onConflict: "email" });
+      
+      if (!error) {
+        lastError = null;
+        break;
+      }
+      lastError = error;
+      // Wait briefly before retry
+      await new Promise((r) => setTimeout(r, 500));
+    }
 
     setLoading(false);
 
-    if (error) {
-      toast({ title: "Something went wrong", description: error.message, variant: "destructive" });
+    if (lastError) {
+      toast({ title: "Something went wrong", description: lastError.message, variant: "destructive" });
     } else {
       setSubscribed(true);
       setEmail("");
