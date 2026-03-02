@@ -109,7 +109,8 @@ serve(async (req) => {
     let sentCount = 0;
     const errors: string[] = [];
 
-    for (const contact of contacts) {
+    for (let i = 0; i < contacts.length; i++) {
+      const contact = contacts[i];
       try {
         const resendResponse = await fetch("https://api.resend.com/emails", {
           method: "POST",
@@ -135,6 +136,11 @@ serve(async (req) => {
       } catch (e) {
         console.error(`Error sending to ${contact.email}:`, e);
         errors.push(contact.email);
+      }
+
+      // Wait 600ms between sends to stay within Resend's 2 req/sec rate limit
+      if (i < contacts.length - 1) {
+        await new Promise((r) => setTimeout(r, 600));
       }
     }
 
