@@ -105,35 +105,41 @@ serve(async (req) => {
       htmlContent += `<p><a href="${newsletter.pdf_url}">Download the newsletter PDF</a></p>`;
     }
 
-    // Send via Resend
-    const emailAddresses = contacts.map((c: any) => c.email);
+    // Send individual emails so recipients can't see each other
+    let sentCount = 0;
+    const errors: string[] = [];
 
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${resendApiKey}`,
-      },
-      body: JSON.stringify({
-        from: "Delhi House Society <newsletter@delhihouse.org>",
-        to: emailAddresses,
-        subject: newsletter.title,
-        html: htmlContent,
-      }),
-    });
+    for (const contact of contacts) {
+      try {
+        const resendResponse = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${resendApiKey}`,
+          },
+          body: JSON.stringify({
+            from: "Delhi House Society <newsletter@delhihouse.org>",
+            to: [contact.email],
+            subject: newsletter.title,
+            html: htmlContent,
+          }),
+        });
 
-    const resendResult = await resendResponse.json();
-
-    if (!resendResponse.ok) {
-      console.error("Resend error:", resendResult);
-      return new Response(
-        JSON.stringify({ error: "Failed to send email", details: resendResult }),
-        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+        if (resendResponse.ok) {
+          sentCount++;
+        } else {
+          const err = await resendResponse.json();
+          console.error(`Failed to send to ${contact.email}:`, err);
+          errors.push(contact.email);
+        }
+      } catch (e) {
+        console.error(`Error sending to ${contact.email}:`, e);
+        errors.push(contact.email);
+      }
     }
 
     return new Response(
-      JSON.stringify({ success: true, sent: emailAddresses.length }),
+      JSON.stringify({ success: true, sent: sentCount, failed: errors.length }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
