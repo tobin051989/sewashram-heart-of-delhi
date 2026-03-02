@@ -25,17 +25,33 @@ const NewslettersPage = () => {
   const [newsletters, setNewsletters] = useState<Newsletter[]>([]);
   const [selected, setSelected] = useState<Newsletter | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchNewsletters = async (retries = 3): Promise<void> => {
+    setError(null);
+    for (let attempt = 0; attempt < retries; attempt++) {
+      try {
+        const { data, error: fetchError } = await supabase
+          .from("newsletters")
+          .select("id, title, content, pdf_url, thumbnail_url, created_at")
+          .eq("published", true)
+          .order("created_at", { ascending: false });
+        if (fetchError) throw fetchError;
+        if (data) setNewsletters(data as Newsletter[]);
+        setLoading(false);
+        return;
+      } catch (err: any) {
+        console.error(`Newsletter fetch attempt ${attempt + 1} failed:`, err);
+        if (attempt < retries - 1) {
+          await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
+        }
+      }
+    }
+    setError("Unable to load newsletters. Please try again.");
+    setLoading(false);
+  };
 
   useEffect(() => {
-    const fetchNewsletters = async () => {
-      const { data } = await supabase
-        .from("newsletters")
-        .select("id, title, content, pdf_url, thumbnail_url, created_at")
-        .eq("published", true)
-        .order("created_at", { ascending: false });
-      if (data) setNewsletters(data as Newsletter[]);
-      setLoading(false);
-    };
     fetchNewsletters();
   }, []);
 
@@ -55,6 +71,16 @@ const NewslettersPage = () => {
 
           {loading ? (
             <p className="text-center text-muted-foreground">Loading...</p>
+          ) : error ? (
+            <Card>
+              <CardContent className="py-16 text-center text-muted-foreground">
+                <FileText className="h-16 w-16 mx-auto mb-4 opacity-30" />
+                <p className="text-lg mb-4">{error}</p>
+                <Button onClick={() => { setLoading(true); fetchNewsletters(); }}>
+                  Try Again
+                </Button>
+              </CardContent>
+            </Card>
           ) : newsletters.length === 0 ? (
             <Card>
               <CardContent className="py-16 text-center text-muted-foreground">
