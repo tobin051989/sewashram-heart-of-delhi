@@ -96,13 +96,13 @@ serve(async (req) => {
       });
     }
 
-    // Build email content
-    let htmlContent = `<h1>${newsletter.title}</h1>`;
+    // Build base email content
+    let baseContent = `<h1>${newsletter.title}</h1>`;
     if (newsletter.content) {
-      htmlContent += `<div>${newsletter.content.replace(/\n/g, "<br>")}</div>`;
+      baseContent += `<div>${newsletter.content.replace(/\n/g, "<br>")}</div>`;
     }
     if (newsletter.pdf_url) {
-      htmlContent += `<p><a href="${newsletter.pdf_url}">Download the newsletter PDF</a></p>`;
+      baseContent += `<p><a href="${newsletter.pdf_url}">Download the newsletter PDF</a></p>`;
     }
 
     // Send individual emails so recipients can't see each other
@@ -111,6 +111,11 @@ serve(async (req) => {
 
     for (let i = 0; i < contacts.length; i++) {
       const contact = contacts[i];
+
+      // Build per-recipient unsubscribe link
+      const unsubscribeUrl = `${supabaseUrl}/functions/v1/unsubscribe?email=${encodeURIComponent(contact.email)}`;
+      const htmlContent = baseContent + `<hr style="margin-top:32px;border:none;border-top:1px solid #ddd;"><p style="font-size:12px;color:#888;text-align:center;margin-top:16px;">You received this because you subscribed to Delhi House Society updates.<br><a href="${unsubscribeUrl}" style="color:#888;">Unsubscribe</a></p>`;
+
       try {
         const resendResponse = await fetch("https://api.resend.com/emails", {
           method: "POST",
