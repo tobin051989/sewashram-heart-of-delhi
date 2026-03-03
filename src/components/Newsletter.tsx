@@ -46,6 +46,10 @@ const Newsletter = () => {
       setSubscribed(true);
       setEmail("");
       toast({ title: "You're subscribed!", description: "Thank you for subscribing to our newsletter." });
+      // Notify admin of new subscriber (fire-and-forget)
+      supabase.functions.invoke("notify-new-subscriber", {
+        body: { email: trimmed },
+      }).catch(() => {});
     }
   };
 
