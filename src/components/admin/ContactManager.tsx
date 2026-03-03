@@ -54,6 +54,10 @@ const ContactManager = () => {
       toast({ title: "Failed to add contact", description: error.message, variant: "destructive" });
     } else {
       toast({ title: "Contact added!" });
+      // Notify admin of new subscriber
+      supabase.functions.invoke("notify-new-subscriber", {
+        body: { email: email.trim(), name: name.trim() || undefined },
+      }).catch(() => {});
       setEmail("");
       setName("");
       setDialogOpen(false);
