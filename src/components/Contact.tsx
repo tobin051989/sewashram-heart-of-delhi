@@ -73,8 +73,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-foreground mb-2">Phone</p>
                   <div className="space-y-1">
