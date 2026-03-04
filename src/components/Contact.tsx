@@ -15,7 +15,7 @@ const Contact = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 shadow-lg">
+          <Card className="p-4 sm:p-8 md:p-12 shadow-lg overflow-hidden">
             <div className="text-center mb-8">
               <div className="space-y-4">
                 <div>
