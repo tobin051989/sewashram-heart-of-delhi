@@ -38,7 +38,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center space-x-1.5 2xl:space-x-3 flex-shrink-0">
+          <div className="hidden xl:flex items-center space-x-4 2xl:space-x-6 flex-shrink-0">
             <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium text-sm whitespace-nowrap">
               Home
             </Link>
