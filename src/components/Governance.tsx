@@ -25,19 +25,6 @@ const Governance = () => {
 
   const boardMembers: BoardMember[] = [
     { 
-      name: "Mr. Satyavir Chakrapani", 
-      role: "General Secretary, DHS",
-      image: satyavirChakrapani,
-      linkedin: "https://www.linkedin.com/in/satyavir-chakrapani-9679286/",
-      imageStyle: "scale-[1.0] object-[center_15%]",
-      bio: [
-        "Mr. Satyavir Chakrapani is a first-generation serial entrepreneur whose journey embodies the power of collective wisdom and purposeful innovation. As CEO of Shikhar Urban & Rural Enterprises (SURE), Managing Director of Shikhar Microfinance Pvt. Ltd., and part of the founding team of the Shikhar Group, he brings extensive experience in microfinance, social enterprise, development finance, and livelihood enhancement initiatives.",
-        "Driven by an enduring passion for innovation and growth, Mr. Chakrapani has held leadership roles with OWIF, Opportunity International, and Interserve. His work spans MSME development, livelihoods, animal husbandry, veterinary health, women's empowerment, education, children's nutrition, and youth entrepreneurship and mentoring.",
-        "Through Shikhar Microfinance and SURE, he has empowered thousands by promoting financial inclusion and skill development. His ventures including Vets on Call, Powerseed Ventures, and OneThe416 Technologies, reflect his deep belief in \"Business as Mission,\" integrating enterprise with social transformation.",
-        "As Chief Functionary of Delhi House Society, Mr. Chakrapani provides strategic leadership to Sewa Ashram in Delhi and also serves as Board Chair of Interserve India."
-      ]
-    },
-    { 
       name: "Mr. Pramod Kumar Singh", 
       role: "Board Chairman, Delhi House Society",
       image: pramodSingh,
@@ -48,6 +35,19 @@ const Governance = () => {
         "Alongside his legal career, Mr. Singh serves on several boards and advisory bodies in the fields of justice, education, and social development, contributing his expertise to organizational governance and leadership.",
         "As Board Chair of Delhi House Society (DHS), Mr. Singh provides strategic guidance and legal oversight, helping strengthen the organization's mission of compassion, justice, and transformation among Delhi's most vulnerable communities.",
         "He lives in New Delhi with his wife, Pratibha, and they are blessed with two married children."
+      ]
+    },
+    { 
+      name: "Mr. Satyavir Chakrapani", 
+      role: "General Secretary, DHS",
+      image: satyavirChakrapani,
+      linkedin: "https://www.linkedin.com/in/satyavir-chakrapani-9679286/",
+      imageStyle: "scale-[1.0] object-[center_15%]",
+      bio: [
+        "Mr. Satyavir Chakrapani is a first-generation serial entrepreneur whose journey embodies the power of collective wisdom and purposeful innovation. As CEO of Shikhar Urban & Rural Enterprises (SURE), Managing Director of Shikhar Microfinance Pvt. Ltd., and part of the founding team of the Shikhar Group, he brings extensive experience in microfinance, social enterprise, development finance, and livelihood enhancement initiatives.",
+        "Driven by an enduring passion for innovation and growth, Mr. Chakrapani has held leadership roles with OWIF, Opportunity International, and Interserve. His work spans MSME development, livelihoods, animal husbandry, veterinary health, women's empowerment, education, children's nutrition, and youth entrepreneurship and mentoring.",
+        "Through Shikhar Microfinance and SURE, he has empowered thousands by promoting financial inclusion and skill development. His ventures including Vets on Call, Powerseed Ventures, and OneThe416 Technologies, reflect his deep belief in \"Business as Mission,\" integrating enterprise with social transformation.",
+        "As Chief Functionary of Delhi House Society, Mr. Chakrapani provides strategic leadership to Sewa Ashram in Delhi and also serves as Board Chair of Interserve India."
       ]
     },
     { 
