@@ -32,9 +32,9 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div className="flex-1">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold text-foreground mb-1">Address</p>
                   <p className="text-muted-foreground mb-3">
                     Khasra 47/25 & 48/21, Krishna Nagar,<br />
