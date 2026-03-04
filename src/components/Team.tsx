@@ -32,7 +32,7 @@ const Team = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 shadow-lg">
+          <Card className="p-4 sm:p-6 md:p-8 shadow-lg overflow-hidden">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-full bg-secondary/10">
                 <Users className="h-6 w-6 text-secondary" />

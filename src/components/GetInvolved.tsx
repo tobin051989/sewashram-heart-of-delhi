@@ -167,21 +167,21 @@ const GetInvolved = () => {
           </div>
         </Card>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/donate">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 px-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
+          <Link to="/donate" className="w-full sm:w-auto">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 w-full sm:w-auto">
               <Heart className="mr-2 h-5 w-5" />
               Donate Today
             </Button>
           </Link>
-          <Link to="/contact">
-            <Button size="lg" variant="outline" className="px-8">
+          <Link to="/contact" className="w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="px-8 w-full sm:w-auto">
               <Users className="mr-2 h-5 w-5" />
               Volunteer With Us
             </Button>
           </Link>
-          <Link to="/contact">
-            <Button size="lg" variant="outline" className="px-8">
+          <Link to="/contact" className="w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="px-8 w-full sm:w-auto">
               <Handshake className="mr-2 h-5 w-5" />
               Partner With Us
             </Button>
