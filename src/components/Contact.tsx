@@ -99,20 +99,15 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
-                <div className="flex gap-2 flex-shrink-0">
-                  <Facebook className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                  <Instagram className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                </div>
-                <div className="min-w-0 flex-1">
+                <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
+                <div>
                   <p className="font-semibold text-foreground mb-2">Social Media</p>
-                  <div className="space-y-1">
-                    <a href="https://www.facebook.com/delhihouse.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
-                      <Facebook className="h-4 w-4 flex-shrink-0" />
-                      <span className="truncate">facebook.com/delhihouse.org</span>
+                  <div className="flex items-center gap-4">
+                    <a href="https://www.facebook.com/delhihouse.org" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary transition-colors" aria-label="Facebook">
+                      <Facebook className="h-5 w-5" />
                     </a>
-                    <a href="https://www.instagram.com/delhihousesocietys/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
-                      <Instagram className="h-4 w-4 flex-shrink-0" />
-                      <span className="truncate">instagram.com/delhihousesocietys</span>
+                    <a href="https://www.instagram.com/delhihousesocietys/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary transition-colors" aria-label="Instagram">
+                      <Instagram className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
