@@ -105,14 +105,14 @@ const DonatePage = () => {
               Our work at Delhi House Society is made possible by the generosity of those who believe in dignity, care, and opportunity for all. Your kindness helps us continue serving the most vulnerable and is deeply appreciated.
             </p>
             
-            <div className="flex flex-wrap items-center gap-4 p-4 bg-card rounded-lg border border-border">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 sm:gap-4 p-4 bg-card rounded-lg border border-border">
               <span className="text-foreground font-medium">For any queries:</span>
-              <a href="mailto:office@delhihouse.org" className="flex items-center gap-2 text-primary hover:underline">
-                <Mail className="h-4 w-4" />
+              <a href="mailto:office@delhihouse.org" className="flex items-center gap-2 text-primary hover:underline text-sm sm:text-base break-all">
+                <Mail className="h-4 w-4 flex-shrink-0" />
                 office@delhihouse.org
               </a>
-              <a href="tel:+919311968001" className="flex items-center gap-2 text-primary hover:underline">
-                <Phone className="h-4 w-4" />
+              <a href="tel:+919311968001" className="flex items-center gap-2 text-primary hover:underline text-sm sm:text-base">
+                <Phone className="h-4 w-4 flex-shrink-0" />
                 +91-9311968001
               </a>
             </div>
