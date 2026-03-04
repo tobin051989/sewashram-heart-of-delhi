@@ -98,21 +98,21 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <div className="flex gap-2">
-                  <Facebook className="h-6 w-6 text-primary flex-shrink-0" />
-                  <Instagram className="h-6 w-6 text-primary flex-shrink-0" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <div className="flex gap-2 flex-shrink-0">
+                  <Facebook className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                  <Instagram className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="font-semibold text-foreground mb-2">Social Media</p>
                   <div className="space-y-1">
-                    <a href="https://www.facebook.com/delhihouse.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                      <Facebook className="h-4 w-4" />
-                      www.facebook.com/delhihouse.org
+                    <a href="https://www.facebook.com/delhihouse.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
+                      <Facebook className="h-4 w-4 flex-shrink-0" />
+                      <span className="truncate">facebook.com/delhihouse.org</span>
                     </a>
-                    <a href="https://www.instagram.com/delhihousesocietys/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                      <Instagram className="h-4 w-4" />
-                      www.instagram.com/delhihousesocietys/
+                    <a href="https://www.instagram.com/delhihousesocietys/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
+                      <Instagram className="h-4 w-4 flex-shrink-0" />
+                      <span className="truncate">instagram.com/delhihousesocietys</span>
                     </a>
                   </div>
                 </div>
