@@ -55,18 +55,18 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div className="flex-1">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold text-foreground mb-2">Email</p>
                   <div className="space-y-1">
-                    <a href="mailto:gen.secy@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
+                    <a href="mailto:gen.secy@delhihouse.org" className="block text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors truncate">
                       gen.secy@delhihouse.org
                     </a>
-                    <a href="mailto:keshav@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
+                    <a href="mailto:keshav@delhihouse.org" className="block text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors truncate">
                       keshav@delhihouse.org
                     </a>
-                    <a href="mailto:communication@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
+                    <a href="mailto:communication@delhihouse.org" className="block text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors truncate">
                       communication@delhihouse.org
                     </a>
                   </div>
