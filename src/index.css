@@ -102,6 +102,8 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   body {

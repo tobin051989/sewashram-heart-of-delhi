@@ -15,7 +15,7 @@ const Contact = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 shadow-lg">
+          <Card className="p-4 sm:p-8 md:p-12 shadow-lg overflow-hidden">
             <div className="text-center mb-8">
               <div className="space-y-4">
                 <div>
@@ -32,9 +32,9 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div className="flex-1">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold text-foreground mb-1">Address</p>
                   <p className="text-muted-foreground mb-3">
                     Khasra 47/25 & 48/21, Krishna Nagar,<br />
@@ -55,26 +55,26 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div className="flex-1">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold text-foreground mb-2">Email</p>
                   <div className="space-y-1">
-                    <a href="mailto:gen.secy@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
+                    <a href="mailto:gen.secy@delhihouse.org" className="block text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors truncate">
                       gen.secy@delhihouse.org
                     </a>
-                    <a href="mailto:keshav@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
+                    <a href="mailto:keshav@delhihouse.org" className="block text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors truncate">
                       keshav@delhihouse.org
                     </a>
-                    <a href="mailto:communication@delhihouse.org" className="block text-muted-foreground hover:text-primary transition-colors">
+                    <a href="mailto:communication@delhihouse.org" className="block text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors truncate">
                       communication@delhihouse.org
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-foreground mb-2">Phone</p>
                   <div className="space-y-1">
@@ -88,8 +88,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <Globe className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-foreground mb-2">Website</p>
                   <a href="http://www.delhihouse.org" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
@@ -98,21 +98,21 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <div className="flex gap-2">
-                  <Facebook className="h-6 w-6 text-primary flex-shrink-0" />
-                  <Instagram className="h-6 w-6 text-primary flex-shrink-0" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-muted/30 min-w-0">
+                <div className="flex gap-2 flex-shrink-0">
+                  <Facebook className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                  <Instagram className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="font-semibold text-foreground mb-2">Social Media</p>
                   <div className="space-y-1">
-                    <a href="https://www.facebook.com/delhihouse.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                      <Facebook className="h-4 w-4" />
-                      www.facebook.com/delhihouse.org
+                    <a href="https://www.facebook.com/delhihouse.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
+                      <Facebook className="h-4 w-4 flex-shrink-0" />
+                      <span className="truncate">facebook.com/delhihouse.org</span>
                     </a>
-                    <a href="https://www.instagram.com/delhihousesocietys/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                      <Instagram className="h-4 w-4" />
-                      www.instagram.com/delhihousesocietys/
+                    <a href="https://www.instagram.com/delhihousesocietys/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
+                      <Instagram className="h-4 w-4 flex-shrink-0" />
+                      <span className="truncate">instagram.com/delhihousesocietys</span>
                     </a>
                   </div>
                 </div>
