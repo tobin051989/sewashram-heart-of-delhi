@@ -190,7 +190,7 @@ const DonatePage = () => {
                   <p><span className="font-semibold">Branch Code:</span> 00691</p>
                   <p><span className="font-semibold">IFSC:</span> SBIN0000691</p>
                   <p><span className="font-semibold">SWIFT:</span> SBININBB104</p>
-                  <p><span className="font-semibold">Bank:</span> FCRA Cell, 4th Floor, State Bank of India, New Delhi Main Branch, 11 Sansad Marg, New Delhi-110 001</p>
+                  <p className="text-sm break-all"><span className="font-semibold">Bank:</span> FCRA Cell, 4th Floor, State Bank of India, New Delhi Main Branch, 11 Sansad Marg, New Delhi-110 001</p>
                 </div>
               </CardContent>
             </Card>

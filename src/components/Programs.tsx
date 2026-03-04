@@ -30,7 +30,7 @@ const Programs = () => {
             <ImageSlideshow images={images} title="Sewa Ashram" />
           </div>
           
-          <div className="p-8">
+          <div className="p-4 sm:p-6 md:p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 rounded-full bg-primary/10">
                 <HeartPulse className="h-6 w-6 text-primary" />
