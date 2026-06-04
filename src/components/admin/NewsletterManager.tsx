@@ -38,6 +38,28 @@ const NewsletterManager = () => {
   const { user } = useAuth();
   const { toast } = useToast();
 
+  const NEWSLETTER_TEMPLATE = `Dear Supporters, Donors, and Friends,
+
+Please find attached the [Month Year] edition of the Delhi House Society – Sewa Ashram Newsletter.
+
+We are deeply grateful for your continued support, encouragement, and partnership. Your generosity enables us to extend care, hope, and meaningful change to those we serve. We hope the stories and updates shared in this edition inspire you and offer a glimpse into the impact your support makes possible.
+
+Your feedback is always valuable to us as we strive to strengthen our work and communication.
+
+Thank you for journeying with us and for being a blessing to so many lives. We look forward to your continued support as we move ahead together in this shared mission of service and transformation.
+
+Warm Regards,
+
+
+Mary Ngaihte Peter
+Communications Lead, DHS
+www.delhihouse.org`;
+
+  const loadTemplate = () => {
+    setContent(NEWSLETTER_TEMPLATE);
+    toast({ title: "Template loaded" });
+  };
+
   const fetchNewsletters = async () => {
     const { data, error } = await supabase
       .from("newsletters")
@@ -178,8 +200,11 @@ const NewsletterManager = () => {
                 placeholder="Newsletter content (optional if uploading PDF)"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                rows={6}
+                rows={10}
               />
+              <Button type="button" variant="outline" size="sm" onClick={loadTemplate}>
+                <FileText className="h-4 w-4 mr-2" /> Load Template
+              </Button>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   <ImageIcon className="h-4 w-4 inline mr-1" /> Thumbnail Image (optional)
