@@ -180,17 +180,35 @@ const DonatePage = () => {
                   Donors From Other Countries
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  It is required by law (FCRA) that you send us a copy of your passport to office@delhihouse.org. Then you can make an international bank transfer in your own currency (not in INR).
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Account Name:</span> Delhi House Society</p>
-                  <p><span className="font-semibold">Account No:</span> 40001325500</p>
-                  <p><span className="font-semibold">Branch Code:</span> 00691</p>
-                  <p><span className="font-semibold">IFSC:</span> SBIN0000691</p>
-                  <p><span className="font-semibold">SWIFT:</span> SBININBB104</p>
-                  <p className="text-sm break-all"><span className="font-semibold">Bank:</span> FCRA Cell, 4th Floor, State Bank of India, New Delhi Main Branch, 11 Sansad Marg, New Delhi-110 001</p>
+              <CardContent className="space-y-6">
+                <div className="space-y-4 text-sm">
+                  <p>
+                    <span className="font-semibold">1. GERMAN + SWISS RESIDENTS (EUR/CHF):</span>{" "}
+                    Go to{" "}
+                    <a href="https://delhihouse.de/mithelfen#spenden" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">
+                      https://delhihouse.de/mithelfen#spenden
+                    </a>{" "}
+                    for instructions on how to make tax deductible donations.
+                  </p>
+                  <p>
+                    <span className="font-semibold">2. NEW ZEALAND RESIDENTS (NZD):</span>{" "}
+                    Make a direct deposit in NZD at ANZ for Cry for the World Foundation, Account: 01 0819 0374190 30, Branch: 37, Rotherham St, Riccarton, Christchurch.
+                  </p>
+                  <p>
+                    <span className="font-semibold">3. AUSTRALIAN RESIDENTS (AUD):</span>{" "}
+                    Go to the webpage of our partner{" "}
+                    <a href="https://interserve.org.au/give/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">
+                      Interserve Australia
+                    </a>{" "}
+                    and select "Interserve worker or Project" in the "I would like to give" drop down, enter the Recipient Number 1299.82 and "Delhi House Society". Select "Once-off" or "Regularly" in the Type of giving space and then the required information is provided/asked for, depending on choices made. Giving can be via credit/debit card, bank transfer or cheque.
+                  </p>
+                  <p>
+                    <span className="font-semibold">4. Other countries:</span>{" "}
+                    Please contact us at{" "}
+                    <a href="mailto:office@delhihouse.org" className="text-primary hover:underline break-all">
+                      office@delhihouse.org
+                    </a>
+                  </p>
                 </div>
               </CardContent>
             </Card>
