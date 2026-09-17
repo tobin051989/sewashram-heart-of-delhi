@@ -43,6 +43,7 @@ export type Database = {
           content: string | null
           created_at: string
           created_by: string
+          email_design_url: string | null
           email_style: string
           id: string
           pdf_url: string | null
@@ -55,6 +56,7 @@ export type Database = {
           content?: string | null
           created_at?: string
           created_by: string
+          email_design_url?: string | null
           email_style?: string
           id?: string
           pdf_url?: string | null
@@ -67,6 +69,7 @@ export type Database = {
           content?: string | null
           created_at?: string
           created_by?: string
+          email_design_url?: string | null
           email_style?: string
           id?: string
           pdf_url?: string | null
