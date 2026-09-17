@@ -6,7 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Plus, Send, Trash2, Eye, EyeOff, FileText, ImageIcon } from "lucide-react";
+import { Plus, Send, Trash2, Eye, EyeOff, FileText, ImageIcon, Palette, Upload } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import {
   Dialog,
   DialogContent,
@@ -21,6 +23,8 @@ interface Newsletter {
   content: string | null;
   pdf_url: string | null;
   thumbnail_url: string | null;
+  email_style: string;
+  email_design_url: string | null;
   published: boolean;
   created_at: string;
 }
@@ -32,6 +36,9 @@ const NewsletterManager = () => {
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
   const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null);
+  const [emailDesignFile, setEmailDesignFile] = useState<File | null>(null);
+  const [emailDesignPreview, setEmailDesignPreview] = useState<string | null>(null);
+  const [emailStyle, setEmailStyle] = useState("editorial");
   const [isCreating, setIsCreating] = useState(false);
   const [isSending, setIsSending] = useState<string | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -63,7 +70,7 @@ www.delhihouse.org`;
   const fetchNewsletters = async () => {
     const { data, error } = await supabase
       .from("newsletters")
-      .select("id, title, content, pdf_url, thumbnail_url, published, created_at")
+        .select("id, title, content, pdf_url, thumbnail_url, email_style, email_design_url, published, created_at")
       .order("created_at", { ascending: false });
     if (!error && data) setNewsletters(data as Newsletter[]);
   };
@@ -80,15 +87,26 @@ www.delhihouse.org`;
     }
   };
 
+  const handleEmailDesignChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setEmailDesignFile(file);
+    setEmailDesignPreview(file ? URL.createObjectURL(file) : null);
+  };
+
   const handleCreate = async () => {
     if (!title.trim()) {
       toast({ title: "Title is required", variant: "destructive" });
+      return;
+    }
+    if (!user?.id) {
+      toast({ title: "You must be signed in to create a newsletter", variant: "destructive" });
       return;
     }
     setIsCreating(true);
 
     let pdfUrl: string | null = null;
     let thumbnailUrl: string | null = null;
+    let emailDesignUrl: string | null = null;
 
     if (pdfFile) {
       const fileName = `${Date.now()}-${pdfFile.name}`;
@@ -122,6 +140,22 @@ www.delhihouse.org`;
       thumbnailUrl = thumbUrlData.publicUrl;
     }
 
+    if (emailDesignFile) {
+      const designName = `email-designs/${Date.now()}-${emailDesignFile.name}`;
+      const { error: designError } = await supabase.storage
+        .from("newsletters")
+        .upload(designName, emailDesignFile);
+
+      if (designError) {
+        toast({ title: "Email design upload failed", description: designError.message, variant: "destructive" });
+        setIsCreating(false);
+        return;
+      }
+
+      const { data: designUrlData } = supabase.storage.from("newsletters").getPublicUrl(designName);
+      emailDesignUrl = designUrlData.publicUrl;
+    }
+
     const { error } = await supabase
       .from("newsletters")
       .insert({
@@ -129,7 +163,9 @@ www.delhihouse.org`;
         content: content.trim() || null,
         pdf_url: pdfUrl,
         thumbnail_url: thumbnailUrl,
-        created_by: user!.id,
+        email_style: emailStyle,
+        email_design_url: emailDesignUrl,
+        created_by: user.id,
         published: false,
       } as any);
 
@@ -142,6 +178,9 @@ www.delhihouse.org`;
       setPdfFile(null);
       setThumbnailFile(null);
       setThumbnailPreview(null);
+      setEmailDesignFile(null);
+      setEmailDesignPreview(null);
+      setEmailStyle("editorial");
       setDialogOpen(false);
       fetchNewsletters();
     }
@@ -205,6 +244,44 @@ www.delhihouse.org`;
               <Button type="button" variant="outline" size="sm" onClick={loadTemplate}>
                 <FileText className="h-4 w-4 mr-2" /> Load Template
               </Button>
+              <div className="space-y-3 rounded-lg border border-border bg-muted/30 p-4">
+                <div className="flex items-center gap-2">
+                  <Palette className="h-4 w-4 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium text-foreground">Email design</p>
+                    <p className="text-xs text-muted-foreground">Choose how the message will look in the inbox.</p>
+                  </div>
+                </div>
+                <RadioGroup value={emailStyle} onValueChange={setEmailStyle} className="grid gap-2 sm:grid-cols-3">
+                  {[
+                    { value: "editorial", label: "Editorial", detail: "Warm header and clear reading flow" },
+                    { value: "spotlight", label: "Spotlight", detail: "Teal announcement-style layout" },
+                    { value: "minimal", label: "Minimal", detail: "Simple, spacious and print-like" },
+                  ].map((option) => (
+                    <Label
+                      key={option.value}
+                      htmlFor={`email-style-${option.value}`}
+                      className="flex cursor-pointer items-start gap-2 rounded-md border border-border bg-background p-3 transition-colors hover:border-primary/60 has-[:checked]:border-primary has-[:checked]:bg-primary/5"
+                    >
+                      <RadioGroupItem value={option.value} id={`email-style-${option.value}`} className="mt-0.5" />
+                      <span className="min-w-0">
+                        <span className="block text-sm font-medium text-foreground">{option.label}</span>
+                        <span className="block text-xs leading-snug text-muted-foreground">{option.detail}</span>
+                      </span>
+                    </Label>
+                  ))}
+                </RadioGroup>
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-foreground">
+                  <Upload className="mr-1 inline h-4 w-4" /> Upload design image (optional)
+                </label>
+                <Input type="file" accept="image/*" onChange={handleEmailDesignChange} />
+                <p className="mt-1 text-xs text-muted-foreground">This image appears at the top of the email above the message.</p>
+                {emailDesignPreview && (
+                  <img src={emailDesignPreview} alt="Email design preview" className="mt-2 max-h-40 w-full rounded-md border object-contain" />
+                )}
+              </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   <ImageIcon className="h-4 w-4 inline mr-1" /> Thumbnail Image (optional)
@@ -274,7 +351,7 @@ www.delhihouse.org`;
                         <span className="ml-2 text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full">Draft</span>
                       )}
                     </p>
-                    {nl.content && (
+                     {nl.content && (
                       <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{nl.content}</p>
                     )}
                     {nl.pdf_url && (

@@ -96,14 +96,61 @@ serve(async (req) => {
       });
     }
 
-    // Build base email content
-    let baseContent = `<h1>${newsletter.title}</h1>`;
-    if (newsletter.content) {
-      baseContent += `<div>${newsletter.content.replace(/\n/g, "<br>")}</div>`;
-    }
-    if (newsletter.pdf_url) {
-      baseContent += `<p><a href="${newsletter.pdf_url}">Download the newsletter PDF</a></p>`;
-    }
+    const escapeHtml = (value: string) => value
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+    const safeTitle = escapeHtml(newsletter.title);
+    const safeContent = newsletter.content ? escapeHtml(newsletter.content).replace(/\n/g, "<br>") : "";
+    const safePdfUrl = newsletter.pdf_url ? encodeURI(newsletter.pdf_url) : null;
+    const safeDesignUrl = newsletter.email_design_url ? encodeURI(newsletter.email_design_url) : null;
+
+    const style = newsletter.email_style || "editorial";
+    const styles = {
+      editorial: {
+        accent: "#b85c3e",
+        accentSoft: "#f8eee9",
+        title: "#3d2a24",
+        label: "Delhi House Society · Sewa Ashram Newsletter",
+      },
+      spotlight: {
+        accent: "#237f83",
+        accentSoft: "#e8f4f3",
+        title: "#173b3d",
+        label: "Stories of care, hope and transformation",
+      },
+      minimal: {
+        accent: "#5b514c",
+        accentSoft: "#f3f1ef",
+        title: "#272321",
+        label: "DELHI HOUSE SOCIETY",
+      },
+    };
+    const selectedStyle = styles[style as keyof typeof styles] || styles.editorial;
+    const designImage = safeDesignUrl
+      ? `<img src="${safeDesignUrl}" alt="Newsletter design" style="display:block;width:100%;height:auto;max-height:420px;object-fit:cover;">`
+      : "";
+    const pdfLink = safePdfUrl
+      ? `<div style="margin:28px 0 6px;text-align:center;"><a href="${safePdfUrl}" style="display:inline-block;background:${selectedStyle.accent};color:#ffffff;text-decoration:none;padding:13px 22px;border-radius:4px;font-weight:700;">Download the newsletter PDF</a></div>`
+      : "";
+
+    const baseContent = `
+      <div style="background:#f7f4f1;padding:28px 12px;font-family:Arial,Helvetica,sans-serif;color:#443b37;">
+        <div style="max-width:620px;margin:0 auto;background:#ffffff;border:1px solid #e5ded9;">
+          ${designImage}
+          <div style="height:6px;background:${selectedStyle.accent};"></div>
+          <div style="padding:30px 34px 34px;">
+            <p style="margin:0 0 12px;color:${selectedStyle.accent};font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;">${selectedStyle.label}</p>
+            <h1 style="margin:0 0 24px;color:${selectedStyle.title};font-family:Georgia,serif;font-size:30px;line-height:1.2;font-weight:700;">${safeTitle}</h1>
+            ${safeContent ? `<div style="font-size:16px;line-height:1.75;">${safeContent}</div>` : ""}
+            ${pdfLink}
+          </div>
+          <div style="background:${selectedStyle.accentSoft};padding:16px 34px;color:#736862;font-size:12px;line-height:1.5;">Thank you for being part of the Delhi House Society community.</div>
+        </div>
+      </div>`;
 
     // Send individual emails so recipients can't see each other
     let sentCount = 0;
@@ -114,7 +161,7 @@ serve(async (req) => {
 
       // Build per-recipient unsubscribe link
       const unsubscribeUrl = `${supabaseUrl}/functions/v1/unsubscribe?email=${encodeURIComponent(contact.email)}`;
-      const htmlContent = baseContent + `<hr style="margin-top:32px;border:none;border-top:1px solid #ddd;"><p style="font-size:12px;color:#888;text-align:center;margin-top:16px;">You received this because you subscribed to Delhi House Society updates.<br><a href="${unsubscribeUrl}" style="color:#888;">Unsubscribe</a></p>`;
+       const htmlContent = baseContent + `<p style="margin:20px auto 0;max-width:620px;text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#888;">You received this because you subscribed to Delhi House Society updates.<br><a href="${unsubscribeUrl}" style="color:#888;">Unsubscribe</a></p>`;
 
       try {
         const resendResponse = await fetch("https://api.resend.com/emails", {
