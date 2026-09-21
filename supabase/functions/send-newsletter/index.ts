@@ -133,8 +133,12 @@ serve(async (req) => {
     const designImage = safeDesignUrl
       ? `<img src="${safeDesignUrl}" alt="Newsletter design" style="display:block;width:100%;height:auto;max-height:420px;object-fit:cover;">`
       : "";
+    // Route the PDF download through the website's own domain so ad blockers
+    // (which often block storage-provider domains) don't stop subscribers.
+    const siteUrl = Deno.env.get("SITE_URL") || "https://sewashram-heart-of-delhi.lovable.app";
+    const downloadPageUrl = `${siteUrl}/newsletter-download/${newsletter.id}`;
     const pdfLink = safePdfUrl
-      ? `<div style="margin:28px 0 6px;text-align:center;"><a href="${safePdfUrl}" style="display:inline-block;background:${selectedStyle.accent};color:#ffffff;text-decoration:none;padding:13px 22px;border-radius:4px;font-weight:700;">Download the newsletter PDF</a></div>`
+      ? `<div style="margin:28px 0 6px;text-align:center;"><a href="${downloadPageUrl}" style="display:inline-block;background:${selectedStyle.accent};color:#ffffff;text-decoration:none;padding:13px 22px;border-radius:4px;font-weight:700;">Download the newsletter PDF</a></div>`
       : "";
 
     const baseContent = `

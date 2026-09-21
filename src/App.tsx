@@ -17,6 +17,7 @@ import PoliciesPage from "./pages/PoliciesPage";
 import DonatePage from "./pages/DonatePage";
 import LearningCentresPage from "./pages/LearningCentresPage";
 import NewslettersPage from "./pages/NewslettersPage";
+import NewsletterDownloadPage from "./pages/NewsletterDownloadPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
@@ -44,7 +45,8 @@ const App = () => (
             <Route path="/get-involved" element={<GetInvolvedPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />
-            <Route path="/newsletters" element={<NewslettersPage />} />
+<Route path="/newsletters" element={<NewslettersPage />} />
+            <Route path="/newsletter-download/:id" element={<NewsletterDownloadPage />} />
             <Route path="/admin/login" element={<AdminLoginPage />} />
             <Route path="/admin" element={<AdminDashboardPage />} />
             <Route path="/reset-password" element={<ResetPasswordPage />} />
