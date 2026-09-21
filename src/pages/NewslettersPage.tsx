@@ -132,9 +132,9 @@ const NewslettersPage = () => {
                       )}
                       {nl.pdf_url && (
                         <Button variant="outline" size="sm" asChild>
-                          <a href={nl.pdf_url} target="_blank" rel="noopener noreferrer">
+                          <Link to={`/newsletter-download/${nl.id}`}>
                             <Download className="h-4 w-4 mr-1" /> Download PDF
-                          </a>
+                          </Link>
                         </Button>
                       )}
                     </div>
@@ -166,9 +166,9 @@ const NewslettersPage = () => {
           {selected?.pdf_url && (
             <div className="mt-4">
               <Button asChild>
-                <a href={selected.pdf_url} target="_blank" rel="noopener noreferrer">
+                <Link to={`/newsletter-download/${selected.id}`}>
                   <Download className="h-4 w-4 mr-2" /> Download PDF
-                </a>
+                </Link>
               </Button>
             </div>
           )}
