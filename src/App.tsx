@@ -30,7 +30,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <AuthProvider>
           <ScrollToTop />
           <Routes>
@@ -45,7 +45,7 @@ const App = () => (
             <Route path="/get-involved" element={<GetInvolvedPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />
-<Route path="/newsletters" element={<NewslettersPage />} />
+            <Route path="/newsletters" element={<NewslettersPage />} />
             <Route path="/newsletter-download/:id" element={<NewsletterDownloadPage />} />
             <Route path="/admin/login" element={<AdminLoginPage />} />
             <Route path="/admin" element={<AdminDashboardPage />} />
